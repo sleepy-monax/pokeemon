@@ -1,9 +1,9 @@
 begin;
-    if not exists(select 1 from sys.databases where name='Palermon')
-        CREATE DATABASE [Palermon];
+    if not exists(select 1 from sys.databases where name='Pokeemon')
+        CREATE DATABASE [Pokeemon];
 end;
 
-USE Palermon;
+USE Pokeemon;
 
 CREATE TABLE Users (
     id              int identity primary key not null,
