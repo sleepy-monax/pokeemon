@@ -20,6 +20,13 @@ CREATE TABLE Monsters (
     level           int not null
 );
 
+create table User_monsters(
+    id              int identity primary key not null,
+    id_user         int not null,
+    id_monster      int not null,
+    foreign key (id_user) references Users,
+    foreign key (id_monster) references Monsters
+);
 
 CREATE TABLE Stereotype (
     id              int identity primary key not null,
