@@ -31,7 +31,7 @@ create table User_monsters(
 
 CREATE TABLE Stereotype (
     id              int identity primary key not null,
-    stereotypeName  varchar(64) not null,
+    name  varchar(64) not null,
     baseHealth      decimal(7,2) not null,
     baseAttack      decimal(7,2) not null,
     baseDefense     decimal(7,2) not null,
