@@ -16,8 +16,9 @@ CREATE TABLE Users (
 CREATE TABLE Monsters (
     id              int identity primary key not null,
     name            varchar(64) not null,
-    stereotype      varchar(64) not null,
-    level           int not null
+    stereotype      int not null,
+    level           int not null,
+    foreign key (stereotype) references Stereotype
 );
 
 create table User_monsters(
