@@ -26,9 +26,9 @@ create table UserMonsters(
     idMonster      int not null,
 
     foreign key (idUser) references Users,
-    foreign key (idMonster) references Monsters
+    foreign key (idMonster) references Monsters,
     
-    primary key (idUser, idMonster),
+    primary key (idUser, idMonster)
 );
 
 create table UserItems(
