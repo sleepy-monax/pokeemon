@@ -14,22 +14,11 @@ CREATE TABLE Users (
     money           int not null default 120
 );
 
-CREATE TABLE Stereotype (
-    id              int identity primary key not null,
-    name            varchar(64) not null,
-    baseHealth      decimal(7,2) not null,
-    baseAttack      decimal(7,2) not null,
-    baseDefense     decimal(7,2) not null,
-    baseSpeed       decimal(7,2) not null
-);
-
 CREATE TABLE Monsters (
     id              int identity primary key not null,
     name            varchar(64) not null,
-    stereotype      int not null,
+    stereotype      varchar(64) not null,
     level           int not null,
-
-    foreign key (stereotype) references Stereotype
 );
 
 create table UserMonsters(
@@ -42,14 +31,12 @@ create table UserMonsters(
     primary key (idUser, idMonster),
 );
 
-CREATE TABLE Items(
-    id              int identity primary key not null,
-    name            varchar(64) not null,
-    value           decimal not null
-);
+create table UserItems(
+    idUser          int not null,
+    nameItem        varchar(64) not null,
+    quantity        int not null,
 
-CREATE TABLE Attack(
-    id              int identity primary key not null,
-    name            varchar(64) not null,
-    damage          decimal(7,2) not null
+    foreign key (idUser) references Users,
+
+    primary key (idUser, nameItem)
 );
