@@ -5,6 +5,7 @@ import {MainMenuComponent} from './main-menu/main-menu.component';
 import {SigninComponent} from './signin/signin.component';
 import {SignupComponent} from './signup/signup.component';
 import {ErrorComponent} from './error/error.component';
+import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'landing',
+    component: LandingComponent
   },
   {
     path: '**',
