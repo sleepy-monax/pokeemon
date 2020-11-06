@@ -1,0 +1,42 @@
+name: Deploy to Azure Web App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
+
+env:
+  AZURE_WEBAPP_NAME: pokeemon
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
+  DOTNET_VERSION: '3.1.403'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout the repo
+      - uses: actions/checkout@master
+
+      # Setup .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      # Run dotnet build and publish
+      - name: dotnet build and publish
+        run: |
+          dotnet build --configuration Release
+          dotnet publish -c Release -o pokeemon
+
+      # Deploy to Azure Web apps
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }} # Define secret variable in repository settings as per action documentation
+          package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/pokeemon'
