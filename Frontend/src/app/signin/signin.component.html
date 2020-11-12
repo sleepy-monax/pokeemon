@@ -1,1 +1,10 @@
-<p>signin works!</p>
+<h1>Sign up</h1>
+<form [formGroup]="player" (ngSubmit)="submit()">
+  <input type="text" placeholder="UserName" formControlName="username">
+  <input type="text" placeholder="Email" formControlName="email">
+  <input type="text" placeholder="Password" formControlName="password">
+  <input type="text" placeholder="Confirm Password" formControlName="password">
+
+  <input type="submit" [disabled]="player.invalid" placeholder="Log Ip">
+  <input type="button" routerLink="/signin" placeholder="Sign Up">
+</form>
