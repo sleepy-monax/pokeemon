@@ -26,7 +26,12 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/_redirects"
+              "src/_redirects",
+              {
+                "glob": "**/*",
+                "input": "../Asserts",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "src/styles.less"
