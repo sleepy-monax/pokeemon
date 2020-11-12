@@ -1,0 +1,27 @@
+:host {
+    display: inline-flex;
+    flex-flow: row;
+    align-items: center;
+
+    line-height: 32px;
+    padding: 8px 16px 8px 12px;
+
+    transition: box-shadow 0.1s;
+    transition: background-color 0.1s;
+
+    user-select: none;
+}
+
+:host:hover {
+    background-color: #fff1;
+    box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.1);
+}
+
+:host:active {
+    background-color: #06fe;
+    box-shadow: 0px 0px 32px 0px rgba(0,102,255,0.75);
+}
+
+.text {
+    padding-left: 6px;
+}
