@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavigationItemComponent } from './navigation/item/item.component';
+import { ShopComponent } from './shop/shop.component';
+import { ItemComponent } from './shop/item/item.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { NavigationItemComponent } from './navigation/item/item.component';
     TextFieldComponent,
     NavigationComponent,
     NavigationItemComponent,
+    ShopComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
