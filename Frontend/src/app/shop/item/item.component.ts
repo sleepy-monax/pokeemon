@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-item',
@@ -27,9 +27,14 @@ export class ItemComponent implements OnInit {
   classItemDescription:any = {
     'itemDescription': true
   }
-  name: string = "Name";
-  quantity: string = "Quantity";
-  price: string = "Price";
-  description: string = "Description";
+  @Input() name: string = "Name";
+  @Input() quantity: number = 1;
+  @Input() price: number = 1;
+  @Input() description: string = "Description";
+  @Input() basePrice: number = 1;
 
+  increment() {
+    this.quantity += 1;
+    this.price = this.basePrice * this.quantity;
+  }
 }

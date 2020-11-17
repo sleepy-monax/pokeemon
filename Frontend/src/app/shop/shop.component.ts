@@ -19,4 +19,10 @@ export class ShopComponent implements OnInit {
   classShopTitle:any = {
     'shopTitle': true
   }
+
+  test: string = "TestInput";
+  price: number  = 10;
+  description: string = "TestDescription";
+  quantity: number = 1;
+  basePrice: number = 10;
 }
