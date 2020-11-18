@@ -1,10 +1,16 @@
-<h1>Sign up</h1>
+<app-title class="title">Sign in</app-title>
 <form [formGroup]="player" (ngSubmit)="submit()">
-  <input type="text" placeholder="UserName" formControlName="username">
-  <input type="text" placeholder="Email" formControlName="email">
-  <input type="text" placeholder="Password" formControlName="password">
-  <input type="text" placeholder="Confirm Password" formControlName="password">
+  <div class="login-form">
+    <input type="text" class="userName" placeholder="UserName" formControlName="pseudo" >
+    <input type="password" class="password" placeholder="Confirm Password" formControlName="password" >
+    <!--<app-button type="text" class="userName" placeholder="User Name" formControlName="pseudo"></app-button>-->
 
-  <input type="submit" [disabled]="player.invalid" placeholder="Log Ip">
-  <input type="button" routerLink="/signin" placeholder="Sign Up">
+    <!--<app-button
+      class="logInButton"
+      styles="normalButton"
+      text="Log in">
+    </app-button>-->
+    <button class="logInButton" [disabled]="player.invalid" >Log in</button>
+    <button class="signUpButton" routerLink="/signup">Sign up</button>
+  </div>
 </form>

@@ -1,7 +1,6 @@
-
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {User} from '../../model/user';
+import {User} from '../model/user';
 
 @Component({
   selector: 'app-signin',
@@ -11,11 +10,10 @@ import {User} from '../../model/user';
 export class SigninComponent implements OnInit {
 
   @Output()
-  userCreated: EventEmitter<User> = new EventEmitter<User>();
+  userVerified: EventEmitter<User> = new EventEmitter<User>();
 
   player: FormGroup = this.fb.group({
     pseudo: ['', Validators.required],
-    email: ['', Validators.required],
     password: ['', Validators.required],
   });
 
@@ -25,7 +23,7 @@ export class SigninComponent implements OnInit {
   }
 
   submit() {
-    this.userCreated.emit(this.player.value);
+    this.userVerified.emit(this.player.value);
     this.player.reset();
   }
 }
