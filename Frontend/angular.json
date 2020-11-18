@@ -47,8 +47,8 @@
               }
             ],
             "styles": [
-              "src/custom-theme.scss",
-              "src/styles.less"
+              "src/style/material.scss",
+              "src/style/main.less"
             ],
             "scripts": []
           },
