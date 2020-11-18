@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "style/constant.less";
+
 body {
     margin: 0;
     font-family: sans-serif;
@@ -9,3 +11,27 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media screen and (max-width: @mobile-breakpoint) {
+    * {
+        --display-desktop: 0;
+        --display-mobile: 1;
+    }
+
+    .only-desktop {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: @mobile-breakpoint) {
+    * {
+        --display-desktop: 1;
+        --display-mobile: 0;
+    }
+
+    .only-mobile {
+        display: none !important;
+    }
+
+    @import 'style/scrollbar.less';
+}

@@ -4,12 +4,16 @@
     align-items: center;
 
     line-height: 32px;
-    padding: 8px 16px 8px 12px;
+    padding: 8px calc(var(--display-desktop) * 4px + 12px) 8px 12px;
 
     transition: box-shadow 0.1s;
     transition: background-color 0.1s;
 
     user-select: none;
+}
+
+:host:focus {
+  outline: 0;
 }
 
 :host:hover {
@@ -23,5 +27,5 @@
 }
 
 .text {
-    padding-left: 6px;
+    padding-left: calc(var(--display-desktop) * 6px);
 }
