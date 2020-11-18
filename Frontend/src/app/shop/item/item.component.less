@@ -1,63 +1,28 @@
 :host {
-  display: block;
-  border: 1px solid black;
-  position: relative;
-  width: 95%;
-  height: 95px;
-  margin-left: 2%;
-  margin-top: 1%;
-  border-radius: 36px;
-  font-family: "Roboto Light";
-  font-style: italic;
   color: black;
-  font-size: 15px;
-  font-weight: bold;
+  background-color: white;
+
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "name quantity price"
+    "description description description";
 }
 
-.itemName {
-  position: absolute;
-  left: 2.34%;
-  right: 57.86%;
-  top: 14.66%;
-  bottom: 50%;
-  text-align: center;
-
-  background: #C4C4C4;
-  border-radius: 50px;
+:host:hover {
+  background-color: whitesmoke;
 }
 
-.itemQuantity {
-  position: absolute;
-  left: 45.15%;
-  right: 32.53%;
-  top: 14.66%;
-  bottom: 50%;
-  text-align: center;
+.description { grid-area: description; }
 
-  background: #C4C4C4;
-  border-radius: 50px;
-}
+.name { grid-area: name; }
 
-.itemPrice {
-  position: absolute;
-  left: 70.07%;
-  right: 2.42%;
-  top: 14.66%;
-  bottom: 50%;
-  text-align: center;
+.quantity { grid-area: quantity; }
 
-  background: #C4C4C4;
-  border-radius: 50px;
-}
-
-.itemDescription {
-  position: absolute;
-  left: 2.34%;
-  right: 2.42%;
-  top: 57.76%;
-  bottom: 7.76%;
-  text-align: center;
-
-  background: #C4C4C4;
-  border-radius: 50px;
-}
+.price { grid-area: price; }

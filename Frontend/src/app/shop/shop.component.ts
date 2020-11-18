@@ -12,10 +12,6 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  classItemContainer:any = {
-    'itemContainer': true
-  }
-
   classShopTitle:any = {
     'shopTitle': true
   }

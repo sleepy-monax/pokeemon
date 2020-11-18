@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-item',
@@ -12,21 +12,6 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  classItemName:any = {
-    'itemName': true
-  };
-
-  classItemQuantity:any = {
-    'itemQuantity': true
-  };
-
-  classItemPrice:any = {
-    'itemPrice': true
-  }
-
-  classItemDescription:any = {
-    'itemDescription': true
-  }
   @Input() name: string = "Name";
   @Input() quantity: number = 1;
   @Input() price: number = 1;

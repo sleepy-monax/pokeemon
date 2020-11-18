@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavigationItemComponent } from './navigation/item/item.component';
 import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
+import { TitleComponent } from './common/title/title.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ItemComponent } from './shop/item/item.component';
     NavigationItemComponent,
     ShopComponent,
     ItemComponent,
+    TitleComponent,
   ],
   imports: [
     BrowserModule,
