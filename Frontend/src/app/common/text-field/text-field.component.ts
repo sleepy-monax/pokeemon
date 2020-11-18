@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Attribute, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-text-field',
@@ -7,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextFieldComponent implements OnInit {
 
-  constructor() { }
+  type: string;
+  styles: string;
+  placeholder: any;
+  value: any;
+
+  constructor(@Attribute('type') type: string,
+              @Attribute('styles') styles: string,
+              @Attribute('placeholder') placeholder: any,
+              @Attribute('value') value: any) {
+    this.type = type;
+    this.styles = styles;
+    this.placeholder = placeholder;
+    this.value = value;
+  }
 
   ngOnInit(): void {
   }
