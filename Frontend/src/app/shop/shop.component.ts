@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+// @ts-ignore
+import itemsJson from '../../assets/items.json';
+
+interface Item {
+  name: String;
+  description: String;
+  price: number;
+}
 
 @Component({
   selector: 'app-shop',
@@ -7,18 +15,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
 
-  constructor() { }
+  items: Item[] = itemsJson;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  classShopTitle:any = {
-    'shopTitle': true
-  }
-
-  test: string = "TestInput";
-  price: number  = 10;
-  description: string = "TestDescription";
   quantity: number = 1;
-  basePrice: number = 10;
 }

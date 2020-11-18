@@ -12,11 +12,11 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() name: string = "Name";
-  @Input() quantity: number = 1;
-  @Input() price: number = 1;
-  @Input() description: string = "Description";
-  @Input() basePrice: number = 1;
+  @Input() name: string;
+  @Input() quantity: number;
+  @Input() price: number;
+  @Input() description: string;
+  @Input() basePrice: number;
 
   increment() {
     this.quantity += 1;

@@ -1,0 +1,29 @@
+[
+        {
+            "name": "Potion",
+            "description": "Heal 20 HP",
+	          "price": 20
+        },
+        {
+
+            "name": "Great Potion",
+            "description": "Heal 50 HP",
+	          "price": 50
+
+        },
+        {
+            "name": "Nice Potion",
+            "description": "Heal 80 HP",
+	          "price": 80
+        },
+        {
+          "name": "Big Potion",
+          "description": "Heal 120 HP",
+          "price": 120
+        },
+        {
+          "name": "THE Potion",
+          "description": "Heal 200 HP",
+          "price": 200
+        }
+]
