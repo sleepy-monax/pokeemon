@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../model/user';
 
@@ -9,7 +9,7 @@ import {User} from '../model/user';
 })
 export class SignupComponent implements OnInit {
 
-  @Output()
+  @Input()
   userCreated: EventEmitter<User> = new EventEmitter<User>();
 
   player: FormGroup = this.fb.group({
