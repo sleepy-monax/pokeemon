@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>{{name}}</h2>
+<h4>{{description}}</h4>
+
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field >
+    <label> Quantity :
+      <input matInput
+             type="number"
+             min="0"
+             value="{{quantity}}"
+             [ngModelOptions]="{standalone: true}"
+             [(ngModel)]="quantity"
+             (ngModelChange)="updatePrice($event)"/>
+    </label>
+  </mat-form-field>
+  <p>
+    <b>Price : </b>{{price}}
+  </p>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary" (click)="buy()">Buy</button>
+</mat-dialog-actions>

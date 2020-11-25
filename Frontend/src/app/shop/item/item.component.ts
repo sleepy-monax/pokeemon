@@ -25,7 +25,7 @@ export class ItemComponent implements OnInit {
     this.price = this.basePrice * this.quantity;
   }
 
-  openDialog() {
+  openBuyDialog() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -43,7 +43,9 @@ export class ItemComponent implements OnInit {
     const dialogRef = this.dialog.open(BuyComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
-      data => console.log("Dialog output:", data)
+      data => {
+        console.log("Dialog output:", data);
+      }
     );
   }
 
