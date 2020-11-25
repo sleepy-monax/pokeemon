@@ -10,7 +10,7 @@ CREATE TABLE Users (
     administrator   bit not null,
     pseudo          varchar(20) not null,
     email           varchar(320) not null,
-    password        binary(64) not null,
+    password        varchar(64) not null,
     money           int not null default 120
 );
 

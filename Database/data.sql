@@ -1,23 +1,23 @@
 insert into Users (administrator, pseudo, email, password)
 values
-    (1, 'Admin', 'admin@pokeemon.xyz', 0x49a02abc531d047c7596bcdd3657e213db6d5d2972ca44d7699ea4accc1827c2),
-    (0, 'Guillaume', 'guillaume.charlier.2017@gmail.com', 0xd53afea4f412db7d0d3d45fdc7fdffbedf267923915587d47e90d2d7bd21aec3),
-    (0, 'Mathieu', 'mathieu.address@gmail.com', 0xf5e088d29801ebb822251d7751bc4b8ff28c50132d8b0a95614b5f048a1d01b6),
-    (0, 'Sasha', 'sasha.address@gmail.com', 0xfabcad3f11442896070a804f5a6fa6c929d6f60bf17aba0c218f75dfb94c8bee),
-    (0, 'Nicolas', 'nicolas.address@gmail.com', 0x35298781dc6efb3dbe57241319cda4e5e1ea4236e0692bc1fa26f9ddd9b359ac),
-    (0, 'Alberto', 'alberto@gmail.com', 0x827f6e29bf4d232124b4be3fbc756586b477295664faff9a4b773491ceb9f07b),
-    (0, 'Ramirez', 'ramirez@gmail.com', 0x266a7b5eddfcd6b1f5dd142fada6c3f6f202056170bda4afc64094ff578edddb),
-    (0, 'Gonzales', 'gonzales@gmail.com', 0xca32c23c27432bb36ff2ea671ef17063d2b00cc30bb335b27266788daedbbe7f),
-    (0, 'Mirador', 'Mirador@gmail.com', 0xab8621dc4e18bf3467dce763193e0c8ad1cdf11c90fbdb417a3e1368300c44a9),
-    (0, 'Portos', 'portos@gmail.com', 0x79bbf44b55e7835fc322f8dff4bd5724b94100a9a5378596e727487674fc4ef7),
-    (0, 'Aramis', 'aramis@gmail.com', 0x321f285ce1431f62a6c0b59500559844851545f02d48d1e2d9e2626ee6e3728e),
-    (0, 'Atos', 'atos@gmail.com', 0x34dea45cfda4802841e7f953a4b285311cc8fad9b55409dab77f99ad08e07ced),
-    (0, 'Alfred', 'alfred@gmail.com', 0xe88cfa8fbf9a4fa868946bbfbb4c9e2f34548a6285e54dea603a90931992eeac),
-    (0, 'Ramses', 'ramses@gmail.com', 0x675177ad430a03e7edf22e8abda2ad2b481c576cdaf56bd3a5e472f29792dc6a),
-    (0, 'Picpiliqueboo', 'picpiliqueboo@gmail.com', 0xe088d2a4d9cefff9ee4e6757f517c0bac62d04ec26d1cca042774f8edfc727f7),
-    (0, 'Gosmonio', 'gosmonio@gmail.com', 0xdf4552a92b47cdd6098029f3c32f5e0fb3416c3e9de4f667093d913a987042b1),
-    (0, 'Hasmaper', 'hasmaper@gmail.com', 0xd7296e349826a44644fa2b47314a889a6bbd5a05358c9eecfe922d36e1d47c42),
-    (0, 'Voomaster', 'voomaster@gmail.com', 0xd14a64d04f2a68abd6f840c3039e6e26389b5d7e11b9c4274a2d3ffeb8667692);
+    (1, 'Admin', 'admin@pokeemon.xyz', '$2y$10$o3Vauecd8ox6ZuVjNFK8h.RazFoFMG0vmqf1hILRwc2R0E2Q7X556'),
+    (0, 'Guillaume', 'guillaume.charlier.2017@gmail.com', '$2y$10$q2k5JIEzWc8Sr0Lh8AtRbe/Ch./Kqn2/rxglxd3TtF.aQCpZJ0Qgm'),
+    (0, 'Mathieu', 'mathieu.address@gmail.com', '$2y$10$bDhoBBfKLyxZAxHyaEUbTuq9xPvrKHcc3UGfL5BfPEuT1F8LgG4r6'),
+    (0, 'Sasha', 'sasha.address@gmail.com', '$2y$10$wsv0V7BgSIGDpp3YLu/mKO8kNAjgPwpW.C9aViBF4OebPrjjdX8OO'),
+    (0, 'Nicolas', 'nicolas.address@gmail.com', '$2y$10$IjnVQV4JAag4ghVVu7M/3.zWE6TF3bn6e5d4i4GhnnaFjfZYpdBnW'),
+    (0, 'Alberto', 'alberto@gmail.com', '$2y$10$Wy8Pt6vu0eCK93GvCHWIK.dD3Y4.Iak2LjonAdTy.2e8ngMiMPBY6'),
+    (0, 'Ramirez', 'ramirez@gmail.com', '$2y$10$r3PTG.ov88WoB8mW1XkxHuI0m2SZxl8OPQ3SbP9a7G2jY6MOEyhOO'),
+    (0, 'Gonzales', 'gonzales@gmail.com', '$2y$10$beD.BYTaXxZ4Xd.MvSst8etJGmcJE8b1vO3J.4aFk5AF07mZWQMvy'),
+    (0, 'Mirador', 'Mirador@gmail.com', '$2y$10$V4eHKmVMOkJE7F303Y18aeMNYFG7x1JMYeGH9vtxScT3Y8iVC6J/G'),
+    (0, 'Portos', 'portos@gmail.com', '$2y$10$DDWJiUH8nFWifsIwi1rVSOoBbuWfM9DAwz5Z6WuyZPsYQ3gI0agNW'),
+    (0, 'Aramis', 'aramis@gmail.com', '$2y$10$1fkfcgZ1q5OMtxBBJBI/zOIjsFp8QrPeAIL8sfxftQzsMg.g/ehN6'),
+    (0, 'Atos', 'atos@gmail.com', '$2y$10$ZDEHOGBzBAEZUUNZYisb9eQrAC9b48eW6i.LfYstILj6XaLwJ4Ixq'),
+    (0, 'Alfred', 'alfred@gmail.com', '$2y$10$RV8T0Sx.d4MEOIhamjFzzOqutj3Galou7bAQyIYV7HIb.5gLZ89tK'),
+    (0, 'Ramses', 'ramses@gmail.com', '$2y$10$wXTkrGaWtRqvo5oJtKsLH.2ograf2U8pqjMR2lU5hGx9EymRU4TWm'),
+    (0, 'Picpiliqueboo', 'picpiliqueboo@gmail.com', '$2y$10$0QpS/Ym42YyWuTT/KDAqkO08JojfN5/ieHLHHAwUEXbajTN6bwE92'),
+    (0, 'Gosmonio', 'gosmonio@gmail.com', '$2y$10$tUvkmcW1Yq58s9wgEXG2f.1Kjq3yxSPExjkYyn3vqfZmLDm..3gRK'),
+    (0, 'Hasmaper', 'hasmaper@gmail.com', '$2y$10$RwlE94BWgcp381ixPyebLeGfE7lo.CfsZIow56KERxt425q.6ds/q'),
+    (0, 'Voomaster', 'voomaster@gmail.com', '$2y$10$pYHcf7hxqji32/FPZ5DLz.ECcmoqmsmEusSa2tVkGPUMErwrVbsvC');
 
 insert into Monsters (stereotype, level)
 values
