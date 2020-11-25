@@ -1,0 +1,153 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using Model.User;
+
+namespace Infrastructure.SqlServer.Users
+{
+    public class SqlServerUserRepository : IUserRepository
+    {
+        
+        private  IFactory<IUser> _factory = new UserFactory();
+        private static readonly string TableName = "Users";
+        public static readonly string ColId = "id";
+        public static readonly string ColAdministrator = "administrator";
+        public static readonly string ColPseudo = "pseudo";
+        public static readonly string ColEmail = "email";
+        public static readonly string ColPassword = "password";
+        public static readonly string ColMoney = "money";
+
+        private static readonly string ReqQuery = $"select * from {TableName}";
+        private static readonly string ReqGet = ReqQuery + $" where {ColId} = @{ColId}";
+
+        private static readonly string ReqCreate = $@"
+            insert into {TableName} ({ColAdministrator}, {ColPseudo}, {ColEmail}, {ColPassword}, {ColMoney})
+            output inserted.{ColId}
+            values (@{ColAdministrator}, @{ColPseudo}, @{ColEmail}, @{ColPassword}, @{ColMoney})
+        ";
+
+        private static readonly string ReqExist =  ReqQuery + $" where {ColPseudo} = @{ColPseudo} or " +
+                                                   $"{ColEmail} = @{ColEmail}";
+
+        private static readonly string ReqDelete = $"delete from {TableName} where {ColId} = @{ColId}";
+
+        private static readonly string ReqUpdate = $@"
+            update {TableName} set
+            {ColPseudo} = @{ColPseudo},
+            {ColEmail} = @{ColEmail},
+            {ColPassword} = @{ColPassword},
+            {ColMoney} = @{ColMoney}
+            where {ColId} = @{ColId}
+        ";
+        
+        
+        public IEnumerable<IUser> Query()
+        {
+            IList<IUser> users = new List<IUser>();
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = ReqQuery;
+
+                var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    users.Add(_factory.CreateFromReader(reader));
+                }
+            }
+
+            return users;
+        }
+
+        public IUser Get(int id)
+        {
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = ReqGet;
+
+                command.Parameters.AddWithValue($"@{ColId}", id);
+
+                var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                return reader.Read() ? _factory.CreateFromReader(reader) : null;
+            }
+        }
+
+        private static bool UserExist(IUser user)
+        {
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = ReqExist;
+
+                command.Parameters.AddWithValue($"@{ColPseudo}", user.Pseudo);
+                command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
+
+                var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                return reader.Read();
+            }
+        }
+
+        public IUser Create(IUser user)
+        {
+            if (UserExist(user))
+                return null;
+            
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = ReqCreate;
+                
+                command.Parameters.AddWithValue($"@{ColAdministrator}", user.Administrator);
+                command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
+                command.Parameters.AddWithValue($"@{ColPseudo}", user.Pseudo);
+                command.Parameters.AddWithValue($"@{ColMoney}", user.Money);
+
+                var hash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                command.Parameters.AddWithValue($"@{ColPassword}", hash);
+
+                user.Id = (int) command.ExecuteScalar();
+            }
+
+            return user;
+        }
+
+        public bool Delete(int id)
+        {
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = ReqDelete;
+
+                command.Parameters.AddWithValue($"@{ColId}", id);
+
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+
+        public bool Update(int id, IUser user)
+        {
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = ReqUpdate;
+
+                command.Parameters.AddWithValue($"@{ColPseudo}", user.Pseudo);
+                command.Parameters.AddWithValue($"@{ColPassword}", user.Password);
+                command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
+                command.Parameters.AddWithValue($"@{ColMoney}", user.Money);
+                
+                command.Parameters.AddWithValue($"@{ColId}", id);
+
+                return command.ExecuteNonQuery() == 1;
+
+            }
+        }
+    }
+}
