@@ -1,4 +1,19 @@
 :host{
-    display: block;
-    margin: 16px;
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px;
+  grid-template-areas:
+    "Button-Solo Button-Multi"
+    "Teams Teams";
+  place-items: center;
+}
+.Teams { grid-area: Teams;}
+.Button-Solo { grid-area: Button-Solo;}
+.Button-Multi { grid-area: Button-Multi;}

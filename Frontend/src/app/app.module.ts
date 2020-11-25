@@ -17,6 +17,8 @@ import { NavigationItemComponent } from './navigation/item/item.component';
 import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
 import { TitleComponent } from './common/title/title.component';
+import { TeamsComponent } from './main-menu/teams/teams.component';
+import { ItemTeamsComponent } from './main-menu/teams/item-teams/item-teams.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { TitleComponent } from './common/title/title.component';
     ShopComponent,
     ItemComponent,
     TitleComponent,
+    TeamsComponent,
+    ItemTeamsComponent,
   ],
   imports: [
     BrowserModule,
