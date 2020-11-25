@@ -2,6 +2,10 @@
   Shop <mat-icon>shop</mat-icon>
 </app-title>
 
+<div class="coinsDiv">
+  You have {{coins}} coins !
+</div>
+
 <div *ngFor="let item of items">
   <app-item [name]=item.name [price]=item.price [description]=item.description [quantity]="quantity" [basePrice]=item.price>
   </app-item>

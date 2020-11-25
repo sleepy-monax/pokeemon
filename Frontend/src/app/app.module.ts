@@ -12,13 +12,17 @@ import { TextFieldComponent } from './common/text-field/text-field.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavigationItemComponent } from './navigation/item/item.component';
 import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
 import { TitleComponent } from './common/title/title.component';
 import { TeamsComponent } from './main-menu/teams/teams.component';
 import { ItemTeamsComponent } from './main-menu/teams/item-teams/item-teams.component';
+import { BuyComponent } from './shop/buy/buy.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -36,13 +40,18 @@ import { ItemTeamsComponent } from './main-menu/teams/item-teams/item-teams.comp
     TitleComponent,
     TeamsComponent,
     ItemTeamsComponent,
+    BuyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
