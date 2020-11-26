@@ -9,7 +9,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class UserApiService implements UserRepository{
-  private static URL: string = environment.serverAdress + 'api/todos';
+  private static URL: string = environment.serverAddress + 'api/todos';
 
   constructor(private http: HttpClient) { }
 
