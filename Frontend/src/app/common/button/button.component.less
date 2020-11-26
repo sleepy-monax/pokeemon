@@ -1,12 +1,52 @@
 button {
-  padding: 15px 65px;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+
+  padding: 8px 16px;
   border-radius: 30px;
+  border: none;
+  user-select: none;
+
+  transition: all 0.1s;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  background-color: #fff1;
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.1);
+}
+
+button:active {
+  background-color: #06fe;
+  box-shadow: 0px 0px 19px 0px var(--second-color);
+}
+
+.text {
+  padding-left: 6px;
 }
 
 .orange {
-  background: linear-gradient(90deg, #fd3701 0%, #ffcf01 100%);
+  --first-color: #fd3701;
+  --second-color: #ffcf01;
+
+  background: linear-gradient(
+    90deg,
+    var(--first-color) 0%,
+    var(--second-color) 100%
+  );
 }
 
 .blue {
-  background: linear-gradient(90deg, #0184fd 0%, #01ffb3 100%);
+  --first-color: #0184fd;
+  --second-color: #01ffb3;
+
+  background: linear-gradient(
+    90deg,
+    var(--first-color) 0%,
+    var(--second-color) 100%
+  );
 }

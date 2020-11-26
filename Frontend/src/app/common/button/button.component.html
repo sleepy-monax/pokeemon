@@ -1,4 +1,6 @@
 <button [ngClass]="color">
     <mat-icon>{{icon}}</mat-icon>
-    <ng-content></ng-content>
+    <div class="text">
+        <ng-content></ng-content>
+    </div>
 </button>
