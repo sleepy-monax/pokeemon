@@ -1,1 +1,4 @@
-<button [ngClass]="style"><mat-icon>{{icon}}</mat-icon>{{text}}</button>
+<button [ngClass]="color">
+    <mat-icon>{{icon}}</mat-icon>
+    <ng-content></ng-content>
+</button>

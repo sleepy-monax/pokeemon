@@ -1,4 +1,4 @@
-import {Attribute, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Attribute, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -6,20 +6,14 @@ import {Attribute, Component, EventEmitter, Input, OnInit, Output} from '@angula
   styleUrls: ['./button.component.less']
 })
 export class ButtonComponent implements OnInit {
-
-  text: string;
   icon: string;
-  style: string;
+  color: string;
 
-  constructor(@Attribute('text') text: string,
-              @Attribute('icon') icon: string,
-              @Attribute('styles') style: string) {
-    this.text = text;
+  constructor(@Attribute('icon') icon: string, @Attribute('color') color: string) {
     this.icon = icon;
-    this.style = style;
+    this.color = color;
   }
 
   ngOnInit(): void {
   }
-
 }
