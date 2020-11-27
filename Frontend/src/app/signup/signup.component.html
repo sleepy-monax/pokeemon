@@ -1,12 +1,10 @@
 <app-title class="title">Sign up</app-title>
-<form [formGroup]="player" (ngSubmit)="submit()">
-  <div class="login-form">
-    <input type="text" class="userName" placeholder="UserName" formControlName="username">
+<form [formGroup]="player" (ngSubmit)="submit()" class="login-form">
+    <input type="text" class="userName" placeholder="UserName" formControlName="pseudo">
     <input type="email" class="email" placeholder="Email" formControlName="email">
-    <input type="password" class="password" placeholder="Password" formControlName="password">
-    <input type="password" class="password" placeholder="Confirm Password" formControlName="password">
+    <input type="password" class="password" placeholder="Password" formControlName="password" (ngModelChange)="checkPassword()">
+    <input type="password" class="password" placeholder="Confirm Password" formControlName="verifPassword" (ngModelChange)="checkPassword()">
 
-    <button class="signUpButton" [disabled]="player.invalid" >Sign Up</button>
-    <button class="logInButton" routerLink="/signin">Sign in</button>
-  </div>
+    <button class="signUpButton" [disabled]="isDisabled || player.invalid">Sign Up</button>
+    <button class="logInButton" routerLink="/signin" >Sign in</button>
 </form>

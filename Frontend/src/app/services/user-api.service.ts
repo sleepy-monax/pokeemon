@@ -1,15 +1,15 @@
-import {UserRepository} from './user-repository';
-import {User, Users} from './user';
+import {Injectable} from '@angular/core';
+import {UserRepository} from '../model/user-repository';
+import {User, Users} from '../model/user';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserApiService implements UserRepository{
-  private static URL: string = environment.serverAddress + 'api/todos';
+  private static URL: string = "https://" + environment.serverAddress +":" + environment.apiPort +"/users";
 
   constructor(private http: HttpClient) { }
 
