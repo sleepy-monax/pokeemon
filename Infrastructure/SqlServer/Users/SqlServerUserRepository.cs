@@ -39,8 +39,10 @@ namespace Infrastructure.SqlServer.Users
             {ColMoney} = @{ColMoney}
             where {ColId} = @{ColId}
         ";
-        
-        
+
+        private readonly int BASE_MONEY = 120;
+
+
         public IEnumerable<IUser> Query()
         {
             IList<IUser> users = new List<IUser>();
@@ -95,7 +97,8 @@ namespace Infrastructure.SqlServer.Users
         {
             if (UserExist(user))
                 return null;
-            
+
+            user.Money = BASE_MONEY;
             using (var connection = Database.GetConnection())
             {
                 connection.Open();
