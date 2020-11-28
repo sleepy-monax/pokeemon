@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".radar.RadarFragment"
+    android:background="@color/colorBackground">
+
+    <xyz.pokeemon.radar.RadarView
+        android:id="@+id/rdv_radar"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="0dp"/>
+
+    <TextView
+        android:id="@+id/tv_latitude"
+        android:layout_width="175dp"
+        android:layout_height="92dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="40dp"
+        android:text="Latitude"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tv_longitude"
+        android:layout_width="175dp"
+        android:layout_height="92dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:text="Longitude"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        android:textAlignment="center"/>
+
+</RelativeLayout>

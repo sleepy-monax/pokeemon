@@ -1,4 +1,4 @@
-package xyz.myapplication;
+package xyz.pokeemon;
 
 import org.junit.Test;
 

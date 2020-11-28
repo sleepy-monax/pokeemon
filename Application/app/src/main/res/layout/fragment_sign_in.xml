@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".connection.SignInFragment"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/tv_signin_title"
+        android:layout_width="129dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="141dp"
+        android:text="Sign In"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="@color/colorText"/>
+
+    <EditText
+        android:id="@+id/et_signin_email"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_signin_title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="92dp"
+        android:hint="Email"
+        android:textColorHint="@color/colorText"/>
+
+    <EditText
+        android:id="@+id/et_signin_password"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_signin_email"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="95dp"
+        android:hint="Pasxwword"
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorText"/>
+
+    <Button
+        android:id="@+id/btn_signin_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_signin_password"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="54dp"
+        android:onClick="submit"
+        android:text="Log in" />
+
+    <Button
+        android:id="@+id/btn_signin_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_signin_login"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="54dp"
+        android:onClick="goToSignUp"
+        android:text="Go to sign up" />
+
+</RelativeLayout>

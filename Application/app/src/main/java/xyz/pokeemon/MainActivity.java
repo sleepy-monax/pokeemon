@@ -1,4 +1,4 @@
-package xyz.myapplication;
+package xyz.pokeemon;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,37 +10,40 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import xyz.myapplication.fragements.HomeFragment;
-import xyz.myapplication.fragements.AccountFragment;
-import xyz.myapplication.fragements.ShopFragment;
-import xyz.myapplication.fragements.TeamFragment;
+import xyz.pokeemon.shop.ShopFragment;
+import xyz.pokeemon.connection.SignInFragment;
+import xyz.pokeemon.team.TeamFragment;
+import xyz.pokeemon.radar.RadarFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private View decorView;
+    private Fragment selectedFragment;
+    private BottomNavigationView bottomNavigationView;
 
+    //Event to configure each button of navigation bar
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragement = null;
+                    selectedFragment = null;
                     switch(item.getItemId()){
                         case R.id.ic_home:
-                            selectedFragement = new HomeFragment();
+                            selectedFragment = new RadarFragment();
                             break;
                         case R.id.ic_pets:
-                            selectedFragement = new TeamFragment();
+                            selectedFragment = new TeamFragment();
                             break;
                         case R.id.ic_shop:
-                            selectedFragement = new ShopFragment();
+                            selectedFragment = new ShopFragment();
                             break;
                         case R.id.ic_account:
-                            selectedFragement = new AccountFragment();
+                            selectedFragment = new SignInFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(
                             R.id.fl_wrapper,
-                            selectedFragement)
+                            selectedFragment)
                         .commit();
                     return true;
                 }
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Apply the method to hide bars
         decorView = getWindow().getDecorView();
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
@@ -61,10 +65,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        //Search navbar by ID and set listener to each button
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        bottomNavigationView.setSelectedItemId(R.id.ic_home);
     }
 
+    //Call when this activity is running
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -73,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Called when the activity is create to hide the system bar
     private int hideSystemBar(){
         return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY

@@ -1,4 +1,4 @@
-package xyz.myapplication.fragements;
+package xyz.pokeemon.team;
 
 import android.os.Bundle;
 
@@ -10,27 +10,29 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import xyz.myapplication.R;
+import xyz.pokeemon.R;
 
-public class AccountFragment extends Fragment {
+
+public class TeamFragment extends Fragment {
     private WebView webView;
 
-    public AccountFragment() {
+    public TeamFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
-        webView = (WebView) v.findViewById(R.id.wv_home);
+        View v = inflater.inflate(R.layout.fragment_team, container, false);
+        webView = (WebView) v.findViewById(R.id.wv_team);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://pokeemon.xyz/settings");
+        webView.loadUrl("https://pokeemon.xyz/team");
         webView.setWebViewClient(new WebViewClient());
         return v;
     }
