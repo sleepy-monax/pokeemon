@@ -12,11 +12,11 @@ export class BattleService {
   }
 
   start(props: Properties) {
-    this.ws.send({ type: 'create-battle', properties: props });
+    this.ws.send({ type: 'create-battle', payload: props });
   }
 
   join(addr: Address) {
-    this.ws.send({ type: 'join-battle', properties: addr });
+    this.ws.send({ type: 'join-battle', payload: addr });
   }
 
   quit() {

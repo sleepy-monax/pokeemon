@@ -97,28 +97,29 @@ namespace Backend.Services
             }
         }
 
-        private async Task AcknowledgeConnection(string sessionId, WebSocket socket)
+        private async Task Send<T>(string type, T payload, params WebSocket[] sockets)
         {
-            var message = new Message<string>
+            var message = new Message<T>
             {
-                Type = "name",
-                Payload = sessionId
+                Type = type,
+                Payload = payload
             };
 
-            Console.WriteLine($"User {sessionId} join the game.");
-
-            await Send(message.ToJson(), socket);
+            await Send(message.ToJson(), sockets);
         }
 
-        private async Task InvalidReqest(string type, WebSocket socket)
+        private async Task AcknowledgeConnection(string sessionId, WebSocket socket)
         {
-            var message = new Message<string>
-            {
-                Type = "invalid-request",
-                Payload = type
-            };
+            Console.WriteLine($"User {sessionId} join the game.");
 
-            await Send(message.ToJson(), socket);
+            await Send("acknowledge-connection", sessionId, socket);
+        }
+
+        private async Task InvalidRequest(string type, WebSocket socket)
+        {
+            Console.WriteLine($"User sent an invalid request '{type}'.");
+
+            await Send("invalid-request", type, socket);
         }
 
         private async Task DispatchRequest(string type, JObject payload, WebSocket socket)
@@ -129,7 +130,7 @@ namespace Backend.Services
             }
             else
             {
-                await InvalidReqest(type, socket);
+                await InvalidRequest(type, socket);
             }
         }
     }

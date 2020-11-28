@@ -24,6 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { ConnectionStatusComponent } from './navigation/connection-status/connection-status.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     TeamsComponent,
     ItemTeamsComponent,
     BuyComponent,
+    ConnectionStatusComponent,
   ],
   imports: [
     BrowserModule,
