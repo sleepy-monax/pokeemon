@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
@@ -40,11 +40,15 @@ export class BuyComponent implements OnInit {
   }
 
   close() {
-    this.dialogRef.close("closed");
+    this.dialogRef.close({
+      data: {quantity: <number> 0}
+      });
   }
 
   buy() {
-    this.dialogRef.close(this.form.value)
+    this.dialogRef.close({
+      data: {quantity: <number> this.quantity, price: <number> this.price}
+    });
   }
 
   updatePrice(event : any) {

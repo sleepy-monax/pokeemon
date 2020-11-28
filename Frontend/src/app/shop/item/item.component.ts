@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {BuyComponent} from '../buy/buy.component';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
+import {ShopComponent} from '../shop.component';
 
 @Component({
   selector: 'app-item',
@@ -15,6 +16,10 @@ export class ItemComponent implements OnInit {
   @Input() description: string;
   @Input() basePrice: number;
 
+  @Output() emitCoinsUsed = new EventEmitter();
+
+  @ViewChild(BuyComponent) buyDialog: BuyComponent;
+
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -22,6 +27,15 @@ export class ItemComponent implements OnInit {
 
   increment() {
     this.quantity += 1;
+    this.price = this.basePrice * this.quantity;
+  }
+
+  decrement() {
+    if (this.quantity == 1 ||this.quantity == 0) {
+      this.quantity = 0
+    } else {
+      this.quantity -= 1;
+    }
     this.price = this.basePrice * this.quantity;
   }
 
@@ -45,8 +59,18 @@ export class ItemComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       data => {
         console.log("Dialog output:", data);
+        if (data.data.quantity > 0) {
+          this.quantity = data.data.quantity;
+          this.price = data.data.price;
+          this.emitCoinsUsed.emit(data.data.price);
+        } else {
+          this.quantity = 1;
+          this.price = this.basePrice * this.quantity;
+        }
       }
-    );
+   );
   }
+
+
 
 }
