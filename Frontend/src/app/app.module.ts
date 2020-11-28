@@ -25,6 +25,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { ConnectionStatusComponent } from './navigation/connection-status/connection-status.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ConnectionStatusComponent } from './navigation/connection-status/connec
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

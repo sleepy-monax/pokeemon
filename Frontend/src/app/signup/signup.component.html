@@ -4,16 +4,49 @@
     <mat-icon>report_problem</mat-icon>
     Pseudo existe déjà.
   </label>
-  <input type="text" id="pseudo" class="userName" placeholder="UserName" formControlName="pseudo" [pattern]="pseudoPattern">
+
+  <input
+    type="text"
+    id="pseudo"
+    class="userName"
+    placeholder="UserName"
+    formControlName="pseudo"
+    [pattern]="pseudoPattern"
+    matTooltip="Seulement des caracteres alphanumeriques"
+    matTooltipPosition="below">
+
   <label [ngClass]="emailclass" for="email" class="WarningEmail">
     <mat-icon>report_problem</mat-icon>
     Un compte est déjà enregistré avec cette adresse.
   </label>
-  <input type="email" id="email" class="email" placeholder="Email" formControlName="email" [pattern]="emailPattern">
-  <input type="password" class="password" placeholder="Password" formControlName="password"
-         (ngModelChange)="checkPassword()" [pattern]="passwordPattern">
-  <input type="password" class="checkPassword" placeholder="Confirm Password" formControlName="verifPassword"
-         (ngModelChange)="checkPassword()" [pattern]="passwordPattern">
+
+  <input
+    type="email"
+    id="email"
+    class="email"
+    placeholder="Email"
+    formControlName="email"
+    [pattern]="emailPattern"
+    matTooltip="exemple@exemple.com"
+    matTooltipPosition="below">
+
+  <input
+    type="password"
+    class="password"
+    placeholder="Password"
+    formControlName="password"
+    (ngModelChange)="checkPassword()"
+    [pattern]="passwordPattern"
+    matTooltip="Doit contenir : Un chiffre 0-9, Une lettre minuscule a-z, Une lettre majuscule A-Z, Un caractere special ,;:!"
+    matTooltipPosition="below">
+
+  <input
+    type="password"
+    class="checkPassword"
+    placeholder="Confirm Password"
+    formControlName="verifPassword"
+    (ngModelChange)="checkPassword()"
+    [pattern]="passwordPattern">
 
   <app-button class="signUpButton" [isDisabled]="isDisabled || player.invalid">Sign up</app-button>
   <app-button class="logInButton" routerLink="/signin">Sign in</app-button>
