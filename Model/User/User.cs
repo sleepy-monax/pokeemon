@@ -32,5 +32,22 @@
             Password = password;
             Money = money;
         }
+
+        public User(string pseudo, string email)
+        {
+            Id = 0;
+            Pseudo = pseudo;
+            Email = email;
+        }
+
+        public User(User user)
+        {
+            Administrator = false;
+            Password = user.Password;
+            Pseudo = user.Pseudo;
+            Money = 120;
+            Email = user.Email;
+            
+        }
     }
 }

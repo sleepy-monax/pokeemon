@@ -40,9 +40,6 @@ namespace Infrastructure.SqlServer.Users
             where {ColId} = @{ColId}
         ";
 
-        private readonly int BASE_MONEY = 120;
-
-
         public IEnumerable<IUser> Query()
         {
             IList<IUser> users = new List<IUser>();
@@ -77,7 +74,7 @@ namespace Infrastructure.SqlServer.Users
             }
         }
 
-        private static bool UserExist(IUser user)
+        private IUser UserExist(IUser user)
         {
             using (var connection = Database.GetConnection())
             {
@@ -89,16 +86,17 @@ namespace Infrastructure.SqlServer.Users
                 command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
 
                 var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-                return reader.Read();
+                return reader.Read() ? _factory.CreateFromReader(reader) : null;
             }
         }
 
         public IUser Create(IUser user)
         {
-            if (UserExist(user))
-                return null;
+            var exist = UserExist(user);
+            if (exist != null)
+                return new User(exist.Pseudo, exist.Email);
 
-            user.Money = BASE_MONEY;
+            user = new User((User) user);
             using (var connection = Database.GetConnection())
             {
                 connection.Open();
