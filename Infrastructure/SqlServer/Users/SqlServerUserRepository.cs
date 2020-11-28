@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using Model.User;
+using Model.Utils;
 
 namespace Infrastructure.SqlServer.Users
 {
@@ -96,6 +97,7 @@ namespace Infrastructure.SqlServer.Users
             if (exist != null)
                 return new User(exist.Pseudo, exist.Email);
 
+            CorrectValue(user);
             user = new User((User) user);
             using (var connection = Database.GetConnection())
             {
@@ -115,6 +117,13 @@ namespace Infrastructure.SqlServer.Users
             }
 
             return user;
+        }
+
+        private void CorrectValue(IUser user)
+        {
+            user.Email = SQLServer.MySQLEscape(user.Email);
+            user.Password = SQLServer.MySQLEscape(user.Password);
+            user.Pseudo = SQLServer.MySQLEscape(user.Pseudo);
         }
 
         public bool Delete(int id)
