@@ -13,7 +13,7 @@ public class RadarView extends View {
     private final String LOG = "RadarView";
     private final int POINT_ARRAY_SIZE = 25;
 
-    private int fps = 100;
+    private int fps = 60;
     private boolean showCircles = true;
 
     float alpha = 0;
@@ -25,7 +25,7 @@ public class RadarView extends View {
         @Override
         public void run() {
             invalidate();
-            mHandler.postDelayed(this, 1000 / fps);
+            mHandler.postDelayed(this, 10 / fps);
         }
     };
 

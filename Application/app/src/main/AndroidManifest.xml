@@ -31,14 +31,16 @@
             android:name="com.google.geo.API_KEY"
             android:value="AIzaSyDSVWHeL18cEPYuzRNElr7bVfD1zae-y8w"/>
 
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
