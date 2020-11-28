@@ -70,7 +70,7 @@ namespace Backend.Services
                         }
                         else
                         {
-                            await InvalidReqest("undefined-type", socket);
+                            await InvalidRequest("undefined-type", socket);
                         }
                     }
                 }
