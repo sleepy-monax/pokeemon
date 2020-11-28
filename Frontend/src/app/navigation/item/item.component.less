@@ -1,15 +1,16 @@
 :host {
-    display: inline-flex;
-    flex-flow: row;
-    align-items: center;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
 
-    line-height: 32px;
-    padding: 8px calc(var(--display-desktop) * 4px + 12px) 8px 12px;
+  line-height: 32px;
+  padding: 8px calc(var(--display-desktop) * 4px + 12px) 8px 12px;
 
-    transition: box-shadow 0.1s;
-    transition: background-color 0.1s;
+  transition: all 0.1s;
 
-    user-select: none;
+  background-color: #06f0;
+  outline: 0px solid #06f0;
+  user-select: none;
 }
 
 :host:focus {
@@ -17,15 +18,14 @@
 }
 
 :host:hover {
-    background-color: #fff1;
-    box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.1);
+  background-color: #06f;
+  outline: 6px solid #06f;
 }
 
 :host:active {
-    background-color: #06fe;
-    box-shadow: 0px 0px 32px 0px rgba(0,102,255,0.75);
+  box-shadow: 0px 0px 32px 0px rgba(0, 102, 255, 0.75);
 }
 
 .text {
-    padding-left: calc(var(--display-desktop) * 6px);
+  padding-left: calc(var(--display-desktop) * 6px);
 }
