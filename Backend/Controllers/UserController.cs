@@ -10,9 +10,8 @@ namespace Backend.Controllers
     [Route("users")]
     public class UserController : ControllerBase
     {
-
         private IUserRepository _userRepository = new SqlServerUserRepository();
-        
+
         [HttpGet]
         public ActionResult<IEnumerable<User>> Query()
         {
@@ -26,3 +25,4 @@ namespace Backend.Controllers
         }
     }
 }
+
