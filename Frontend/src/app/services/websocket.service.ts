@@ -16,7 +16,7 @@ interface Message {
 export class WebsocketService {
   private socket: WebSocket;
   private messagesSubject = new Subject();
-  private messagesHandlers: { [id: string]: ((msg: Message) => void) };
+  private messagesHandlers: { [id: string]: ((msg: Message) => void) } = {};
 
   public messages = this.messagesSubject.pipe(switchAll(), catchError(e => { throw e }));
   public isConnected: BehaviorSubject<boolean> = new BehaviorSubject(false);
