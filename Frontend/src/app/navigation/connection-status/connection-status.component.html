@@ -1,1 +1,2 @@
-<p>connection-status works!</p>
+<div class="text only-desktop">{{message}}</div>
+<div [ngClass]="[connected ? 'connected' : 'disconnected', 'badge']" class="badge"></div>
