@@ -32,11 +32,11 @@ create table UserMonsters(
 );
 
 create table UserItems(
+    id              int identity primary key not null,
     idUser          int not null,
     nameItem        varchar(64) not null,
     quantity        int not null,
 
     foreign key (idUser) references Users,
 
-    primary key (idUser, nameItem)
 );
