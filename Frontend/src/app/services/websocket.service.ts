@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
-import { EMPTY, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { catchError, tap, switchAll } from 'rxjs/operators';
-import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
+import { catchError, switchAll } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
+
+interface Message {
+  type: string;
+  payload: any;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +16,7 @@ import { environment } from 'src/environments/environment';
 export class WebsocketService {
   private socket: WebSocket;
   private messagesSubject = new Subject();
+  private messagesHandlers: { [id: string]: ((msg: Message) => void) };
 
   public messages = this.messagesSubject.pipe(switchAll(), catchError(e => { throw e }));
   public isConnected: BehaviorSubject<boolean> = new BehaviorSubject(false);
@@ -29,12 +34,29 @@ export class WebsocketService {
     }));
 
     this.socket.addEventListener("message", (ev => {
-      var message: any = JSON.parse(ev.data);
+      var message: Message = JSON.parse(ev.data);
       console.log(message);
+      this.dispatch(message);
     }));
   }
 
-  public send(msg: any): void {
+  private dispatch(message: Message) {
+    if (message.type in this.messagesHandlers) {
+      this.messagesHandlers[message.type](message)
+    } else {
+      console.log(`No handler of message of type '${message.type}'`);
+    }
+  }
+
+  public registerHander<T>(type: string, callback: ((arg: T) => void)) {
+    this.messagesHandlers[type] = (message: Message) => {
+      callback(message.payload as T);
+    };
+  }
+
+  public send<T>(type: string, payload: T): void {
+    const message = { type, payload };
+    this.socket.send(JSON.stringify(message));
   }
 
   public close(): void {

@@ -11,15 +11,15 @@ export class BattleService {
     ws.connect()
   }
 
-  start(props: Properties) {
-    this.ws.send({ type: 'create-battle', payload: props });
+  public start(props: Properties): void {
+    this.ws.send('create-battle', props);
   }
 
-  join(addr: Address) {
-    this.ws.send({ type: 'join-battle', payload: addr });
+  public join(addr: Address): void {
+    this.ws.send('join-battle', addr);
   }
 
-  quit() {
-    this.ws.send({ type: 'quit-battle' });
+  public quit(): void {
+    this.ws.send('quit-battle', {});
   }
 }
