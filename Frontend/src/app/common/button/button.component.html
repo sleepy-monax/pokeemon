@@ -1,5 +1,5 @@
-<button [ngClass]="color">
-    <mat-icon>{{icon}}</mat-icon>
+<button [ngClass]="color" [disabled]="isDisabled">
+    <mat-icon [ngClass]="hiddenclass">{{icon}}</mat-icon>
     <div class="text">
         <ng-content></ng-content>
     </div>

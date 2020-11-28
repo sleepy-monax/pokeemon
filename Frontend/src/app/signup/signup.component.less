@@ -1,73 +1,43 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
 :host{
   display: block;
   width: 100%;
   max-width: 560px;
   margin: 0 auto;
+  color: #333333;
 }
 
 .title:extend(.content){
 }
 
-.login-form{
-  display: block;
-  background-color: aliceblue;
-  border: red;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 1em;
+
   border-radius: 30px;
-
-  margin: 50px auto 0;
-  top: 20%;
-
-  height: 300px;
-  max-width: 300px;
+  background-color: aliceblue;
+  height: 350px;
+  max-width: 560px;
   width: 100%;
-}
-
-.userName{
-  display: flex;
-  position: relative;
-  margin-left: 10%;
-  top: 10%;
-}
-
-.email{
-  display: flex;
-  position: relative;
-  margin-left: 10%;
-  top: 20%;
-}
-
-.password{
-  display: flex;
-  position: relative;
-  margin-left: 10%;
-  top: 30%;
+  padding: 10px;
 }
 
 .signUpButton{
-  display: flex;
-  position: relative;
-  margin-left: 60%;
-  top: 40%;
+  alignment: right;
 }
 
 .logInButton{
-  display: flex;
-  position: relative;
-  margin-left: 60%;
-  top: 50%;
+  float: right;
 }
-
 
 input.ng-valid {
   background-color: #88cf88;
+}
+
+.isHidden {
+  display: none;
+  visibility: hidden;
 }
 
 
