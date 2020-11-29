@@ -3,6 +3,7 @@ export const environment = {
   serverAddress: 'localhost',
   webSocketPort: 5000,
   webSocketEndpoint: 'endpoint',
+  webSocketProtocole: 'ws',
   apiPort: 5001
 };
 

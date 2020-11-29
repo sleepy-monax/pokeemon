@@ -1,4 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
+import { env } from 'process';
 import { Subject } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { catchError, switchAll } from 'rxjs/operators';
@@ -24,7 +25,7 @@ export class WebsocketService {
   }
 
   public connect(): void {
-    const address = `ws://${environment.serverAddress}:${environment.webSocketPort}/${environment.webSocketEndpoint}`;
+    const address = `${environment.webSocketProtocole}://${environment.serverAddress}:${environment.webSocketPort}/${environment.webSocketEndpoint}`;
     console.log(`Connecting to ${address}...`);
     this.socket = new WebSocket(address);
 
