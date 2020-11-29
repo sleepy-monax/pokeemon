@@ -5,9 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".shop.ShopFragment">
 
-    <WebView
-        android:id="@+id/wv_shop"
+    <ListView
+        android:id="@+id/lv_shop"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp" />
 
 </RelativeLayout>
