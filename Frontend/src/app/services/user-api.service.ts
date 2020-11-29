@@ -28,4 +28,8 @@ export class UserApiService implements UserRepository{
   update(id: number, user: User): Observable<any> {
     return this.http.put(UserApiService.URL + '/' + id, user);
   }
+
+  getById(id: number): Observable<User> {
+    return this.http.get<User>(UserApiService.URL + '/' + id);
+  }
 }

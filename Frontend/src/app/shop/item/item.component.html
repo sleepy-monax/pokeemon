@@ -1,7 +1,7 @@
 <div class="name">{{name}}</div>
 <div class="quantity">Quantity : {{quantity}}
-  <button (click)="decrement()">-</button>
-  <button (click)="increment()">+</button>
+  <button class="mat-raised-button" (click)="decrement()">-</button>
+  <button class="mat-raised-button" (click)="increment()">+</button>
 </div>
-<div class="price">Price : {{price}}    <button (click)="openBuyDialog()">Buy</button></div>
+<div class="price">Price : {{price}}    <app-button color="buy" (click)="openBuyDialog()">Buy</app-button></div>
 <div class="description">Description : {{description}}</div>

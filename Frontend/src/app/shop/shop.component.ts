@@ -2,6 +2,11 @@ import {Component, OnInit} from '@angular/core';
 // @ts-ignore
 import itemsJson from '../../assets/items.json';
 import {Item} from '../../model/item';
+import {UserItemService} from '../services/user-item-service';
+import {UserItem} from '../model/user-item';
+import {UserApiService} from '../services/user-api.service';
+import {User} from '../model/user';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -11,15 +16,25 @@ import {Item} from '../../model/item';
 export class ShopComponent implements OnInit {
 
   items: Item[] = itemsJson;
+  userItem: UserItem = null;
+  user: Observable<User>;
+  id: number = 1;
+
+  private _subscription: Subscription[] = [];
 
   quantity: number = 1;
-  coins: number = 1000;
+  coins: number = 0;
   isHidden: boolean = true;
 
-  constructor() {
+  constructor(private userItemApi: UserItemService, private userApi: UserApiService) {
   }
 
   ngOnInit(): void {
+    this.userApi.getById(this.id)
+      .subscribe( user => {
+          this.coins = user.money;
+        }
+      );
   }
 
   modifyCoins(event) {
@@ -31,7 +46,19 @@ export class ShopComponent implements OnInit {
       return;
     } else {
       this.coins -= event;
+      this.userApi.getById(this.id)
+        .subscribe( user => {
+            console.log("Avant update : " + user.money);
+            user.money = this.coins;
+            this.userApi.update(this.id, user);
+            console.log("Après update : " + user.money);
+          }
+        );
       this.isHidden = true;
     }
+  }
+
+  ngOnDestroy() {
+    this._subscription.forEach(sub => sub && sub.unsubscribe());
   }
 }
