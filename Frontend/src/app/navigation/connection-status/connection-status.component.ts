@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { connected } from 'process';
+import { LatencyService } from 'src/app/services/latency.service';
 import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
@@ -11,17 +12,18 @@ export class ConnectionStatusComponent implements OnInit {
 
   public connected: boolean = false;
   public message: string = 'Disconnected';
+  public latency: number = 0;
 
 
-  constructor(private websocket: WebsocketService) {
+  constructor(private ws: WebsocketService, private ls: LatencyService) {
 
   }
 
 
   ngOnInit(): void {
-    this.websocket.connect()
 
-    this.websocket.isConnected.subscribe((value: boolean) => {
+
+    this.ws.isConnected.subscribe((value: boolean) => {
       this.connected = value;
 
       if (value) {
@@ -29,6 +31,10 @@ export class ConnectionStatusComponent implements OnInit {
       } else {
         this.message = 'Disconnected';
       }
+    });
+
+    this.ls.latency.subscribe((value) => {
+      this.latency = value;
     });
   }
 }

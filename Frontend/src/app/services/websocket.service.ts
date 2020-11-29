@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { catchError, switchAll } from 'rxjs/operators';
@@ -15,40 +15,43 @@ interface Message {
 })
 export class WebsocketService {
   private socket: WebSocket;
-  private messagesSubject = new Subject();
   private messagesHandlers: { [id: string]: ((msg: Message) => void) } = {};
 
-  public messages = this.messagesSubject.pipe(switchAll(), catchError(e => { throw e }));
   public isConnected: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor() {
+    this.connect();
   }
 
-  public connect() {
+  public connect(): void {
     const address = `ws://${environment.serverAddress}:${environment.webSocketPort}/${environment.webSocketEndpoint}`;
     console.log(`Connecting to ${address}...`);
     this.socket = new WebSocket(address);
 
-    this.socket.addEventListener("open", (ev => {
+    this.socket.addEventListener('open', (ev => {
       this.isConnected.next(true);
     }));
 
-    this.socket.addEventListener("message", (ev => {
-      var message: Message = JSON.parse(ev.data);
-      console.log(message);
+    this.socket.addEventListener('close', (ev => {
+      this.isConnected.next(false);
+    }));
+
+    this.socket.addEventListener('message', (ev => {
+      const message: Message = JSON.parse(ev.data);
       this.dispatch(message);
     }));
   }
 
-  private dispatch(message: Message) {
+  private dispatch(message: Message): void {
     if (message.type in this.messagesHandlers) {
       this.messagesHandlers[message.type](message)
     } else {
       console.log(`No handler of message of type '${message.type}'`);
+      console.log(message);
     }
   }
 
-  public registerHander<T>(type: string, callback: ((arg: T) => void)) {
+  public registerHandler<T>(type: string, callback: ((arg: T) => void)): void {
     this.messagesHandlers[type] = (message: Message) => {
       callback(message.payload as T);
     };

@@ -6,7 +6,6 @@ import {Attribute, Component, OnInit} from '@angular/core';
   styleUrls: ['./text-field.component.less']
 })
 export class TextFieldComponent implements OnInit {
-
   type: string;
   styles: string;
   placeholder: any;

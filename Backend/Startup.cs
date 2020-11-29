@@ -40,7 +40,9 @@ namespace Backend
             });
             services.AddControllers();
             //services.AddSingleton(typeof(BattleService), new BattleService());
-            services.AddSingleton<BattleService>();
+            services.AddSingleton<SessionService>();
+            services.AddSingleton<LatencyService>();
+            services.AddSingleton<ChatService>();
             services.AddLogging();
         }
 
@@ -71,6 +73,10 @@ namespace Backend
             });
 
             app.UseWebSockets();
+
+            app.ApplicationServices.GetService(typeof(LatencyService));
+            app.ApplicationServices.GetService(typeof(ChatService));
+
             app.Use(async (context, next) =>
             {
                 if (context.Request.Path == "/endpoint")
@@ -78,8 +84,8 @@ namespace Backend
                     if (context.WebSockets.IsWebSocketRequest)
                     {
                         var socket = await context.WebSockets.AcceptWebSocketAsync();
-                        var battleService = (BattleService)app.ApplicationServices.GetService(typeof(BattleService));
-                        await battleService.AddUser(socket);
+                        var battleService = (SessionService)app.ApplicationServices.GetService(typeof(SessionService));
+                        await battleService.AcceptConnection(socket);
                         while (socket.State == WebSocketState.Open)
                         {
                             await Task.Delay(TimeSpan.FromMinutes(1));

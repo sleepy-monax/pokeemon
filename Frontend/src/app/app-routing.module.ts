@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AppComponent} from './app.component';
-import {MainMenuComponent} from './main-menu/main-menu.component';
-import {SigninComponent} from './signin/signin.component';
-import {SignupComponent} from './signup/signup.component';
-import {ErrorComponent} from './error/error.component';
+import { AppComponent } from './app.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { ErrorComponent } from './error/error.component';
 import { LandingComponent } from './landing/landing.component';
-import {ShopComponent} from './shop/shop.component';
+import { ShopComponent } from './shop/shop.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'shop',
     component: ShopComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent
   },
   {
     path: '**',

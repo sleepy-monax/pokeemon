@@ -1,0 +1,8 @@
+<p>chat works!</p>
+<li *ngFor="let msg of messages">{{ msg.text }}</li>
+
+<input type="text" placeholder="Type a message" [(ngModel)]="newMessage" />
+
+<app-button icon="send" color="blue" (click)="sendMessage()">
+    Send
+</app-button>
