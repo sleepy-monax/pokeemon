@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     selectedFragment = null;
                     switch(item.getItemId()){
-                        case R.id.ic_home:
+                        case R.id.ic_radar:
                             selectedFragment = new RadarFragment();
                             break;
                         case R.id.ic_pets:
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         //Search navbar by ID and set listener to each button
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
-        bottomNavigationView.setSelectedItemId(R.id.ic_home);
+        bottomNavigationView.setSelectedItemId(R.id.ic_radar);
     }
 
     //Call when this activity is running
