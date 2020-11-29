@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angula
 import {BuyComponent} from '../buy/buy.component';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
 import {ShopComponent} from '../shop.component';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-item',
@@ -54,23 +55,23 @@ export class ItemComponent implements OnInit {
       dataBasePrice : this.basePrice,
     };
 
-    const dialogRef = this.dialog.open(BuyComponent, dialogConfig);
+    if(this.dialog.openDialogs.length==0) {
+      const dialogRef = this.dialog.open(BuyComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(
-      data => {
-        console.log("Dialog output:", data);
-        if (data.data.quantity > 0) {
-          this.quantity = data.data.quantity;
-          this.price = data.data.price;
-          this.emitCoinsUsed.emit(data.data.price);
-        } else {
-          this.quantity = 1;
-          this.price = this.basePrice * this.quantity;
-        }
-      }
-   );
+      dialogRef.afterClosed()
+        .subscribe(
+          data => {
+            console.log("Dialog output:", data);
+            if (data.data.quantity > 0) {
+              this.quantity = data.data.quantity;
+              this.price = data.data.price;
+              this.emitCoinsUsed.emit(data.data.price);
+            } else {
+              this.quantity = 1;
+              this.price = this.basePrice * this.quantity;
+            }
+          }
+        );
+    }
   }
-
-
-
 }
