@@ -47,11 +47,17 @@ export class ShopComponent implements OnInit {
     } else {
       this.coins -= event;
       this.userApi.getById(this.id)
-        .subscribe( user => {
+        .subscribe(user => {
             console.log("Avant update : " + user.money);
-            user.money = this.coins;
-            this.userApi.update(this.id, user);
-            console.log("Après update : " + user.money);
+            //user.money = this.coins;
+            let userEncode = {
+              pseudo: user.pseudo,
+              email: user.email,
+              password: user.password,
+              money: this.coins
+            };
+            this.userApi.update(this.id, userEncode);
+            console.log("Après update : " + userEncode.money);
           }
         );
       this.isHidden = true;
