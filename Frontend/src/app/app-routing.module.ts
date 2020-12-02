@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
-import { ErrorComponent } from './error/error.component';
-import { LandingComponent } from './landing/landing.component';
-import { ShopComponent } from './shop/shop.component';
-import { ChatComponent } from './chat/chat.component';
+import { SigninComponent } from './authentication/signin/signin.component';
+import { SignupComponent } from './authentication/signup/signup.component';
+import { LandingComponent } from './navigation/landing/landing.component';
+import { ErrorComponent } from './scaffolding/error/error.component';
+import { ShopComponent } from './shopping/shop/shop.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainMenuComponent
+    component: LandingComponent
   },
   {
     path: 'signin',
@@ -31,24 +28,14 @@ const routes: Routes = [
     component: ShopComponent
   },
   {
-    path: 'chat',
-    component: ChatComponent
-  },
-  {
     path: '**',
     component: ErrorComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  static components = [
-    AppComponent,
-    MainMenuComponent,
-    SigninComponent,
-    SignupComponent
-  ]
 }
