@@ -1,0 +1,22 @@
+:host {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: 1.5fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "ground chat"
+    "menu chat";
+}
+
+.chat {
+  grid-area: chat;
+}
+
+.ground {
+  grid-area: ground;
+}
+
+.menu {
+  grid-area: menu;
+}

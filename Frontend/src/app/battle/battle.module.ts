@@ -8,6 +8,9 @@ import { TeamComponent } from './team/team.component';
 import { CreatureComponent } from './creature/creature.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { ToolkitModule } from '../toolkit/toolkit.module';
+import { BattleComponent } from './battle/battle.component';
+import { BattleGroundComponent } from './battle-ground/battle-ground.component';
+import { BattleMenuComponent } from './battle-menu/battle-menu.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +18,17 @@ import { ToolkitModule } from '../toolkit/toolkit.module';
     MessageComponent,
     TeamComponent,
     CreatureComponent,
-    ConnectionComponent],
+    ConnectionComponent,
+    BattleComponent,
+    BattleGroundComponent,
+    BattleMenuComponent],
   exports: [
     ChatComponent,
     MessageComponent,
     TeamComponent,
     CreatureComponent,
-    ConnectionComponent],
+    ConnectionComponent,
+    BattleComponent],
   imports: [
     CommonModule,
     FormsModule,
