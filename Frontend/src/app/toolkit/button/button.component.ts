@@ -12,14 +12,7 @@ export class ButtonComponent implements OnInit {
   @Input()
   isDisabled = false;
 
-  hiddenclass = {
-    hidden: true
-  };
-
   constructor(@Attribute('icon') icon: string, @Attribute('color') color: string) {
-    if (icon != null) {
-      this.hiddenclass.hidden = false;
-    }
     this.icon = icon;
     this.color = color;
   }

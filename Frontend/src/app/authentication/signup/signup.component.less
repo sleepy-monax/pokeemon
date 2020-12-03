@@ -1,34 +1,30 @@
-:host{
-  display: block;
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto;
-  color: #333333;
-}
-
-.title:extend(.content){
-}
-
-.grid-container {
+.container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 1fr);
-  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". .";
 
-  border-radius: 30px;
-  background-color: aliceblue;
-  height: 350px;
-  max-width: 560px;
-  width: 100%;
-  padding: 10px;
+  width: 560px;
+  height: 320px;
+
+  border-radius: 6px;
+  background-color: #444;
+  box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.75);
+
+  overflow: hidden;
 }
 
-.signUpButton{
-  alignment: right;
+.left-content {
+  background-image: url("/assets/cover.png");
+  background-size: cover;
 }
 
-.logInButton{
-  float: right;
+.right-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
 }
 
 input.ng-valid {
@@ -39,5 +35,3 @@ input.ng-valid {
   display: none;
   visibility: hidden;
 }
-
-

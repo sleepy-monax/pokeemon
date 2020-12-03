@@ -1,53 +1,39 @@
-<app-title class="title">Sign up</app-title>
-<form [formGroup]="player" (ngSubmit)="submit()" class="grid-container">
-  <label [ngClass]="pseudoclass" for="pseudo" class="WarningPseudo">
-    <mat-icon>report_problem</mat-icon>
-    Pseudo existe déjà.
-  </label>
+<app-centered>
+  <div class="container">
+    <div class="left-content">
+    </div>
 
-  <input
-    type="text"
-    id="pseudo"
-    class="userName"
-    placeholder="UserName"
-    formControlName="pseudo"
-    [pattern]="pseudoPattern"
-    matTooltip="Seulement des caracteres alphanumeriques"
-    matTooltipPosition="below">
+    <form class="right-content" [formGroup]="player" (ngSubmit)="submit()">
+      <app-title>Sign up</app-title>
 
-  <label [ngClass]="emailclass" for="email" class="WarningEmail">
-    <mat-icon>report_problem</mat-icon>
-    Un compte est déjà enregistré avec cette adresse.
-  </label>
+      <label [ngClass]="pseudoclass" for="pseudo" class="WarningPseudo">
+        <mat-icon>report_problem</mat-icon>
+        Pseudo existe déjà.
+      </label>
 
-  <input
-    type="email"
-    id="email"
-    class="email"
-    placeholder="Email"
-    formControlName="email"
-    [pattern]="emailPattern"
-    matTooltip="exemple@exemple.com"
-    matTooltipPosition="below">
+      <input type="text" id="pseudo" class="userName" placeholder="UserName" formControlName="pseudo"
+        [pattern]="pseudoPattern" matTooltip="Seulement des caracteres alphanumeriques" matTooltipPosition="below">
 
-  <input
-    type="password"
-    class="password"
-    placeholder="Password"
-    formControlName="password"
-    (ngModelChange)="checkPassword()"
-    [pattern]="passwordPattern"
-    matTooltip="Doit contenir : Un chiffre 0-9, Une lettre minuscule a-z, Une lettre majuscule A-Z, Un caractere special ,;:!"
-    matTooltipPosition="below">
+      <label [ngClass]="emailclass" for="email" class="WarningEmail">
+        <mat-icon>report_problem</mat-icon>
+        Un compte est déjà enregistré avec cette adresse.
+      </label>
 
-  <input
-    type="password"
-    class="checkPassword"
-    placeholder="Confirm Password"
-    formControlName="verifPassword"
-    (ngModelChange)="checkPassword()"
-    [pattern]="passwordPattern">
+      <input type="email" id="email" class="email" placeholder="Email" formControlName="email" [pattern]="emailPattern"
+        matTooltip="exemple@exemple.com" matTooltipPosition="below">
 
-  <app-button class="signUpButton" [isDisabled]="isDisabled || player.invalid">Sign up</app-button>
-  <app-button class="logInButton" routerLink="/signin">Sign in</app-button>
-</form>
+      <input type="password" class="password" placeholder="Password" formControlName="password"
+        (ngModelChange)="checkPassword()" [pattern]="passwordPattern"
+        matTooltip="Doit contenir : Un chiffre 0-9, Une lettre minuscule a-z, Une lettre majuscule A-Z, Un caractere special ,;:!"
+        matTooltipPosition="below">
+
+      <input type="password" class="checkPassword" placeholder="Confirm Password" formControlName="verifPassword"
+        (ngModelChange)="checkPassword()" [pattern]="passwordPattern">
+
+      <app-button class="signUpButton" [isDisabled]="isDisabled || player.invalid">Sign up</app-button>
+      <app-button class="logInButton" routerLink="/signin">Sign in</app-button>
+    </form>
+
+  </div>
+
+</app-centered>
