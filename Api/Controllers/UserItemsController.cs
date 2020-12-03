@@ -4,7 +4,7 @@ using Infrastructure.SqlServer.UserItems;
 using Microsoft.AspNetCore.Mvc;
 using Model.UserItems;
 
-namespace Backend.Controllers
+namespace Api.Controllers
 {
     [ApiController]
     [Route("userItems")]

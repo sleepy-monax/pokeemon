@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Infrastructure.WebSocket;
 using Newtonsoft.Json.Linq;
 
-namespace Backend.Services
+namespace Api.Services
 {
     public class SessionService
     {

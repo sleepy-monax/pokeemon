@@ -1,6 +1,6 @@
 using System;
 
-namespace Backend.Services
+namespace Api.Services
 {
     public class ChatService
     {

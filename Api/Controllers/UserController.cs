@@ -4,7 +4,7 @@ using Infrastructure.SqlServer.Users;
 using Microsoft.AspNetCore.Mvc;
 using Model.User;
 
-namespace Backend.Controllers
+namespace Api.Controllers
 {
     [ApiController]
     [Route("users")]
