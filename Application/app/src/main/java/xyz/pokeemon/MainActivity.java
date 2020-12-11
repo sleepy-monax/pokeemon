@@ -56,12 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Apply the method to hide bars
         decorView = getWindow().getDecorView();
-        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
-            @Override
-            public void onSystemUiVisibilityChange(int visibility) {
-                if(visibility==0){
-                    decorView.setSystemUiVisibility(hideSystemBar());
-                }
+        decorView.setOnSystemUiVisibilityChangeListener(visibility -> {
+            if(visibility==0){
+                decorView.setSystemUiVisibility(hideSystemBar());
             }
         });
 
