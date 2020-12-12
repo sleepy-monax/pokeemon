@@ -1,3 +1,5 @@
+USE Pokeemon;
+
 insert into Users (administrator, pseudo, email, password)
 values
     (1, 'Admin', 'admin@pokeemon.xyz', '$2y$10$o3Vauecd8ox6ZuVjNFK8h.RazFoFMG0vmqf1hILRwc2R0E2Q7X556'),

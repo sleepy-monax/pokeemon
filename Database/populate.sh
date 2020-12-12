@@ -1,9 +1,10 @@
 #!/bin/bash
 
-WAIT_TIME=90s
+WAIT_TIME=30s
 
 echo "Importing data will start in $WAIT_TIME..."
 sleep $WAIT_TIME
+echo "Staring data importation..."
 
-sqlcmd -i create-db.sql
-sqlcmd -i load-data.sql
+sqlcmd -U SA -P $SA_PASSWORD -i create-db.sql
+sqlcmd -U SA -P $SA_PASSWORD -i load-data.sql

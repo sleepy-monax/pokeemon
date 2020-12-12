@@ -1,7 +1,6 @@
-begin;
-    if not exists(select 1 from sys.databases where name='Pokeemon')
-        CREATE DATABASE [Pokeemon];
-end;
+CREATE DATABASE Pokeemon;
+
+GO
 
 USE Pokeemon;
 
@@ -27,7 +26,7 @@ create table UserMonsters(
 
     foreign key (idUser) references Users,
     foreign key (idMonster) references Monsters,
-    
+
     primary key (idUser, idMonster)
 );
 

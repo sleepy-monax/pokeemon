@@ -5,16 +5,17 @@ WORKDIR /usr/src/backend
 # copy csproj and restore as distinct layers
 COPY *.sln .
 
-COPY Api /usr/src/backend
-COPY Extentions /usr/src/backend
-COPY Infrastructure /usr/src/backend
-COPY Model /usr/src/backend
+COPY Api /usr/src/backend/Api
+COPY Extentions /usr/src/backend/Extentions
+COPY Infrastructure /usr/src/backend/Infrastructure
+COPY Model /usr/src/backend/Model
 
+RUN ls -la
 RUN dotnet build --configuration Release
-RUN dotnet publish -c Release -o /usr/src/backend --no-restore
+RUN dotnet publish -c Release -o /usr/src/backend/pokeemon --no-restore
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
-WORKDIR /usr/src/backend
-COPY --from=build /usr/src/backend ./
+WORKDIR /usr/src/backend/pokeemon
+COPY --from=build /usr/src/backend/pokeemon ./
 ENTRYPOINT ["./Api"]
