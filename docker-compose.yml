@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+    frontend:
+        depends_on:
+            - backend
+
+    backend:
+        build: .
+        ports:
+            - "8000:80"
+        depends_on:
+            - database
+
+    database:
+        image: "mcr.microsoft.com/mssql/server"
+        environment:
+            SA_PASSWORD: "eHd66Cjt7cFRCdgBTsbNgajcwBHYpvc2"
+            ACCEPT_EULA: "Y"
