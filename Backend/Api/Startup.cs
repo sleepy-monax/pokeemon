@@ -39,7 +39,6 @@ namespace Api
                 });
             });
             services.AddControllers();
-            //services.AddSingleton(typeof(BattleService), new BattleService());
             services.AddSingleton<SessionService>();
             services.AddSingleton<LatencyService>();
             services.AddSingleton<ChatService>();

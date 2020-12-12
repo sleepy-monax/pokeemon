@@ -1,14 +1,32 @@
 version: "3.9"
 services:
     frontend:
-        build: Frontend
+        build:
+            context: .  # here changed
+            dockerfile: Configs/Docker/frontend.Dockerfile
+
+        ports:
+            - "4200:4200"
+
         depends_on:
             - backend
 
     backend:
-        build: Backend
+        build:
+            context: .  # here changed
+            dockerfile: Configs/Docker/backend.Dockerfile
+
         depends_on:
             - database
 
+        ports:
+            - "5000:80"
+            - "5001:81"
+
     database:
-        build: Database
+        build:
+            context: .  # here changed
+            dockerfile: Configs/Docker/database.Dockerfile
+
+        ports:
+            - "1433:1433"
