@@ -1,10 +1,11 @@
-FROM mcr.microsoft.com/mssql/server:2019-latest
+FROM mcr.microsoft.com/mssql/server:latest
 
-WORKDIR /usr/src/app/db
-COPY ../Database /usr/src/app/db
+WORKDIR /usr/src/database
+COPY create-db.sql /usr/src/database
+COPY load-data.sql /usr/src/database
 
+ENV PATH="/opt/mssql-tools/bin/:${PATH}"
 ENV ACCEPT_EULA=Y
-ENV sa_password=eHd66Cjt7cFRCdgBTsbNgajcwBHYpvc2
+ENV SA_PASSWORD=eHd66Cjt7cFRCdgBTsbNgajcwBHYpvc2
 
-RUN sqlcmd -i create-db.sql
-RUN sqlcmd -i load-data.sql
+CMD /bin/bash ./entry-point.sh
