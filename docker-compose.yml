@@ -2,7 +2,7 @@ version: "3.9"
 services:
     frontend:
         build:
-            context: .  # here changed
+            context: .
             dockerfile: Configs/Docker/frontend.Dockerfile
 
         ports:
@@ -13,20 +13,24 @@ services:
 
     backend:
         build:
-            context: .  # here changed
+            context: .
             dockerfile: Configs/Docker/backend.Dockerfile
 
-        depends_on:
-            - database
+        env_file: Configs/Docker/database.env
 
         ports:
             - "5000:80"
             - "5001:81"
 
+        depends_on:
+            - database
+
     database:
         build:
-            context: .  # here changed
+            context: .
             dockerfile: Configs/Docker/database.Dockerfile
+
+        env_file: Configs/Docker/database.env
 
         ports:
             - "1433:1433"
