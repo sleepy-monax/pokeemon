@@ -5,7 +5,6 @@ WORKDIR /usr/src/Backend
 COPY Backend/Pokeemon.sln .
 
 COPY Backend/Api /usr/src/Backend/Api
-COPY Backend/Extentions /usr/src/Backend/Extentions
 COPY Backend/Infrastructure /usr/src/Backend/Infrastructure
 COPY Backend/Model /usr/src/Backend/Model
 
