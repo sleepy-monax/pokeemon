@@ -11,4 +11,4 @@ COPY Configs/Docker/database.env /usr/src/Database
 ENV PATH="/opt/mssql-tools/bin/:${PATH}"
 ENV ACCEPT_EULA=Y
 
-RUN /bin/sh -c "/bin/sh ./database-start.sh & /bin/sh ./database-deploy.sh"
+RUN /bin/sh ./database-start.sh & /bin/sh ./database-deploy.sh
