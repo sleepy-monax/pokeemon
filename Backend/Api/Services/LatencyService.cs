@@ -6,10 +6,7 @@ namespace Api.Services
     {
         public LatencyService(SessionService bs)
         {
-            bs.RegisterRequestHandler<object>("ping", (session, payload) =>
-            {
-                return session.Send("pong");
-            });
+            bs.RegisterRequestHandler<object>("ping", (session, payload) => session.Send("pong"));
         }
     }
 }

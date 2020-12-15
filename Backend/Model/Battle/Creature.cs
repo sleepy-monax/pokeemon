@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Model.Battle
 {
@@ -31,21 +32,8 @@ namespace Model.Battle
             }
         }
 
-        public Stats Stats
-        {
-            get
-            {
-                var stats = Stereotype.Stats;
+        public Stats Stats => Status.Aggregate(Stereotype.Stats, (current, status) => status.Apply(current));
 
-                foreach (var statut in Statuts)
-                {
-                    stats = statut.apply(stats);
-                }
-
-                return stats;
-            }
-        }
-
-        public List<Statut> Statuts { get; set; } = new List<Statut>();
+        public List<Statut> Status { get; set; } = new List<Statut>();
     }
 }

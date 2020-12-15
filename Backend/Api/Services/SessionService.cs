@@ -12,8 +12,8 @@ namespace Api.Services
 {
     public class SessionService
     {
-        private Dictionary<string, Session> _sessions = new Dictionary<string, Session>();
-        private Dictionary<string, Func<Session, JObject, Task>> _requestHandlers = new Dictionary<string, Func<Session, JObject, Task>>();
+        private readonly Dictionary<string, Session> _sessions = new Dictionary<string, Session>();
+        private readonly Dictionary<string, Func<Session, JObject, Task>> _requestHandlers = new Dictionary<string, Func<Session, JObject, Task>>();
 
         public void RegisterRequestHandler<T>(string type, Func<Session, T, Task> action)
         {
@@ -43,8 +43,8 @@ namespace Api.Services
 
             do
             {
-                var random_number = rand.Next(1, int.MaxValue);
-                name = $"session-{random_number:X}";
+                var randomNumber = rand.Next(1, int.MaxValue);
+                name = $"session-{randomNumber:X}";
             } while (_sessions.ContainsKey(name));
 
             return name;

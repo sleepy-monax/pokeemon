@@ -1,6 +1,6 @@
 namespace Model.Battle
 {
-    class UnLockableAction
+    struct UnLockableAction
     {
         public int Level { get; set; }
         public Action? Action { get; set; }
