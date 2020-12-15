@@ -9,7 +9,7 @@ import {User, Users} from '../model/user';
   providedIn: 'root'
 })
 export class UserItemService {
-  private static URL: string = "https://" + environment.serverAddress +":" + environment.apiPort +"/users";
+  private static URL: string = "https://" + environment.serverAddress +":" + environment.apiPort +"/userItems";
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +27,10 @@ export class UserItemService {
 
   update(id: number, userItem: UserItem): Observable<any> {
     return this.http.put(UserItemService.URL + '/' + id, userItem);
+  }
+
+  getById(id: number): Observable<UserItem> {
+    return this.http.get<UserItem>(UserItemService.URL + '/' + id);
   }
 
 }

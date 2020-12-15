@@ -20,7 +20,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        [Route(template: "{id:int}")]
+        [Route(template: "{id}")]
         public ActionResult<UserItem> GetById(int id)
         {
             IUserItems userItems = (UserItem) _userItemsRepository.Get(id);
@@ -33,7 +33,7 @@ namespace Api.Controllers
             return Ok(_userItemsRepository.Create(userItem));
         }
 
-        [HttpDelete]
+        [HttpPut]
         [Route(template: "{id}")]
         public ActionResult Put(int id, [FromBody] UserItem userItem)
         {

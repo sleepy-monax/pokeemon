@@ -31,6 +31,18 @@ namespace Api.Controllers
         {
             return Ok(_userRepository.Create(user));
         }
+        
+        [HttpPut]
+        [Route(template: "{id}")]
+        public ActionResult Put(int id, [FromBody] User user)
+        {
+            if (_userRepository.Update(id, user))
+            {
+                return Ok();
+            }
+
+            return NotFound();
+        }
     }
 }
 

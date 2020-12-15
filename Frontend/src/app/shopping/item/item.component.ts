@@ -16,7 +16,8 @@ export class ItemComponent implements OnInit {
   @Input() description: string;
   @Input() basePrice: number;
 
-  @Output() emitCoinsUsed = new EventEmitter();
+  @Output() emitCoinsUsed = new EventEmitter<object>();
+  //@Output() emitNameItem = new EventEmitter();
 
   @ViewChild(CheckoutComponent) buyDialog: CheckoutComponent;
 
@@ -64,7 +65,7 @@ export class ItemComponent implements OnInit {
             if (data.data.quantity > 0) {
               this.quantity = data.data.quantity;
               this.price = data.data.price;
-              this.emitCoinsUsed.emit(data.data.price);
+              this.emitCoinsUsed.emit({price : data.data.price, name : this.name, quantity : data.data.quantity});
             } else {
               this.quantity = 1;
               this.price = this.basePrice * this.quantity;

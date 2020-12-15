@@ -17,7 +17,7 @@ export class ShopComponent implements OnInit {
 
   items: Item[] = itemsJson;
   userItem: UserItem = null;
-  user: Observable<User>;
+  user: User = null;
   id: number = 1;
 
   private _subscription: Subscription[] = [];
@@ -33,38 +33,57 @@ export class ShopComponent implements OnInit {
     this.userApi.getById(this.id)
       .subscribe(user => {
         this.coins = user.money;
-      }
+        }
       );
   }
 
-  modifyCoins(event) {
-    console.log("Coins spent : ", event);
-    var diff = this.coins - event;
+  modifyCoinsAndItems(event) {
+    console.log("Coins spent : ", event.price);
+    var diff = this.coins - event.price;
     if (diff < 0) {
       console.log("No money for this");
       this.isHidden = false;
       return;
     } else {
-      this.coins -= event;
+      this.coins -= event.price;
+      //Modif user coins
       this.userApi.getById(this.id)
-        .subscribe(user => {
-          console.log("Avant update : " + user.money);
-          //user.money = this.coins;
-          let userEncode = {
-            pseudo: user.pseudo,
-            email: user.email,
-            password: user.password,
-            money: this.coins
-          };
-          this.userApi.update(this.id, userEncode);
-          console.log("Après update : " + userEncode.money);
-        }
+        .subscribe(userGet => {
+            this.user = userGet;
+            console.log("avant update : " + this.user.money);
+            userGet.money = this.coins;
+
+            console.log(this.user);
+            this.userApi.update(userGet.id, this.user);
+            console.log("après update : " + this.user.money);
+          }
         );
       this.isHidden = true;
+      //Add item to user
+      this.userItem = {
+        idUser: this.id,
+        nameItem: event.name,
+        quantity: event.quantity
+      };
+      this.userItemApi.getById(this.id)
+        .subscribe(userItem => {
+          const userItemTest = userItem;
+          console.log("User test : " + userItemTest);
+        });
+      this._subscription.push(
+        this.userItemApi.create(this.userItem)
+          .subscribe()
+      );
+      console.log("Item ajouté : " +
+        "Id User : " + this.userItem.idUser +
+        " - Nom :  " + this.userItem.nameItem +
+        " - Quantité : " + this.userItem.quantity);
     }
   }
 
   ngOnDestroy() {
     this._subscription.forEach(sub => sub && sub.unsubscribe());
   }
+
+
 }
