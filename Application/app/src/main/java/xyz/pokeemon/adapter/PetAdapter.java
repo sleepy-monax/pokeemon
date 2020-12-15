@@ -1,6 +1,7 @@
 package xyz.pokeemon.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,11 +45,13 @@ public class PetAdapter extends ArrayAdapter<Pet> {
                 tvSpeed = convertView.findViewById(R.id.tv_speed),
                 tvName = convertView.findViewById(R.id.tv_name_pet);
 
+        Log.i("pet", pet.toString());
+
         tvName.setText(pet.getName());
-        tvHealth.setText(pet.getHealth()+"");
-        tvAttack.setText(pet.getAttack()+"");
-        tvDefend.setText(pet.getDefend()+"");
-        tvSpeed.setText(pet.getSpeed()+"");
+        tvHealth.setText(pet.getStats().getHealth()+"");
+        tvAttack.setText(pet.getStats().getAttack()+"");
+        tvDefend.setText(pet.getStats().getDefense()+"");
+        tvSpeed.setText(pet.getStats().getSpeed()+"");
 
     }
 }

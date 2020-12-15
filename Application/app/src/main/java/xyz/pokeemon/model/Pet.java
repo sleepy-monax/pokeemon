@@ -3,25 +3,30 @@ package xyz.pokeemon.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Pet implements Parcelable {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pet implements Parcelable, Serializable {
 
     private String name;
-    private int health, attack, defend, speed;
+    private String type;
+    private Stat stats;
+    private List<Action> actions;
 
-    public Pet(String name, int health, int attack, int defend, int speed) {
+    public Pet(String name, String type, Stat stat) {
         this.name = name;
-        this.health = health;
-        this.attack = attack;
-        this.defend = defend;
-        this.speed = speed;
+        this.type = type;
+        this.stats = stat;
+        actions = new ArrayList<>();
     }
 
     protected Pet(Parcel in) {
         name = in.readString();
-        health = in.readInt();
-        attack = in.readInt();
-        defend = in.readInt();
-        speed = in.readInt();
+        type = in.readString();
+        stats = in.readParcelable(Stat.class.getClassLoader());
+        actions = new ArrayList<>();
+        in.readList(actions, Action.class.getClassLoader());
     }
 
     public static final Creator<Pet> CREATOR = new Creator<Pet>() {
@@ -36,6 +41,7 @@ public class Pet implements Parcelable {
         }
     };
 
+
     public String getName() {
         return name;
     }
@@ -44,46 +50,37 @@ public class Pet implements Parcelable {
         this.name = name;
     }
 
-    public int getHealth() {
-        return health;
+    public Stat getStats() {
+        return stats;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setStats(Stat stats) {
+        this.stats = stats;
     }
 
-    public int getAttack() {
-        return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public int getDefend() {
-        return defend;
-    }
-
-    public void setDefend(int defend) {
-        this.defend = defend;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
 
     @Override
     public String toString() {
-        return"name='" + name + '\'' +
-                ", health=" + health +
-                ", attack=" + attack +
-                ", defend=" + defend +
-                ", speed=" + speed;
+        return "Pet{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", stat=" + stats +
+                ", actions=" + actions +
+                '}';
     }
+
+    /**
+    @Override
+    public String toString() {
+        return"name='" + name + '\'' +
+                ", health=" + stat.getHealth() +
+                ", attack=" + stat.getAttack() +
+                ", defense=" + stat.getDefense() +
+                ", speed=" + stat.getSpeed();
+    }
+     */
+
+
 
     @Override
     public int describeContents() {
@@ -93,9 +90,8 @@ public class Pet implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
-        parcel.writeInt(health);
-        parcel.writeInt(attack);
-        parcel.writeInt(defend);
-        parcel.writeInt(speed);
+        parcel.writeString(type);
+        parcel.writeParcelable(stats, i);
+        parcel.writeList(actions);
     }
 }
