@@ -3,6 +3,7 @@ package xyz.pokeemon.radar.location;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.location.Location;
 import android.view.Gravity;
@@ -15,9 +16,18 @@ import android.widget.Toast;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
+import java.util.Random;
+
 import xyz.pokeemon.R;
+import xyz.pokeemon.model.Pet;
 import xyz.pokeemon.radar.RadarFragment;
 import xyz.pokeemon.radar.animations.AnimationEffects;
+import xyz.pokeemon.serialization.Utils;
 
 /**
  *  This class will generate a button randomly on a view.
@@ -29,6 +39,7 @@ public class PetGenerationManager {
     private Button b;
     private PositionManager positionManager;
     private AnimationEffects animationEffect;
+    private List<Pet> pets;
 
 
     /**
@@ -70,9 +81,15 @@ public class PetGenerationManager {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                pets = initialiseListPet(v.getContext());
+
+                //Generate random for pet capture.
+                Random random = new Random();
+                int randomIndex = random.nextInt(pets.size());
+
                 //Set information.
                 builder.setTitle("Captured Pet");
-                builder.setMessage("You have captured : " + "");
+                builder.setMessage("You have captured : " + pets.get(randomIndex).getName());
 
                 //Closing button on the alert dialog.
                 builder.setNegativeButton("OK",
@@ -99,6 +116,28 @@ public class PetGenerationManager {
     public void applyAnimation(){
         animationEffect = new AnimationEffects();
         animationEffect.blinkAnimation(b);
+    }
+
+
+    /**
+     * @param context get the context of the current view.
+     * @return return the pet list read in the json file.
+     */
+    private List<Pet> initialiseListPet(Context context) {
+        String jsonFileString = Utils.getJsonFromAssets(context, "creatures.json");
+
+        Gson gson = new Gson();
+        Type listPetType = new TypeToken<List<Pet>>() {}.getType();
+
+        pets = gson.fromJson(jsonFileString, listPetType);
+        return pets;
+    }
+
+    /**
+     *  Register the pet capture in the database.
+     */
+    public void registerPetCapture(){
+
     }
 
 

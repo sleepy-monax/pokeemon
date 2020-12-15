@@ -23,7 +23,6 @@ import java.util.List;
 import xyz.pokeemon.R;
 import xyz.pokeemon.adapter.PetAdapter;
 import xyz.pokeemon.model.Action;
-import xyz.pokeemon.model.Item;
 import xyz.pokeemon.model.Pet;
 import xyz.pokeemon.serialization.Utils;
 
@@ -46,7 +45,7 @@ public class TeamFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_team, container, false);
-        initialseListPet();
+        initialiseListPet();
         final ListView lvPets = view.findViewById(R.id.lv_team);
         petOnClick(lvPets);
         PetAdapter adapter = new PetAdapter(
@@ -100,7 +99,7 @@ public class TeamFragment extends Fragment {
         });
     }
 
-    private void initialseListPet() {
+    private void initialiseListPet() {
         String jsonFileString = Utils.getJsonFromAssets(getContext(), "creatures.json");
 
         Gson gson = new Gson();
