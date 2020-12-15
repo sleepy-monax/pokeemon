@@ -47,7 +47,6 @@
             Pseudo = user.Pseudo;
             Money = 120;
             Email = user.Email;
-            
         }
     }
 }

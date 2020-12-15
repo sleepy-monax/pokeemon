@@ -9,7 +9,6 @@
 
         public UserItem()
         {
-            
         }
 
         public UserItem(int id, int idUser, string nameItem, int quantity)
