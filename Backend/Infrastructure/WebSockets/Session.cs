@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net.WebSockets;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
@@ -30,15 +31,20 @@ namespace Infrastructure.WebSocket
 
                 do
                 {
-                    socketResponse = await Socket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-                    package.AddRange(new ArraySegment<byte>(buffer, 0, socketResponse.Count));
+                    var arrayBuffer = new ArraySegment<byte>(buffer);
+                    socketResponse = await Socket.ReceiveAsync(arrayBuffer, CancellationToken.None);
+
+                    var arrayPackage = new ArraySegment<byte>(buffer, 0, socketResponse.Count);
+                    package.AddRange(arrayPackage);
                 } while (!socketResponse.EndOfMessage);
 
-                var bufferAsString = System.Text.Encoding.UTF8.GetString(package.ToArray());
+                var encoding = Encoding.UTF8;
 
-                if (!string.IsNullOrEmpty(bufferAsString))
+                var rawMessage = encoding.GetString(package.ToArray());
+
+                if (!string.IsNullOrEmpty(rawMessage))
                 {
-                    var jobject = JObject.Parse(bufferAsString);
+                    var jobject = JObject.Parse(rawMessage);
 
                     if (jobject.ContainsKey("type"))
                     {
@@ -81,9 +87,15 @@ namespace Infrastructure.WebSocket
 
         public async Task SendRaw(string message)
         {
-            var stringAsBytes = System.Text.Encoding.UTF8.GetBytes(message);
-            var byteArraySegment = new ArraySegment<byte>(stringAsBytes, 0, stringAsBytes.Length);
-            await Socket.SendAsync(byteArraySegment, WebSocketMessageType.Text, true, CancellationToken.None);
+            var encoding = Encoding.UTF8;
+            var bytes = encoding.GetBytes(message);
+            var array = new ArraySegment<byte>(bytes, 0, bytes.Length);
+
+            await Socket.SendAsync(
+                array,
+                WebSocketMessageType.Text,
+                true,
+                CancellationToken.None);
         }
     }
 }

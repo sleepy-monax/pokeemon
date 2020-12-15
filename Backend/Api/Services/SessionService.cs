@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Infrastructure.WebSocket;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 
 namespace Api.Services
 {
@@ -18,7 +19,19 @@ namespace Api.Services
         {
             _requestHandlers.Add(type, (session, json) =>
             {
-                return action(session, json.ToObject<T>());
+                var contract = new DefaultContractResolver
+                {
+                    NamingStrategy = new SnakeCaseNamingStrategy()
+                };
+
+                var serializer = new JsonSerializer
+                {
+                    ContractResolver = contract
+                };
+
+                var message = json.ToObject<T>(serializer);
+
+                return action(session, message);
             });
         }
 

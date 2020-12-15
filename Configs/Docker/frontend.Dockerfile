@@ -1,10 +1,10 @@
 FROM node:10
 
-WORKDIR /usr/src/Frontend
+WORKDIR /app/Frontend
 
-COPY Assets /usr/src/Assets
-COPY Frontend/src /usr/src/Frontend/src
-COPY Frontend/*.json /usr/src/Frontend/
+COPY Assets /app/Assets
+COPY Frontend/src /app/Frontend/src
+COPY Frontend/*.json /app/Frontend/
 
 RUN npm install -g @angular/cli && npm install
 
