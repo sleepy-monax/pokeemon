@@ -2,6 +2,6 @@ namespace Model.Chat
 {
     public class Message
     {
-        public string Text;
+        public string Text { get; set; }
     }
 }

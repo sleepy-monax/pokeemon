@@ -29,9 +29,9 @@ namespace Api.Services
                     ContractResolver = contract
                 };
 
-                var message = json.ToObject<T>(serializer);
+                var message = json.ToObject<Message<T>>();
 
-                return action(session, message);
+                return action(session, message.Payload);
             });
         }
 
@@ -82,11 +82,11 @@ namespace Api.Services
             }
         }
 
-        private async Task DispatchRequest(Session session, string type, JObject payload)
+        private async Task DispatchRequest(Session session, string type, JObject message)
         {
             if (_requestHandlers.ContainsKey(type))
             {
-                await _requestHandlers[type](session, payload);
+                await _requestHandlers[type](session, message);
             }
             else
             {

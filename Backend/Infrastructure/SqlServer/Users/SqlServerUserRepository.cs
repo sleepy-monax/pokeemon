@@ -8,8 +8,7 @@ namespace Infrastructure.SqlServer.Users
 {
     public class SqlServerUserRepository : IUserRepository
     {
-        
-        private  IFactory<IUser> _factory = new UserFactory();
+        private IFactory<IUser> _factory = new UserFactory();
         private static readonly string TableName = "Users";
         public static readonly string ColId = "id";
         public static readonly string ColAdministrator = "administrator";
@@ -27,7 +26,7 @@ namespace Infrastructure.SqlServer.Users
             values (@{ColAdministrator}, @{ColPseudo}, @{ColEmail}, @{ColPassword}, @{ColMoney})
         ";
 
-        private static readonly string ReqExist =  ReqQuery + $" where {ColPseudo} = @{ColPseudo} or " +
+        private static readonly string ReqExist = ReqQuery + $" where {ColPseudo} = @{ColPseudo} or " +
                                                    $"{ColEmail} = @{ColEmail}";
 
         private static readonly string ReqDelete = $"delete from {TableName} where {ColId} = @{ColId}";
@@ -98,13 +97,13 @@ namespace Infrastructure.SqlServer.Users
                 return new User(exist.Pseudo, exist.Email);
 
             CorrectValue(user);
-            user = new User((User) user);
+            user = new User((User)user);
             using (var connection = Database.GetConnection())
             {
                 connection.Open();
                 var command = connection.CreateCommand();
                 command.CommandText = ReqCreate;
-                
+
                 command.Parameters.AddWithValue($"@{ColAdministrator}", user.Administrator);
                 command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
                 command.Parameters.AddWithValue($"@{ColPseudo}", user.Pseudo);
@@ -113,7 +112,7 @@ namespace Infrastructure.SqlServer.Users
                 var hash = BCrypt.Net.BCrypt.HashPassword(user.Password);
                 command.Parameters.AddWithValue($"@{ColPassword}", hash);
 
-                user.Id = (int) command.ExecuteScalar();
+                user.Id = (int)command.ExecuteScalar();
             }
 
             return user;
@@ -152,7 +151,7 @@ namespace Infrastructure.SqlServer.Users
                 command.Parameters.AddWithValue($"@{ColPassword}", user.Password);
                 command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
                 command.Parameters.AddWithValue($"@{ColMoney}", user.Money);
-                
+
                 command.Parameters.AddWithValue($"@{ColId}", id);
 
                 return command.ExecuteNonQuery() == 1;

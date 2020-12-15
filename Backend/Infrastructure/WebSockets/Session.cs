@@ -44,6 +44,10 @@ namespace Infrastructure.WebSocket
 
                 if (!string.IsNullOrEmpty(rawMessage))
                 {
+                    var settings = new JsonLoadSettings{
+
+                     };
+
                     var jobject = JObject.Parse(rawMessage);
 
                     if (jobject.ContainsKey("type"))
