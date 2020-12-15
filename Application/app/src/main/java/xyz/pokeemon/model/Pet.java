@@ -58,6 +58,13 @@ public class Pet implements Parcelable, Serializable {
         this.stats = stats;
     }
 
+    public List<Action> getActions() {
+        return actions;
+    }
+
+    public void setActions(List<Action> actions) {
+        this.actions = actions;
+    }
 
     @Override
     public String toString() {
@@ -68,19 +75,6 @@ public class Pet implements Parcelable, Serializable {
                 ", actions=" + actions +
                 '}';
     }
-
-    /**
-    @Override
-    public String toString() {
-        return"name='" + name + '\'' +
-                ", health=" + stat.getHealth() +
-                ", attack=" + stat.getAttack() +
-                ", defense=" + stat.getDefense() +
-                ", speed=" + stat.getSpeed();
-    }
-     */
-
-
 
     @Override
     public int describeContents() {
