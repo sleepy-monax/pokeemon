@@ -65,11 +65,11 @@ export class ShopComponent implements OnInit {
         nameItem: event.name,
         quantity: event.quantity
       };
-      this.userItemApi.getById(this.id)
+      /*this.userItemApi.getById(this.id)
         .subscribe(userItem => {
           const userItemTest = userItem;
           console.log("User test : " + userItemTest);
-        });
+        });*/
       this._subscription.push(
         this.userItemApi.create(this.userItem)
           .subscribe()
