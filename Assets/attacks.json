@@ -1,2351 +1,1568 @@
 [
-  {
-    "name": "Aqua Jet",
-    "type": "Water",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "User attacks first.",
-    "probability": 0
-  },
-  {
-    "name": "Aqua Ring",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Restores a little HP each turn.",
-    "probability": 0
-  },
-  {
-    "name": "Aqua Tail",
-    "type": "Water",
-    "power": 90,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Bouncy Bubble",
-    "type": "Water",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "User recovers half the HP inflicted on opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Brine",
-    "type": "Water",
-    "power": 65,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Power doubles if opponent's HP is less than 50%.",
-    "probability": 0
-  },
-  {
-    "name": "Bubble",
-    "type": "Water",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 30,
-    "description": "May lower opponent's Speed.",
-    "probability": 10
-  },
-  {
-    "name": "Bubble Beam",
-    "type": "Water",
-    "power": 65,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "May lower opponent's Speed.",
-    "probability": 10
-  },
-  {
-    "name": "Clamp",
-    "type": "Water",
-    "power": 35,
-    "accuracy": 85,
-    "power_point": 15,
-    "description": "Traps opponent, damaging them for 4-5 turns.",
-    "probability": 100
-  },
-  {
-    "name": "Crabhammer",
-    "type": "Water",
-    "power": 100,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "High critical hit ratio.",
-    "probability": 0
-  },
-  {
-    "name": "Dive",
-    "type": "Water",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Dives underwater on first turn, attacks on second turn.",
-    "probability": 0
-  },
-  {
-    "name": "Fishious Rend",
-    "type": "Water",
-    "power": 85,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "If the user attacks before the target, the power of this move is doubled.",
-    "probability": 0
-  },
-  {
-    "name": "Flip Turn",
-    "type": "Water",
-    "power": 60,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "After making its attack, the user rushes back to switch places with a party Pokeemon in waiting.",
-    "probability": 0
-  },
-  {
-    "name": "Hydro Cannon",
-    "type": "Water",
-    "power": 150,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "User must recharge next turn.",
-    "probability": 0
-  },
-  {
-    "name": "Hydro Pump",
-    "type": "Water",
-    "power": 110,
-    "accuracy": 80,
-    "power_point": 5,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Hydro Vortex",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Water type Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Life Dew",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "User and teammates recover HP.",
-    "probability": 0
-  },
-  {
-    "name": "Liquidation",
-    "type": "Water",
-    "power": 85,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "May lower opponent's Defense.",
-    "probability": 20
-  },
-  {
-    "name": "Max Geyser",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 0,
-    "description": "Water type Dynamax move. Summons heavy rain.",
-    "probability": 0
-  },
-  {
-    "name": "Muddy Water",
-    "type": "Water",
-    "power": 90,
-    "accuracy": 85,
-    "power_point": 10,
-    "description": "May lower opponent's Accuracy.",
-    "probability": 30
-  },
-  {
-    "name": "Oceanic Operetta",
-    "type": "Water",
-    "power": 195,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Primarina-exclusive Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Octazooka",
-    "type": "Water",
-    "power": 65,
-    "accuracy": 85,
-    "power_point": 10,
-    "description": "May lower opponent's Accuracy.",
-    "probability": 50
-  },
-  {
-    "name": "Origin Pulse",
-    "type": "Water",
-    "power": 110,
-    "accuracy": 85,
-    "power_point": 10,
-    "description": "Hits all adjacent opponents.",
-    "probability": 0
-  },
-  {
-    "name": "Rain Dance",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 5,
-    "description": "Makes it rain for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Razor Shell",
-    "type": "Water",
-    "power": 75,
-    "accuracy": 95,
-    "power_point": 10,
-    "description": "May lower opponent's Defense.",
-    "probability": 50
-  },
-  {
-    "name": "Scald",
-    "type": "Water",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May burn opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Snipe Shot",
-    "type": "Water",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Ignores moves and abilities that draw in moves. High critical hit ratio.",
-    "probability": 0
-  },
-  {
-    "name": "Soak",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "Changes the target's type to water.",
-    "probability": 0
-  },
-  {
-    "name": "Sparkling Aria",
-    "type": "Water",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Heals the burns of its target.",
-    "probability": 0
-  },
-  {
-    "name": "Splishy Splash",
-    "type": "Water",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May paralyze opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Steam Eruption",
-    "type": "Water",
-    "power": 110,
-    "accuracy": 95,
-    "power_point": 5,
-    "description": "May burn opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Surf",
-    "type": "Water",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Hits all adjacent Pokeemon.",
-    "probability": 0
-  },
-  {
-    "name": "Surging Strikes",
-    "type": "Water",
-    "power": 25,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Always results in a critical hit and ignores stat changes.",
-    "probability": 0
-  },
-  {
-    "name": "Water Gun",
-    "type": "Water",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 25,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Water Pledge",
-    "type": "Water",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Added descriptions appear if preceded by Fire Pledge or succeeded by Grass Pledge.",
-    "probability": 0
-  },
-  {
-    "name": "Water Pulse",
-    "type": "Water",
-    "power": 60,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "May confuse opponent.",
-    "probability": 20
-  },
-  {
-    "name": "Water Shuriken",
-    "type": "Water",
-    "power": 15,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "Hits 2-5 times in one turn.",
-    "probability": 0
-  },
-  {
-    "name": "Water Sport",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 15,
-    "description": "Weakens the power of Fire-type moves.",
-    "probability": 0
-  },
-  {
-    "name": "Water Spout",
-    "type": "Water",
-    "power": 150,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "The higher the user's HP, the higher the damage caused.",
-    "probability": 0
-  },
-  {
-    "name": "Waterfall",
-    "type": "Water",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May cause flinching.",
-    "probability": 20
-  },
-  {
-    "name": "Whirlpool",
-    "type": "Water",
-    "power": 35,
-    "accuracy": 85,
-    "power_point": 15,
-    "description": "Traps opponent, damaging them for 4-5 turns.",
-    "probability": 100
-  },
-  {
-    "name": "Withdraw",
-    "type": "Water",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 40,
-    "description": "Raises user's Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Blast Burn",
-    "type": "Fire",
-    "power": 150,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "User must recharge next turn.",
-    "probability": 0
-  },
-  {
-    "name": "Blaze Kick",
-    "type": "Fire",
-    "power": 85,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "High critical hit ratio. May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Blue Flare",
-    "type": "Fire",
-    "power": 130,
-    "accuracy": 85,
-    "power_point": 5,
-    "description": "May burn opponent.",
-    "probability": 20
-  },
-  {
-    "name": "Burn Up",
-    "type": "Fire",
-    "power": 130,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "To inflict massive damage, the user burns itself out. After using this move, the user will no longer be Fire type.",
-    "probability": 0
-  },
-  {
-    "name": "Burning Jealousy",
-    "type": "Fire",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Hits all opponents, and burns any that have had their stats boosted.",
-    "probability": 0
-  },
-  {
-    "name": "Ember",
-    "type": "Fire",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 25,
-    "description": "May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Eruption",
-    "type": "Fire",
-    "power": 150,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Stronger when the user's HP is higher.",
-    "probability": 0
-  },
-  {
-    "name": "Fiery Dance",
-    "type": "Fire",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "May raise user's Special Attack.",
-    "probability": 50
-  },
-  {
-    "name": "Fire Blast",
-    "type": "Fire",
-    "power": 110,
-    "accuracy": 85,
-    "power_point": 5,
-    "description": "May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Fire Fang",
-    "type": "Fire",
-    "power": 65,
-    "accuracy": 95,
-    "power_point": 15,
-    "description": "May cause flinching and/or burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Fire Lash",
-    "type": "Fire",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "The user strikes the target with a burning lash. This also lowers the target's Defense stat.",
-    "probability": 100
-  },
-  {
-    "name": "Fire Pledge",
-    "type": "Fire",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Added descriptions appear if combined with Grass Pledge or Water Pledge.",
-    "probability": 0
-  },
-  {
-    "name": "Fire Punch",
-    "type": "Fire",
-    "power": 75,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Fire Spin",
-    "type": "Fire",
-    "power": 35,
-    "accuracy": 85,
-    "power_point": 15,
-    "description": "Traps opponent, damaging them for 4-5 turns.",
-    "probability": 100
-  },
-  {
-    "name": "Flame Burst",
-    "type": "Fire",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May also injure nearby Pokeemon.",
-    "probability": 0
-  },
-  {
-    "name": "Flame Charge",
-    "type": "Fire",
-    "power": 50,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "Raises user's Speed.",
-    "probability": 100
-  },
-  {
-    "name": "Flame Wheel",
-    "type": "Fire",
-    "power": 60,
-    "accuracy": 100,
-    "power_point": 25,
-    "description": "May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Flamethrower",
-    "type": "Fire",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Flare Blitz",
-    "type": "Fire",
-    "power": 120,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "User receives recoil damage. May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Fusion Flare",
-    "type": "Fire",
-    "power": 100,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Power increases if Fusion Bolt is used in the same turn.",
-    "probability": 0
-  },
-  {
-    "name": "Heat Crash",
-    "type": "Fire",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "The heavier the user, the stronger the attack.",
-    "probability": 0
-  },
-  {
-    "name": "Heat Wave",
-    "type": "Fire",
-    "power": 95,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Incinerate",
-    "type": "Fire",
-    "power": 60,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Destroys the target's held berry.",
-    "probability": 0
-  },
-  {
-    "name": "Inferno",
-    "type": "Fire",
-    "power": 100,
-    "accuracy": 50,
-    "power_point": 5,
-    "description": "Burns opponent.",
-    "probability": 100
-  },
-  {
-    "name": "Inferno Overdrive",
-    "type": "Fire",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Fire type Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Lava Plume",
-    "type": "Fire",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May burn opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Magma Storm",
-    "type": "Fire",
-    "power": 100,
-    "accuracy": 75,
-    "power_point": 5,
-    "description": "Traps opponent, damaging them for 4-5 turns.",
-    "probability": 100
-  },
-  {
-    "name": "Max Flare",
-    "type": "Fire",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 0,
-    "description": "Fire type Dynamax move. Summons harsh sunlight.",
-    "probability": 0
-  },
-  {
-    "name": "Mind Blown",
-    "type": "Fire",
-    "power": 150,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "User receives recoil damage.",
-    "probability": 0
-  },
-  {
-    "name": "Mystical Fire",
-    "type": "Fire",
-    "power": 75,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Lowers opponent's Special Attack.",
-    "probability": 100
-  },
-  {
-    "name": "Overheat",
-    "type": "Fire",
-    "power": 130,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "Sharply lowers user's Special Attack.",
-    "probability": 100
-  },
-  {
-    "name": "Pyro Ball",
-    "type": "Fire",
-    "power": 120,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "May burn opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Sacred Fire",
-    "type": "Fire",
-    "power": 100,
-    "accuracy": 95,
-    "power_point": 5,
-    "description": "May burn opponent.",
-    "probability": 50
-  },
-  {
-    "name": "Searing Shot",
-    "type": "Fire",
-    "power": 100,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "May burn opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Shell Trap",
-    "type": "Fire",
-    "power": 150,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Deals more damage to opponent if hit by a Physical move.",
-    "probability": 0
-  },
-  {
-    "name": "Sizzly Slide",
-    "type": "Fire",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Burns the opponent.",
-    "probability": 100
-  },
-  {
-    "name": "Sunny Day",
-    "type": "Fire",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 5,
-    "description": "Makes it sunny for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "V-create",
-    "type": "Fire",
-    "power": 180,
-    "accuracy": 95,
-    "power_point": 5,
-    "description": "Lowers user's Defense, Special Defense and Speed.",
-    "probability": 100
-  },
-  {
-    "name": "Will-O-Wisp",
-    "type": "Fire",
-    "power": 0,
-    "accuracy": 85,
-    "power_point": 15,
-    "description": "Burns opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Aura Wheel",
-    "type": "Electric",
-    "power": 110,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Changes type based on Morpeko's Mode.",
-    "probability": 100
-  },
-  {
-    "name": "Bolt Beak",
-    "type": "Electric",
-    "power": 85,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "If the user attacks before the target, the power of this move is doubled.",
-    "probability": 0
-  },
-  {
-    "name": "Bolt Strike",
-    "type": "Electric",
-    "power": 130,
-    "accuracy": 85,
-    "power_point": 5,
-    "description": "May paralyze opponent.",
-    "probability": 20
-  },
-  {
-    "name": "Buzzy Buzz",
-    "type": "Electric",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Paralyzes the opponent.",
-    "probability": 100
-  },
-  {
-    "name": "Charge",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Raises user's Special Defense and next Electric move's power increases.",
-    "probability": 0
-  },
-  {
-    "name": "Charge Beam",
-    "type": "Electric",
-    "power": 50,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "May raise user's Special Attack.",
-    "probability": 70
-  },
-  {
-    "name": "Discharge",
-    "type": "Electric",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May paralyze opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Eerie Impulse",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Sharply lowers opponent's Special Attack.",
-    "probability": 0
-  },
-  {
-    "name": "Electric Terrain",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Prevents all Pokeemon from falling asleep for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Electrify",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Changes the target's move to Electric type.",
-    "probability": 0
-  },
-  {
-    "name": "Electro Ball",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "The faster the user, the stronger the attack.",
-    "probability": 0
-  },
-  {
-    "name": "Electroweb",
-    "type": "Electric",
-    "power": 55,
-    "accuracy": 95,
-    "power_point": 15,
-    "description": "Lowers opponent's Speed.",
-    "probability": 100
-  },
-  {
-    "name": "Fusion Bolt",
-    "type": "Electric",
-    "power": 100,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Power increases if Fusion Flare is used in the same turn.",
-    "probability": 0
-  },
-  {
-    "name": "Gigavolt Havoc",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Electric type Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Ion Deluge",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 25,
-    "description": "Changes Normal-type moves to Electric-type.",
-    "probability": 0
-  },
-  {
-    "name": "Magnet Rise",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "User becomes immune to Ground-type moves for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Magnetic Flux",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Raises Defense and Sp. Defense of Plus/Minus Pok\u00e9mon.",
-    "probability": 0
-  },
-  {
-    "name": "Max Lightning",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 0,
-    "description": "Electric type Dynamax move. Summons Electric Terrain.",
-    "probability": 0
-  },
-  {
-    "name": "Nuzzle",
-    "type": "Electric",
-    "power": 20,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "Paralyzes opponent.",
-    "probability": 100
-  },
-  {
-    "name": "Overdrive",
-    "type": "Electric",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Parabolic Charge",
-    "type": "Electric",
-    "power": 65,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "User recovers half the HP inflicted on opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Pika Papow",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Power increases when player's bond is stronger.",
-    "probability": 0
-  },
-  {
-    "name": "Plasma Fists",
-    "type": "Electric",
-    "power": 100,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Changes Normal-type moves to Electric-type moves.",
-    "probability": 0
-  },
-  {
-    "name": "Rising Voltage",
-    "type": "Electric",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "Power doubles on Electric Terrain.",
-    "probability": 0
-  },
-  {
-    "name": "Shock Wave",
-    "type": "Electric",
-    "power": 60,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Ignores Accuracy and Evasiveness.",
-    "probability": 0
-  },
-  {
-    "name": "Spark",
-    "type": "Electric",
-    "power": 65,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "May paralyze opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Stoked Sparksurfer",
-    "type": "Electric",
-    "power": 175,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Alolan Raichu-exclusive Electric type Z-Move.",
-    "probability": 100
-  },
-  {
-    "name": "Thunder",
-    "type": "Electric",
-    "power": 110,
-    "accuracy": 70,
-    "power_point": 10,
-    "description": "May paralyze opponent.",
-    "probability": 30
-  },
-  {
-    "name": "Thunder Cage",
-    "type": "Electric",
-    "power": 80,
-    "accuracy": 90,
-    "power_point": 15,
-    "description": "Deals damage and traps opponent, damaging them for 4-5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Thunder Fang",
-    "type": "Electric",
-    "power": 65,
-    "accuracy": 95,
-    "power_point": 15,
-    "description": "May cause flinching and/or paralyze opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Thunder Punch",
-    "type": "Electric",
-    "power": 75,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May paralyze opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Thunder Shock",
-    "type": "Electric",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 30,
-    "description": "May paralyze opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Thunder Wave",
-    "type": "Electric",
-    "power": 0,
-    "accuracy": 90,
-    "power_point": 20,
-    "description": "Paralyzes opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Thunderbolt",
-    "type": "Electric",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May paralyze opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Volt Switch",
-    "type": "Electric",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "User must switch out after attacking.",
-    "probability": 0
-  },
-  {
-    "name": "Volt Tackle",
-    "type": "Electric",
-    "power": 120,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "User receives recoil damage. May paralyze opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Wild Charge",
-    "type": "Electric",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "User receives recoil damage.",
-    "probability": 0
-  },
-  {
-    "name": "Zap Cannon",
-    "type": "Electric",
-    "power": 120,
-    "accuracy": 50,
-    "power_point": 5,
-    "description": "Paralyzes opponent.",
-    "probability": 100
-  },
-  {
-    "name": "Zing Zap",
-    "type": "Electric",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "May cause flinching.",
-    "probability": 30
-  },
-  {
-    "name": "Zippy Zap",
-    "type": "Electric",
-    "power": 50,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Always results in a critical hit.",
-    "probability": 100
-  },
-  {
-    "name": "Absorb",
-    "type": "Grass",
-    "power": 20,
-    "accuracy": 100,
-    "power_point": 25,
-    "description": "User recovers half the HP inflicted on opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Apple Acid",
-    "type": "Grass",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Lowers target's Special Defense.",
-    "probability": 100
-  },
-  {
-    "name": "Aromatherapy",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 5,
-    "description": "Cures all status problems in your party.",
-    "probability": 0
-  },
-  {
-    "name": "Bloom Doom",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Grass type Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Branch Poke",
-    "type": "Grass",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 40,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Bullet Seed",
-    "type": "Grass",
-    "power": 25,
-    "accuracy": 100,
-    "power_point": 30,
-    "description": "Hits 2-5 times in one turn.",
-    "probability": 0
-  },
-  {
-    "name": "Cotton Guard",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Drastically raises user's Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Cotton Spore",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 40,
-    "description": "Sharply lowers opponent's Speed.",
-    "probability": 0
-  },
-  {
-    "name": "Drum Beating",
-    "type": "Grass",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Lowers opponent's Speed.",
-    "probability": 100
-  },
-  {
-    "name": "Energy Ball",
-    "type": "Grass",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "May lower opponent's Special Defense.",
-    "probability": 10
-  },
-  {
-    "name": "Forest's Curse",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "Adds Grass type to opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Frenzy Plant",
-    "type": "Grass",
-    "power": 150,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "User must recharge next turn.",
-    "probability": 0
-  },
-  {
-    "name": "Giga Drain",
-    "type": "Grass",
-    "power": 75,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "User recovers half the HP inflicted on opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Grass Knot",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "The heavier the opponent, the stronger the attack.",
-    "probability": 0
-  },
-  {
-    "name": "Grass Pledge",
-    "type": "Grass",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Added descriptions appear if preceded by Water Pledge or succeeded by Fire Pledge.",
-    "probability": 0
-  },
-  {
-    "name": "Grass Whistle",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 55,
-    "power_point": 15,
-    "description": "Puts opponent to sleep.",
-    "probability": 0
-  },
-  {
-    "name": "Grassy Glide",
-    "type": "Grass",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "High priority during Grassy Terrain.",
-    "probability": 0
-  },
-  {
-    "name": "Grassy Terrain",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Restores a little HP of all Pokeemon for 5 turns. ",
-    "probability": 0
-  },
-  {
-    "name": "Grav Apple",
-    "type": "Grass",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Lowers the opponent's Defense stat.",
-    "probability": 100
-  },
-  {
-    "name": "Horn Leech",
-    "type": "Grass",
-    "power": 75,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "User recovers half the HP inflicted on opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Ingrain",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "User restores HP each turn. User cannot escape/switch.",
-    "probability": 0
-  },
-  {
-    "name": "Jungle Healing",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Restores team's HP and cures status conditions.",
-    "probability": 0
-  },
-  {
-    "name": "Leaf Blade",
-    "type": "Grass",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "High critical hit ratio.",
-    "probability": 0
-  },
-  {
-    "name": "Leaf Storm",
-    "type": "Grass",
-    "power": 130,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "Sharply lowers user's Special Attack.",
-    "probability": 100
-  },
-  {
-    "name": "Leaf Tornado",
-    "type": "Grass",
-    "power": 65,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "May lower opponent's Accuracy.",
-    "probability": 50
-  },
-  {
-    "name": "Leafage",
-    "type": "Grass",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 40,
-    "description": "Strikes opponent with leaves.",
-    "probability": 0
-  },
-  {
-    "name": "Leech Seed",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "Drains HP from opponent each turn.",
-    "probability": 0
-  },
-  {
-    "name": "Magical Leaf",
-    "type": "Grass",
-    "power": 60,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Ignores Accuracy and Evasiveness.",
-    "probability": 0
-  },
-  {
-    "name": "Max Overgrowth",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 0,
-    "description": "Grass type Dynamax move. Summons Grassy Terrain.",
-    "probability": 0
-  },
-  {
-    "name": "Mega Drain",
-    "type": "Grass",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "User recovers half the HP inflicted on opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Needle Arm",
-    "type": "Grass",
-    "power": 60,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "May cause flinching.",
-    "probability": 30
-  },
-  {
-    "name": "Petal Blizzard",
-    "type": "Grass",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Hits all adjacent Pokeemon.",
-    "probability": 0
-  },
-  {
-    "name": "Petal Dance",
-    "type": "Grass",
-    "power": 120,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "User attacks for 2-3 turns but then becomes confused.",
-    "probability": 0
-  },
-  {
-    "name": "Power Whip",
-    "type": "Grass",
-    "power": 120,
-    "accuracy": 85,
-    "power_point": 10,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Razor Leaf",
-    "type": "Grass",
-    "power": 55,
-    "accuracy": 95,
-    "power_point": 25,
-    "description": "High critical hit ratio.",
-    "probability": 0
-  },
-  {
-    "name": "Sappy Seed",
-    "type": "Grass",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Drains HP from opponent each turn.",
-    "probability": 100
-  },
-  {
-    "name": "Seed Bomb",
-    "type": "Grass",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Seed Flare",
-    "type": "Grass",
-    "power": 120,
-    "accuracy": 85,
-    "power_point": 5,
-    "description": "May lower opponent's Special Defense.",
-    "probability": 40
-  },
-  {
-    "name": "Sleep Powder",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 75,
-    "power_point": 15,
-    "description": "Puts opponent to sleep.",
-    "probability": 0
-  },
-  {
-    "name": "Snap Trap",
-    "type": "Grass",
-    "power": 35,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Traps opponent, damaging them for 4-5 turns.",
-    "probability": 100
-  },
-  {
-    "name": "Solar Beam",
-    "type": "Grass",
-    "power": 120,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Charges on first turn, attacks on second.",
-    "probability": 0
-  },
-  {
-    "name": "Solar Blade",
-    "type": "Grass",
-    "power": 125,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Charges on first turn, attacks on second.",
-    "probability": 0
-  },
-  {
-    "name": "Spiky Shield",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Protects the user and inflicts damage on contact.",
-    "probability": 0
-  },
-  {
-    "name": "Spore",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Puts opponent to sleep.",
-    "probability": 0
-  },
-  {
-    "name": "Strength Sap",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "The user restores its HP by the same amount as the target's Attack stat. It also lowers the target's Attack stat.",
-    "probability": 100
-  },
-  {
-    "name": "Stun Spore",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 75,
-    "power_point": 30,
-    "description": "Paralyzes opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Synthesis",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 5,
-    "description": "User recovers HP. Amount varies with the weather.",
-    "probability": 0
-  },
-  {
-    "name": "Trop Kick",
-    "type": "Grass",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Lowers opponent's Attack.",
-    "probability": 100
-  },
-  {
-    "name": "Vine Whip",
-    "type": "Grass",
-    "power": 45,
-    "accuracy": 100,
-    "power_point": 25,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Wood Hammer",
-    "type": "Grass",
-    "power": 120,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "User receives recoil damage.",
-    "probability": 0
-  },
-  {
-    "name": "Worry Seed",
-    "type": "Grass",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Changes the opponent's Ability to Insomnia.",
-    "probability": 0
-  },
-  {
-    "name": "Agility",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 30,
-    "description": "Sharply raises user's Speed.",
-    "probability": 0
-  },
-  {
-    "name": "Ally Switch",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 15,
-    "description": "User switches with opposite teammate.",
-    "probability": 0
-  },
-  {
-    "name": "Amnesia",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Sharply raises user's Special Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Barrier",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Sharply raises user's Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Calm Mind",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Raises user's Special Attack and Special Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Confusion",
-    "type": "Psychic",
-    "power": 50,
-    "accuracy": 100,
-    "power_point": 25,
-    "description": "May confuse opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Cosmic Power",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Raises user's Defense and Special Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Dream Eater",
-    "type": "Psychic",
-    "power": 100,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "User recovers half the HP inflicted on a sleeping opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Eerie Spell",
-    "type": "Psychic",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Deals damage and reduces opponent's PP.",
-    "probability": 0
-  },
-  {
-    "name": "Expanding Force",
-    "type": "Psychic",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Increases power and hits all opponents on Psychic Terrain.",
-    "probability": 0
-  },
-  {
-    "name": "Extrasensory",
-    "type": "Psychic",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "May cause flinching.",
-    "probability": 10
-  },
-  {
-    "name": "Freezing Glare",
-    "type": "Psychic",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "May freeze opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Future Sight",
-    "type": "Psychic",
-    "power": 120,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Damage occurs 2 turns later.",
-    "probability": 0
-  },
-  {
-    "name": "Genesis Supernova",
-    "type": "Psychic",
-    "power": 185,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Mew-exclusive Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Glitzy Glow",
-    "type": "Psychic",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Reduces damage from Special attacks.",
-    "probability": 0
-  },
-  {
-    "name": "Gravity",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 5,
-    "description": "Prevents moves like Fly and Bounce and the Ability Levitate for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Guard Split",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Averages Defense and Special Defense with the target.",
-    "probability": 0
-  },
-  {
-    "name": "Guard Swap",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "User and opponent swap Defense and Special Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Heal Block",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Prevents the opponent from restoring HP for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Heal Pulse",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Restores half the target's max HP.",
-    "probability": 0
-  },
-  {
-    "name": "Healing Wish",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "The user faints and the next Pokeemon released is fully healed.",
-    "probability": 0
-  },
-  {
-    "name": "Heart Stamp",
-    "type": "Psychic",
-    "power": 60,
-    "accuracy": 100,
-    "power_point": 25,
-    "description": "May cause flinching.",
-    "probability": 30
-  },
-  {
-    "name": "Heart Swap",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Stat changes are swapped with the opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Hyperspace Hole",
-    "type": "Psychic",
-    "power": 80,
-    "accuracy": 0,
-    "power_point": 5,
-    "description": "Can strike through Protect/Detect.",
-    "probability": 0
-  },
-  {
-    "name": "Hypnosis",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 60,
-    "power_point": 20,
-    "description": "Puts opponent to sleep.",
-    "probability": 0
-  },
-  {
-    "name": "Imprison",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Opponent is unable to use moves that the user also knows.",
-    "probability": 0
-  },
-  {
-    "name": "Instruct",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 15,
-    "description": "Allows an ally to use a move instead.",
-    "probability": 0
-  },
-  {
-    "name": "Kinesis",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 80,
-    "power_point": 15,
-    "description": "Lowers opponent's Accuracy.",
-    "probability": 0
-  },
-  {
-    "name": "Light Screen",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 30,
-    "description": "Halves damage from Special attacks for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Light That Burns the Sky",
-    "type": "Psychic",
-    "power": 200,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Ultra Necrozma-exclusive Z-Move. Ignores target's ability; uses highest Attack stat.",
-    "probability": 0
-  },
-  {
-    "name": "Lunar Dance",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "The user faints but the next Pokeemon released is fully healed.",
-    "probability": 0
-  },
-  {
-    "name": "Luster Purge",
-    "type": "Psychic",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "May lower opponent's Special Defense.",
-    "probability": 50
-  },
-  {
-    "name": "Magic Coat",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 15,
-    "description": "Reflects moves that cause status conditions back to the attacker.",
-    "probability": 0
-  },
-  {
-    "name": "Magic Powder",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "Changes target's type to Psychic.",
-    "probability": 0
-  },
-  {
-    "name": "Magic Room",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Suppresses the descriptions of held items for five turns.",
-    "probability": 0
-  },
-  {
-    "name": "Max Mindstorm",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 0,
-    "description": "Psychic type Dynamax move. Summons Psychic Terrain.",
-    "probability": 0
-  },
-  {
-    "name": "Meditate",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 40,
-    "description": "Raises user's Attack.",
-    "probability": 0
-  },
-  {
-    "name": "Miracle Eye",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 40,
-    "description": "Resets opponent's Evasiveness, removes Dark's Psychic immunity.",
-    "probability": 0
-  },
-  {
-    "name": "Mirror Coat",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "When hit by a Special Attack, user strikes back with 2x power.",
-    "probability": 0
-  },
-  {
-    "name": "Mist Ball",
-    "type": "Psychic",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "May lower opponent's Special Attack.",
-    "probability": 50
-  },
-  {
-    "name": "Photon Geyser",
-    "type": "Psychic",
-    "power": 100,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "Uses Attack or Special Attack stat, whichever is higher.",
-    "probability": 0
-  },
-  {
-    "name": "Power Split",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Averages Attack and Special Attack with the target.",
-    "probability": 0
-  },
-  {
-    "name": "Power Swap",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "User and opponent swap Attack and Special Attack.",
-    "probability": 0
-  },
-  {
-    "name": "Power Trick",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "User's own Attack and Defense switch.",
-    "probability": 0
-  },
-  {
-    "name": "Prismatic Laser",
-    "type": "Psychic",
-    "power": 160,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "The user shoots powerful lasers using the power of a prism. The user can't move on the next turn.",
-    "probability": 0
-  },
-  {
-    "name": "Psybeam",
-    "type": "Psychic",
-    "power": 65,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "May confuse opponent.",
-    "probability": 10
-  },
-  {
-    "name": "Psychic",
-    "type": "Psychic",
-    "power": 90,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "May lower opponent's Special Defense.",
-    "probability": 10
-  },
-  {
-    "name": "Psychic Fangs",
-    "type": "Psychic",
-    "power": 85,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "The user bites the target with its psychic capabilities. This can also destroy Light Screen and Reflect.",
-    "probability": 0
-  },
-  {
-    "name": "Psychic Terrain",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Prevents priority moves from being used for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Psycho Boost",
-    "type": "Psychic",
-    "power": 140,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "Sharply lowers user's Special Attack.",
-    "probability": 100
-  },
-  {
-    "name": "Psycho Cut",
-    "type": "Psychic",
-    "power": 70,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "High critical hit ratio.",
-    "probability": 0
-  },
-  {
-    "name": "Psycho Shift",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Transfers user's status condition to the opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Psyshock",
-    "type": "Psychic",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Inflicts damage based on the target's Defense, not Special Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Psystrike",
-    "type": "Psychic",
-    "power": 100,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Inflicts damage based on the target's Defense, not Special Defense.",
-    "probability": 0
-  },
-  {
-    "name": "Psywave",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Inflicts damage 50-150% of user's level.",
-    "probability": 0
-  },
-  {
-    "name": "Reflect",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Halves damage from Physical attacks for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Rest",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "User sleeps for 2 turns, but user is fully healed.",
-    "probability": 0
-  },
-  {
-    "name": "Role Play",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "User copies the opponent's Ability.",
-    "probability": 0
-  },
-  {
-    "name": "Shattered Psyche",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Psychic type Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Skill Swap",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "The user swaps Abilities with the opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Speed Swap",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "The user exchanges Speed stats with the target.",
-    "probability": 0
-  },
-  {
-    "name": "Stored Power",
-    "type": "Psychic",
-    "power": 20,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Power increases when user's stats have been raised.",
-    "probability": 0
-  },
-  {
-    "name": "Synchronoise",
-    "type": "Psychic",
-    "power": 120,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Hits any Pokeemon that shares a type with the user.",
-    "probability": 0
-  },
-  {
-    "name": "Telekinesis",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 15,
-    "description": "Ignores opponent's Evasiveness for three turns, add Ground immunity.",
-    "probability": 0
-  },
-  {
-    "name": "Teleport",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Allows user to flee wild battles; also warps player to last PokeeCenter.",
-    "probability": 0
-  },
-  {
-    "name": "Trick",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 10,
-    "description": "Swaps held items with the opponent.",
-    "probability": 0
-  },
-  {
-    "name": "Trick Room",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 5,
-    "description": "Slower Pokeemon move first in the turn for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Wonder Room",
-    "type": "Psychic",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Swaps every Pokeemon's Defense and Special Defense for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Zen Headbutt",
-    "type": "Psychic",
-    "power": 80,
-    "accuracy": 90,
-    "power_point": 15,
-    "description": "May cause flinching.",
-    "probability": 20
-  },
-  {
-    "name": "Accelerock",
-    "type": "Rock",
-    "power": 40,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "User attacks first.",
-    "probability": 0
-  },
-  {
-    "name": "Ancient Power",
-    "type": "Rock",
-    "power": 60,
-    "accuracy": 100,
-    "power_point": 5,
-    "description": "May raise all user's stats at once.",
-    "probability": 10
-  },
-  {
-    "name": "Continental Crush",
-    "type": "Rock",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Rock type Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Diamond Storm",
-    "type": "Rock",
-    "power": 100,
-    "accuracy": 95,
-    "power_point": 5,
-    "description": "May sharply raise user's Defense.",
-    "probability": 50
-  },
-  {
-    "name": "Head Smash",
-    "type": "Rock",
-    "power": 150,
-    "accuracy": 80,
-    "power_point": 5,
-    "description": "User receives recoil damage.",
-    "probability": 0
-  },
-  {
-    "name": "Max Rockfall",
-    "type": "Rock",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 0,
-    "description": "Rock type Dynamax move. Summons a sandstorm.",
-    "probability": 0
-  },
-  {
-    "name": "Meteor Beam",
-    "type": "Rock",
-    "power": 120,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "User gathers space power and boosts its Sp. Atk stat, then attacks the target on the next turn.",
-    "probability": 0
-  },
-  {
-    "name": "Power Gem",
-    "type": "Rock",
-    "power": 80,
-    "accuracy": 100,
-    "power_point": 20,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Rock Blast",
-    "type": "Rock",
-    "power": 25,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "Hits 2-5 times in one turn.",
-    "probability": 0
-  },
-  {
-    "name": "Rock Polish",
-    "type": "Rock",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Sharply raises user's Speed.",
-    "probability": 0
-  },
-  {
-    "name": "Rock Slide",
-    "type": "Rock",
-    "power": 75,
-    "accuracy": 90,
-    "power_point": 10,
-    "description": "May cause flinching.",
-    "probability": 30
-  },
-  {
-    "name": "Rock Throw",
-    "type": "Rock",
-    "power": 50,
-    "accuracy": 90,
-    "power_point": 15,
-    "description": "",
-    "probability": 0
-  },
-  {
-    "name": "Rock Tomb",
-    "type": "Rock",
-    "power": 60,
-    "accuracy": 95,
-    "power_point": 15,
-    "description": "Lowers opponent's Speed.",
-    "probability": 100
-  },
-  {
-    "name": "Rock Wrecker",
-    "type": "Rock",
-    "power": 150,
-    "accuracy": 90,
-    "power_point": 5,
-    "description": "User must recharge next turn.",
-    "probability": 0
-  },
-  {
-    "name": "Rollout",
-    "type": "Rock",
-    "power": 30,
-    "accuracy": 90,
-    "power_point": 20,
-    "description": "Doubles in power each turn for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Sandstorm",
-    "type": "Rock",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 10,
-    "description": "Creates a sandstorm for 5 turns.",
-    "probability": 0
-  },
-  {
-    "name": "Smack Down",
-    "type": "Rock",
-    "power": 50,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Makes Flying-type Pokeemon vulnerable to Ground moves.",
-    "probability": 100
-  },
-  {
-    "name": "Splintered Stormshards",
-    "type": "Rock",
-    "power": 190,
-    "accuracy": 0,
-    "power_point": 1,
-    "description": "Lycanroc-exclusive Z-Move.",
-    "probability": 0
-  },
-  {
-    "name": "Stealth Rock",
-    "type": "Rock",
-    "power": 0,
-    "accuracy": 0,
-    "power_point": 20,
-    "description": "Damages opponent switching into battle.",
-    "probability": 0
-  },
-  {
-    "name": "Stone Edge",
-    "type": "Rock",
-    "power": 100,
-    "accuracy": 80,
-    "power_point": 5,
-    "description": "High critical hit ratio.",
-    "probability": 0
-  },
-  {
-    "name": "Tar Shot",
-    "type": "Rock",
-    "power": 0,
-    "accuracy": 100,
-    "power_point": 15,
-    "description": "Lowers the opponent's Speed and makes them weaker to Fire-type moves.",
-    "probability": 100
-  }
+    {
+        "name": "Aqua Jet",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "User attacks first.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Aqua Tail",
+        "accuracy": 90,
+        "power_point": 10,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Bouncy Bubble",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "User recovers half the HP inflicted on opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Brine",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Power doubles if opponent's HP is less than 50%.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 65
+        }
+    },
+    {
+        "name": "Bubble",
+        "accuracy": 100,
+        "power_point": 30,
+        "description": "May lower opponent's Speed.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Bubble Beam",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "May lower opponent's Speed.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 65
+        }
+    },
+    {
+        "name": "Clamp",
+        "accuracy": 85,
+        "power_point": 15,
+        "description": "Traps opponent, damaging them for 4-5 turns.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 35
+        }
+    },
+    {
+        "name": "Crabhammer",
+        "accuracy": 90,
+        "power_point": 10,
+        "description": "High critical hit ratio.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 100
+        }
+    },
+    {
+        "name": "Dive",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Dives underwater on first turn, attacks on second turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Fishious Rend",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "If the user attacks before the target, the power of this move is doubled.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 85
+        }
+    },
+    {
+        "name": "Flip Turn",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "After making its attack, the user rushes back to switch places with a party Pokeemon in waiting.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Hydro Cannon",
+        "accuracy": 90,
+        "power_point": 5,
+        "description": "User must recharge next turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Hydro Pump",
+        "accuracy": 80,
+        "power_point": 5,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 110
+        }
+    },
+    {
+        "name": "Life Dew",
+        "accuracy": 0,
+        "power_point": 10,
+        "description": "Recover HP.",
+        "probability": 100,
+        "effect": {
+            "regen": "damage",
+            "amount": 30
+        }
+    },
+    {
+        "name": "Liquidation",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "May lower opponent's Defense.",
+        "probability": 20,
+        "effect": {
+            "type": "alteration",
+            "defense": 0.9
+        }
+    },
+    {
+        "name": "Muddy Water",
+        "accuracy": 85,
+        "power_point": 10,
+        "description": "May lower opponent's Accuracy.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Octazooka",
+        "accuracy": 85,
+        "power_point": 10,
+        "description": "May lower opponent's Accuracy.",
+        "probability": 50,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 65
+        }
+    },
+    {
+        "name": "Origin Pulse",
+        "accuracy": 85,
+        "power_point": 10,
+        "description": "Hits all adjacent opponents.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 110
+        }
+    },
+    {
+        "name": "Razor Shell",
+        "accuracy": 95,
+        "power_point": 10,
+        "description": "May lower opponent's Defense.",
+        "probability": 50,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 75
+        }
+    },
+    {
+        "name": "Scald",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May burn opponent.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Snipe Shot",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Ignores moves and abilities that draw in moves. High critical hit ratio.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Soak",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "Changes the target's type to water.",
+        "probability": 100,
+        "effect": {
+            "type": "change_type",
+            "new_type": "water"
+        }
+    },
+    {
+        "name": "Sparkling Aria",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Heals the burns of its target.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Splishy Splash",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May paralyze opponent.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Steam Eruption",
+        "accuracy": 95,
+        "power_point": 5,
+        "description": "May burn opponent.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 110
+        }
+    },
+    {
+        "name": "Surf",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Hits all adjacent Pokeemon.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Surging Strikes",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "Always results in a critical hit and ignores stat changes.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 25
+        }
+    },
+    {
+        "name": "Water Gun",
+        "accuracy": 100,
+        "power_point": 25,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Water Pledge",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Added descriptions appear if preceded by Fire Pledge or succeeded by Grass Pledge.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Water Pulse",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "May confuse opponent.",
+        "probability": 20,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Water Shuriken",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "Hits 2-5 times in one turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 15
+        }
+    },
+    {
+        "name": "Water Spout",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "The higher the user's HP, the higher the damage caused.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Waterfall",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May cause flinching.",
+        "probability": 20,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Whirlpool",
+        "accuracy": 85,
+        "power_point": 15,
+        "description": "Traps opponent, damaging them for 4-5 turns.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "water",
+            "amount": 35
+        }
+    },
+    {
+        "name": "Withdraw",
+        "accuracy": 0,
+        "power_point": 40,
+        "description": "Raises user's Defense.",
+        "probability": 100,
+        "effect": {
+            "type": "alteration",
+            "defense": 2
+        }
+    },
+    {
+        "name": "Blast Burn",
+        "accuracy": 90,
+        "power_point": 5,
+        "description": "User must recharge next turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Blaze Kick",
+        "accuracy": 90,
+        "power_point": 10,
+        "description": "High critical hit ratio. May burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 85
+        }
+    },
+    {
+        "name": "Blue Flare",
+        "accuracy": 85,
+        "power_point": 5,
+        "description": "May burn opponent.",
+        "probability": 20,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 130
+        }
+    },
+    {
+        "name": "Burn Up",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "To inflict massive damage, the user burns itself out. After using this move, the user will no longer be Fire type.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 130
+        }
+    },
+    {
+        "name": "Burning Jealousy",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "Hits all opponents, and burns any that have had their stats boosted.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 70
+        }
+    },
+    {
+        "name": "Ember",
+        "accuracy": 100,
+        "power_point": 25,
+        "description": "May burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Eruption",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "Stronger when the user's HP is higher.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Fiery Dance",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "May raise user's Special Attack.",
+        "probability": 50,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Fire Blast",
+        "accuracy": 85,
+        "power_point": 5,
+        "description": "May burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 110
+        }
+    },
+    {
+        "name": "Fire Fang",
+        "accuracy": 95,
+        "power_point": 15,
+        "description": "May cause flinching and/or burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 65
+        }
+    },
+    {
+        "name": "Fire Lash",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "The user strikes the target with a burning lash. This also lowers the target's Defense stat.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Fire Pledge",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Added descriptions appear if combined with Grass Pledge or Water Pledge.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Fire Punch",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 75
+        }
+    },
+    {
+        "name": "Fire Spin",
+        "accuracy": 85,
+        "power_point": 15,
+        "description": "Traps opponent, damaging them for 4-5 turns.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 35
+        }
+    },
+    {
+        "name": "Flame Burst",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May also injure nearby Pokeemon.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 70
+        }
+    },
+    {
+        "name": "Flame Charge",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "Raises user's Speed.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Flare Blitz",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "User receives recoil damage. May burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Heat Wave",
+        "accuracy": 90,
+        "power_point": 10,
+        "description": "May burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 95
+        }
+    },
+    {
+        "name": "Incinerate",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Destroys the target's held berry.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Lava Plume",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May burn opponent.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Magma Storm",
+        "accuracy": 75,
+        "power_point": 5,
+        "description": "Traps opponent, damaging them for 4-5 turns.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 100
+        }
+    },
+    {
+        "name": "Mind Blown",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "User receives recoil damage.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Pyro Ball",
+        "accuracy": 90,
+        "power_point": 5,
+        "description": "May burn opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Sacred Fire",
+        "accuracy": 95,
+        "power_point": 5,
+        "description": "May burn opponent.",
+        "probability": 50,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 100
+        }
+    },
+    {
+        "name": "Searing Shot",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "May burn opponent.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 100
+        }
+    },
+    {
+        "name": "Shell Trap",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "Deals more damage to opponent if hit by a Physical move.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Sizzly Slide",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Burns the opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Will-O-Wisp",
+        "accuracy": 85,
+        "power_point": 15,
+        "description": "Burns opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "fire",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Aura Wheel",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Changes type based on Morpeko's Mode.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 110
+        }
+    },
+    {
+        "name": "Bolt Beak",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "If the user attacks before the target, the power of this move is doubled.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 85
+        }
+    },
+    {
+        "name": "Bolt Strike",
+        "accuracy": 85,
+        "power_point": 5,
+        "description": "May paralyze opponent.",
+        "probability": 20,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 130
+        }
+    },
+    {
+        "name": "Buzzy Buzz",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Paralyzes the opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Charge Beam",
+        "accuracy": 90,
+        "power_point": 10,
+        "description": "May raise user's Special Attack.",
+        "probability": 70,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Discharge",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May paralyze opponent.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Overdrive",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Parabolic Charge",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "User recovers half the HP inflicted on opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "electric",
+            "amount": 65
+        }
+    },
+    {
+        "name": "Absorb",
+        "accuracy": 100,
+        "power_point": 25,
+        "description": "User recovers half the HP inflicted on opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 20
+        }
+    },
+    {
+        "name": "Apple Acid",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Lowers target's Special Defense.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Bloom Doom",
+        "accuracy": 0,
+        "power_point": 1,
+        "description": "Grass type Z-Move.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Branch Poke",
+        "accuracy": 100,
+        "power_point": 40,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Bullet Seed",
+        "accuracy": 100,
+        "power_point": 30,
+        "description": "Hits 2-5 times in one turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 25
+        }
+    },
+    {
+        "name": "Cotton Spore",
+        "accuracy": 100,
+        "power_point": 40,
+        "description": "Sharply lowers opponent's Speed.",
+        "probability": 100,
+        "effect": {
+            "type": "alteration",
+            "speed": 0.5
+        }
+    },
+    {
+        "name": "Drum Beating",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Lowers opponent's Speed.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Energy Ball",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "May lower opponent's Special Defense.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Forest's Curse",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "Adds Grass type to opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "change_type",
+            "new_type": "grass"
+        }
+    },
+    {
+        "name": "Frenzy Plant",
+        "accuracy": 90,
+        "power_point": 5,
+        "description": "User must recharge next turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Giga Drain",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "User recovers half the HP inflicted on opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 75
+        }
+    },
+    {
+        "name": "Grass Knot",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Grass Pledge",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Added descriptions appear if preceded by Water Pledge or succeeded by Fire Pledge.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Grassy Glide",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 70
+        }
+    },
+    {
+        "name": "Grav Apple",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Lowers the opponent's Defense stat.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Horn Leech",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "User recovers half the HP inflicted on opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 75
+        }
+    },
+    {
+        "name": "Leaf Blade",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "High critical hit ratio.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Leaf Storm",
+        "accuracy": 90,
+        "power_point": 5,
+        "description": "Sharply lowers user's Special Attack.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 130
+        }
+    },
+    {
+        "name": "Leaf Tornado",
+        "accuracy": 90,
+        "power_point": 10,
+        "description": "May lower opponent's Accuracy.",
+        "probability": 50,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 65
+        }
+    },
+    {
+        "name": "Leafage",
+        "accuracy": 100,
+        "power_point": 40,
+        "description": "Strikes opponent with leaves.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Magical Leaf",
+        "accuracy": 0,
+        "power_point": 20,
+        "description": "Ignores Accuracy and Evasiveness.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Mega Drain",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "User recovers half the HP inflicted on opponent.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Needle Arm",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "May cause flinching.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Petal Blizzard",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Hits all adjacent Pokeemon.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Petal Dance",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "User attacks for 2-3 turns but then becomes confused.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Power Whip",
+        "accuracy": 85,
+        "power_point": 10,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Razor Leaf",
+        "accuracy": 95,
+        "power_point": 25,
+        "description": "High critical hit ratio.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 55
+        }
+    },
+    {
+        "name": "Seed Bomb",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Seed Flare",
+        "accuracy": 85,
+        "power_point": 5,
+        "description": "May lower opponent's Special Defense.",
+        "probability": 40,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Snap Trap",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Traps opponent, damaging them for 4-5 turns.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 35
+        }
+    },
+    {
+        "name": "Solar Beam",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Charges on first turn, attacks on second.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Solar Blade",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Charges on first turn, attacks on second.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 125
+        }
+    },
+    {
+        "name": "Trop Kick",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Lowers opponent's Attack.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 70
+        }
+    },
+    {
+        "name": "Vine Whip",
+        "accuracy": 100,
+        "power_point": 25,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 45
+        }
+    },
+    {
+        "name": "Wood Hammer",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "User receives recoil damage.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "grass",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Confusion",
+        "accuracy": 100,
+        "power_point": 25,
+        "description": "May confuse opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "psychic",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Extrasensory",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "May cause flinching.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "psychic",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Freezing Glare",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "May freeze opponent.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "psychic",
+            "amount": 90
+        }
+    },
+    {
+        "name": "Future Sight",
+        "accuracy": 100,
+        "power_point": 10,
+        "description": "Damage occurs 2 turns later.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "psychic",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Heart Stamp",
+        "accuracy": 100,
+        "power_point": 25,
+        "description": "May cause flinching.",
+        "probability": 30,
+        "effect": {
+            "type": "damage",
+            "damage": "psychic",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Hyperspace Hole",
+        "accuracy": 0,
+        "power_point": 5,
+        "description": "Can strike through Protect/Detect.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "psychic",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Hypnosis",
+        "accuracy": 60,
+        "power_point": 20,
+        "description": "Puts opponent to sleep and reduced stats.",
+        "probability": 100,
+        "effect": {
+            "type": "alteration",
+            "Attack": 0.9,
+            "Defense": 0.9,
+            "Speed": 0.9,
+            "Health": 0.9
+        }
+    },
+    {
+        "name": "Light Screen",
+        "accuracy": 0,
+        "power_point": 30,
+        "description": "Halves damage.",
+        "probability": 100,
+        "effect": {
+            "type": "alteration",
+            "attack": 0.5
+        }
+    },
+    {
+        "name": "Luster Purge",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "May lower opponent's Defense.",
+        "probability": 50,
+        "effect": {
+            "type": "alteration",
+            "defense": 0.5
+        }
+    },
+    {
+        "name": "Magic Powder",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "Changes target's type to Psychic.",
+        "probability": 100,
+        "effect": {
+            "type": "change_type",
+            "new_type": "psychic"
+        }
+    },
+    {
+        "name": "Shattered Psyche",
+        "accuracy": 0,
+        "power_point": 1,
+        "description": "Reduce all stats by 50%.",
+        "probability": 100,
+        "effect": {
+            "type": "alteration",
+            "attack": 0.5,
+            "defense": 0.5,
+            "speed": 0.5
+        }
+    },
+    {
+        "name": "Zen Headbutt",
+        "accuracy": 90,
+        "power_point": 15,
+        "description": "May cause flinching.",
+        "probability": 20,
+        "effect": {
+            "type": "damage",
+            "damage": "psychic",
+            "amount": 80
+        }
+    },
+    {
+        "name": "Accelerock",
+        "accuracy": 100,
+        "power_point": 20,
+        "description": "User attacks first.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 40
+        }
+    },
+    {
+        "name": "Ancient Power",
+        "accuracy": 100,
+        "power_point": 5,
+        "description": "May raise all user's stats at once.",
+        "probability": 10,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Continental Crush",
+        "accuracy": 0,
+        "power_point": 1,
+        "description": "Rock type Z-Move.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 100
+        }
+    },
+    {
+        "name": "Meteor Beam",
+        "accuracy": 90,
+        "power_point": 10,
+        "description": "User gathers space power and boosts its Sp. Atk stat, then attacks the target on the next turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 120
+        }
+    },
+    {
+        "name": "Rock Throw",
+        "accuracy": 90,
+        "power_point": 15,
+        "description": "",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Rock Tomb",
+        "accuracy": 95,
+        "power_point": 15,
+        "description": "Lowers opponent's Speed.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 60
+        }
+    },
+    {
+        "name": "Rock Wrecker",
+        "accuracy": 90,
+        "power_point": 5,
+        "description": "User must recharge next turn.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 150
+        }
+    },
+    {
+        "name": "Rollout",
+        "accuracy": 90,
+        "power_point": 20,
+        "description": "Doubles in power each turn for 5 turns.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 30
+        }
+    },
+    {
+        "name": "Sandstorm",
+        "accuracy": 0,
+        "power_point": 10,
+        "description": "Creates a sandstorm.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Smack Down",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Makes Flying-type Pokeemon vulnerable to Ground moves.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 50
+        }
+    },
+    {
+        "name": "Splintered Stormshards",
+        "accuracy": 0,
+        "power_point": 1,
+        "description": "Lycanroc-exclusive Z-Move.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 190
+        }
+    },
+    {
+        "name": "Stone Edge",
+        "accuracy": 80,
+        "power_point": 5,
+        "description": "High critical hit ratio.",
+        "probability": 100,
+        "effect": {
+            "type": "damage",
+            "damage": "rock",
+            "amount": 100
+        }
+    },
+    {
+        "name": "Tar Shot",
+        "accuracy": 100,
+        "power_point": 15,
+        "description": "Lowers the opponent's Speed and makes them weaker.",
+        "probability": 100,
+        "effect": {
+            "type": "alteration",
+            "attack": 0.5,
+            "speed": 0.5
+        }
+    }
 ]

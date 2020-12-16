@@ -1,8 +1,8 @@
 [
   {
     "name": "Bulbasaur",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 49,
       "defense": 49,
       "speed": 45,
@@ -18,10 +18,6 @@
         "level": 3
       },
       {
-        "name": "Aromatherapy",
-        "level": 1
-      },
-      {
         "name": "Bloom Doom",
         "level": 7
       },
@@ -32,14 +28,6 @@
       {
         "name": "Bullet Seed",
         "level": 9
-      },
-      {
-        "name": "Cotton Guard",
-        "level": 17
-      },
-      {
-        "name": "Cotton Spore",
-        "level": 15
       },
       {
         "name": "Drum Beating",
@@ -65,8 +53,8 @@
   },
   {
     "name": "Ivysaur",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 62,
       "defense": 63,
       "speed": 60,
@@ -86,16 +74,8 @@
         "level": 7
       },
       {
-        "name": "Grass Whistle",
-        "level": 1
-      },
-      {
         "name": "Grassy Glide",
         "level": 3
-      },
-      {
-        "name": "Grassy Terrain",
-        "level": 13
       },
       {
         "name": "Grav Apple",
@@ -104,14 +84,6 @@
       {
         "name": "Horn Leech",
         "level": 5
-      },
-      {
-        "name": "Ingrain",
-        "level": 6
-      },
-      {
-        "name": "Jungle Healing",
-        "level": 4
       },
       {
         "name": "Leaf Blade",
@@ -129,8 +101,8 @@
   },
   {
     "name": "Venusaur",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 82,
       "defense": 83,
       "speed": 80,
@@ -146,10 +118,6 @@
         "level": 2
       },
       {
-        "name": "Sleep Powder",
-        "level": 10
-      },
-      {
         "name": "Snap Trap",
         "level": 13
       },
@@ -160,22 +128,6 @@
       {
         "name": "Solar Blade",
         "level": 19
-      },
-      {
-        "name": "Spiky Shield",
-        "level": 16
-      },
-      {
-        "name": "Spore",
-        "level": 1
-      },
-      {
-        "name": "Strength Sap",
-        "level": 18
-      },
-      {
-        "name": "Stun Spore",
-        "level": 4
       },
       {
         "name": "Synthesis",
@@ -192,17 +144,13 @@
       {
         "name": "Wood Hammer",
         "level": 15
-      },
-      {
-        "name": "Worry Seed",
-        "level": 17
       }
     ]
   },
   {
     "name": "Charmander",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 52,
       "defense": 43,
       "speed": 65,
@@ -214,10 +162,6 @@
         "level": 1
       },
       {
-        "name": "Inferno Overdrive",
-        "level": 13
-      },
-      {
         "name": "Lava Plume",
         "level": 12
       },
@@ -226,16 +170,8 @@
         "level": 19
       },
       {
-        "name": "Max Flare",
-        "level": 17
-      },
-      {
         "name": "Mind Blown",
         "level": 2
-      },
-      {
-        "name": "Heat Crash",
-        "level": 8
       },
       {
         "name": "Heat Wave",
@@ -253,8 +189,8 @@
   },
   {
     "name": "Charmeleon",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 64,
       "defense": 58,
       "speed": 80,
@@ -266,10 +202,6 @@
         "level": 1
       },
       {
-        "name": "Inferno Overdrive",
-        "level": 13
-      },
-      {
         "name": "Lava Plume",
         "level": 12
       },
@@ -278,16 +210,8 @@
         "level": 19
       },
       {
-        "name": "Max Flare",
-        "level": 17
-      },
-      {
         "name": "Mind Blown",
         "level": 2
-      },
-      {
-        "name": "Heat Crash",
-        "level": 8
       },
       {
         "name": "Heat Wave",
@@ -305,8 +229,8 @@
   },
   {
     "name": "Charizard",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 84,
       "defense": 78,
       "speed": 100,
@@ -357,8 +281,8 @@
   },
   {
     "name": "Squirtle",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 48,
       "defense": 65,
       "speed": 43,
@@ -376,10 +300,6 @@
       {
         "name": "Razor Shell",
         "level": 11
-      },
-      {
-        "name": "Oceanic Operetta",
-        "level": 16
       },
       {
         "name": "Hydro Pump",
@@ -401,8 +321,8 @@
   },
   {
     "name": "Wartortle",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 63,
       "defense": 80,
       "speed": 58,
@@ -445,8 +365,8 @@
   },
   {
     "name": "Blastoise",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 83,
       "defense": 100,
       "speed": 78,
@@ -454,20 +374,12 @@
     },
     "actions": [
       {
-        "name": "Oceanic Operetta",
-        "level": 1
-      },
-      {
         "name": "Octazooka",
         "level": 9
       },
       {
         "name": "Origin Pulse",
         "level": 5
-      },
-      {
-        "name": "Rain Dance",
-        "level": 7
       },
       {
         "name": "Razor Shell",
@@ -489,8 +401,8 @@
   },
   {
     "name": "Pikachu",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 55,
       "defense": 40,
       "speed": 90,
@@ -514,10 +426,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -526,27 +434,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Raichu",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 90,
       "defense": 55,
       "speed": 110,
@@ -570,10 +470,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -582,27 +478,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Vulpix",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 41,
       "defense": 40,
       "speed": 65,
@@ -616,14 +504,6 @@
       {
         "name": "Sizzly Slide",
         "level": 19
-      },
-      {
-        "name": "Sunny Day",
-        "level": 6
-      },
-      {
-        "name": "V-create",
-        "level": 9
       },
       {
         "name": "Will-O-Wisp",
@@ -657,8 +537,8 @@
   },
   {
     "name": "Ninetales",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 76,
       "defense": 75,
       "speed": 100,
@@ -709,18 +589,14 @@
   },
   {
     "name": "Oddish",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 50,
       "defense": 55,
       "speed": 30,
       "health": 45
     },
     "actions": [
-      {
-        "name": "Sleep Powder",
-        "level": 10
-      },
       {
         "name": "Snap Trap",
         "level": 13
@@ -734,45 +610,25 @@
         "level": 19
       },
       {
-        "name": "Spiky Shield",
-        "level": 16
-      },
-      {
-        "name": "Spore",
-        "level": 2
-      },
-      {
         "name": "Leafage",
         "level": 3
       },
       {
-        "name": "Leech Seed",
-        "level": 8
-      },
-      {
         "name": "Magical Leaf",
         "level": 1
-      },
-      {
-        "name": "Max Overgrowth",
-        "level": 5
       }
     ]
   },
   {
     "name": "Gloom",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 65,
       "defense": 70,
       "speed": 40,
       "health": 60
     },
     "actions": [
-      {
-        "name": "Jungle Healing",
-        "level": 20
-      },
       {
         "name": "Leaf Blade",
         "level": 8
@@ -790,16 +646,8 @@
         "level": 17
       },
       {
-        "name": "Leech Seed",
-        "level": 1
-      },
-      {
         "name": "Magical Leaf",
         "level": 7
-      },
-      {
-        "name": "Max Overgrowth",
-        "level": 2
       },
       {
         "name": "Mega Drain",
@@ -829,18 +677,14 @@
   },
   {
     "name": "Vileplume",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 80,
       "defense": 85,
       "speed": 50,
       "health": 75
     },
     "actions": [
-      {
-        "name": "Jungle Healing",
-        "level": 20
-      },
       {
         "name": "Leaf Blade",
         "level": 8
@@ -858,16 +702,8 @@
         "level": 17
       },
       {
-        "name": "Leech Seed",
-        "level": 1
-      },
-      {
         "name": "Magical Leaf",
         "level": 7
-      },
-      {
-        "name": "Max Overgrowth",
-        "level": 2
       },
       {
         "name": "Mega Drain",
@@ -897,18 +733,14 @@
   },
   {
     "name": "Paras",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 70,
       "defense": 55,
       "speed": 25,
       "health": 35
     },
     "actions": [
-      {
-        "name": "Jungle Healing",
-        "level": 20
-      },
       {
         "name": "Leaf Blade",
         "level": 8
@@ -926,16 +758,8 @@
         "level": 17
       },
       {
-        "name": "Leech Seed",
-        "level": 1
-      },
-      {
         "name": "Magical Leaf",
         "level": 7
-      },
-      {
-        "name": "Max Overgrowth",
-        "level": 2
       },
       {
         "name": "Mega Drain",
@@ -965,18 +789,14 @@
   },
   {
     "name": "Parasect",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 95,
       "defense": 80,
       "speed": 30,
       "health": 60
     },
     "actions": [
-      {
-        "name": "Sleep Powder",
-        "level": 10
-      },
       {
         "name": "Snap Trap",
         "level": 13
@@ -990,35 +810,19 @@
         "level": 19
       },
       {
-        "name": "Spiky Shield",
-        "level": 16
-      },
-      {
-        "name": "Spore",
-        "level": 2
-      },
-      {
         "name": "Leafage",
         "level": 3
       },
       {
-        "name": "Leech Seed",
-        "level": 8
-      },
-      {
         "name": "Magical Leaf",
         "level": 1
-      },
-      {
-        "name": "Max Overgrowth",
-        "level": 5
       }
     ]
   },
   {
     "name": "Psyduck",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 52,
       "defense": 48,
       "speed": 55,
@@ -1036,10 +840,6 @@
       {
         "name": "Water Shuriken",
         "level": 5
-      },
-      {
-        "name": "Water Sport",
-        "level": 15
       },
       {
         "name": "Water Spout",
@@ -1065,8 +865,8 @@
   },
   {
     "name": "Golduck",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 82,
       "defense": 78,
       "speed": 85,
@@ -1109,8 +909,8 @@
   },
   {
     "name": "Growlithe",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 70,
       "defense": 45,
       "speed": 60,
@@ -1161,8 +961,8 @@
   },
   {
     "name": "Arcanine",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 110,
       "defense": 80,
       "speed": 95,
@@ -1213,8 +1013,8 @@
   },
   {
     "name": "Poliwag",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 50,
       "defense": 40,
       "speed": 90,
@@ -1224,10 +1024,6 @@
       {
         "name": "Aqua Jet",
         "level": 12
-      },
-      {
-        "name": "Aqua Ring",
-        "level": 10
       },
       {
         "name": "Aqua Tail",
@@ -1269,8 +1065,8 @@
   },
   {
     "name": "Poliwhirl",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 65,
       "defense": 65,
       "speed": 90,
@@ -1286,20 +1082,12 @@
         "level": 2
       },
       {
-        "name": "Hydro Vortex",
-        "level": 14
-      },
-      {
         "name": "Life Dew",
         "level": 12
       },
       {
         "name": "Liquidation",
         "level": 1
-      },
-      {
-        "name": "Max Geyser",
-        "level": 19
       },
       {
         "name": "Muddy Water",
@@ -1321,8 +1109,8 @@
   },
   {
     "name": "Poliwrath",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 95,
       "defense": 95,
       "speed": 70,
@@ -1336,10 +1124,6 @@
       {
         "name": "Water Shuriken",
         "level": 15
-      },
-      {
-        "name": "Water Sport",
-        "level": 1
       },
       {
         "name": "Water Spout",
@@ -1381,8 +1165,8 @@
   },
   {
     "name": "Abra",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 20,
       "defense": 15,
       "speed": 90,
@@ -1390,52 +1174,8 @@
     },
     "actions": [
       {
-        "name": "Rest",
-        "level": 20
-      },
-      {
-        "name": "Role Play",
-        "level": 11
-      },
-      {
         "name": "Shattered Psyche",
         "level": 5
-      },
-      {
-        "name": "Skill Swap",
-        "level": 16
-      },
-      {
-        "name": "Speed Swap",
-        "level": 12
-      },
-      {
-        "name": "Stored Power",
-        "level": 18
-      },
-      {
-        "name": "Synchronoise",
-        "level": 8
-      },
-      {
-        "name": "Telekinesis",
-        "level": 19
-      },
-      {
-        "name": "Teleport",
-        "level": 4
-      },
-      {
-        "name": "Trick",
-        "level": 17
-      },
-      {
-        "name": "Trick Room",
-        "level": 11
-      },
-      {
-        "name": "Wonder Room",
-        "level": 9
       },
       {
         "name": "Zen Headbutt",
@@ -1445,8 +1185,8 @@
   },
   {
     "name": "Kadabra",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 35,
       "defense": 30,
       "speed": 105,
@@ -1454,52 +1194,8 @@
     },
     "actions": [
       {
-        "name": "Rest",
-        "level": 20
-      },
-      {
-        "name": "Role Play",
-        "level": 11
-      },
-      {
         "name": "Shattered Psyche",
         "level": 5
-      },
-      {
-        "name": "Skill Swap",
-        "level": 16
-      },
-      {
-        "name": "Speed Swap",
-        "level": 12
-      },
-      {
-        "name": "Stored Power",
-        "level": 18
-      },
-      {
-        "name": "Synchronoise",
-        "level": 8
-      },
-      {
-        "name": "Telekinesis",
-        "level": 19
-      },
-      {
-        "name": "Teleport",
-        "level": 4
-      },
-      {
-        "name": "Trick",
-        "level": 17
-      },
-      {
-        "name": "Trick Room",
-        "level": 11
-      },
-      {
-        "name": "Wonder Room",
-        "level": 9
       },
       {
         "name": "Zen Headbutt",
@@ -1509,8 +1205,8 @@
   },
   {
     "name": "Alakazam",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 50,
       "defense": 45,
       "speed": 120,
@@ -1518,32 +1214,12 @@
     },
     "actions": [
       {
-        "name": "Amnesia",
-        "level": 13
-      },
-      {
-        "name": "Barrier",
-        "level": 18
-      },
-      {
-        "name": "Calm Mind",
-        "level": 17
-      },
-      {
         "name": "Confusion",
         "level": 15
       },
       {
-        "name": "Guard Split",
-        "level": 2
-      },
-      {
         "name": "Heart Stamp",
         "level": 11
-      },
-      {
-        "name": "Heart Swap",
-        "level": 1
       },
       {
         "name": "Extrasensory",
@@ -1561,8 +1237,8 @@
   },
   {
     "name": "Bellsprout",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 75,
       "defense": 35,
       "speed": 40,
@@ -1570,10 +1246,6 @@
     },
     "actions": [
       {
-        "name": "Sleep Powder",
-        "level": 10
-      },
-      {
         "name": "Snap Trap",
         "level": 13
       },
@@ -1586,35 +1258,19 @@
         "level": 19
       },
       {
-        "name": "Spiky Shield",
-        "level": 16
-      },
-      {
-        "name": "Spore",
-        "level": 2
-      },
-      {
         "name": "Leafage",
         "level": 3
       },
       {
-        "name": "Leech Seed",
-        "level": 8
-      },
-      {
         "name": "Magical Leaf",
         "level": 1
-      },
-      {
-        "name": "Max Overgrowth",
-        "level": 5
       }
     ]
   },
   {
     "name": "Weepinbell",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 90,
       "defense": 50,
       "speed": 55,
@@ -1622,10 +1278,6 @@
     },
     "actions": [
       {
-        "name": "Sleep Powder",
-        "level": 10
-      },
-      {
         "name": "Snap Trap",
         "level": 13
       },
@@ -1638,35 +1290,19 @@
         "level": 19
       },
       {
-        "name": "Spiky Shield",
-        "level": 16
-      },
-      {
-        "name": "Spore",
-        "level": 2
-      },
-      {
         "name": "Leafage",
         "level": 3
       },
       {
-        "name": "Leech Seed",
-        "level": 8
-      },
-      {
         "name": "Magical Leaf",
         "level": 1
-      },
-      {
-        "name": "Max Overgrowth",
-        "level": 5
       }
     ]
   },
   {
     "name": "Victreebel",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 105,
       "defense": 65,
       "speed": 70,
@@ -1682,10 +1318,6 @@
         "level": 3
       },
       {
-        "name": "Aromatherapy",
-        "level": 1
-      },
-      {
         "name": "Bloom Doom",
         "level": 7
       },
@@ -1696,10 +1328,6 @@
       {
         "name": "Bullet Seed",
         "level": 9
-      },
-      {
-        "name": "Cotton Guard",
-        "level": 17
       },
       {
         "name": "Cotton Spore",
@@ -1725,18 +1353,14 @@
   },
   {
     "name": "Tentacool",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 40,
       "defense": 35,
       "speed": 70,
       "health": 40
     },
     "actions": [
-      {
-        "name": "Hydro Vortex",
-        "level": 13
-      },
       {
         "name": "Life Dew",
         "level": 14
@@ -1746,16 +1370,8 @@
         "level": 5
       },
       {
-        "name": "Max Geyser",
-        "level": 11
-      },
-      {
         "name": "Muddy Water",
         "level": 15
-      },
-      {
-        "name": "Rain Dance",
-        "level": 2
       },
       {
         "name": "Razor Shell",
@@ -1773,8 +1389,8 @@
   },
   {
     "name": "Tentacruel",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 70,
       "defense": 65,
       "speed": 100,
@@ -1786,10 +1402,6 @@
         "level": 9
       },
       {
-        "name": "Oceanic Operetta",
-        "level": 14
-      },
-      {
         "name": "Octazooka",
         "level": 1
       },
@@ -1798,16 +1410,8 @@
         "level": 20
       },
       {
-        "name": "Rain Dance",
-        "level": 17
-      },
-      {
         "name": "Aqua Jet",
         "level": 9
-      },
-      {
-        "name": "Aqua Ring",
-        "level": 18
       },
       {
         "name": "Aqua Tail",
@@ -1825,8 +1429,8 @@
   },
   {
     "name": "Geodude",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 80,
       "defense": 100,
       "speed": 20,
@@ -1873,8 +1477,8 @@
   },
   {
     "name": "Graveler",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 95,
       "defense": 115,
       "speed": 35,
@@ -1906,10 +1510,6 @@
         "level": 8
       },
       {
-        "name": "Stealth Rock",
-        "level": 17
-      },
-      {
         "name": "Stone Edge",
         "level": 2
       },
@@ -1937,8 +1537,8 @@
   },
   {
     "name": "Golem",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 120,
       "defense": 130,
       "speed": 45,
@@ -1970,10 +1570,6 @@
         "level": 8
       },
       {
-        "name": "Stealth Rock",
-        "level": 17
-      },
-      {
         "name": "Stone Edge",
         "level": 2
       },
@@ -2001,8 +1597,8 @@
   },
   {
     "name": "Ponyta",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 85,
       "defense": 55,
       "speed": 90,
@@ -2014,10 +1610,6 @@
         "level": 1
       },
       {
-        "name": "Inferno Overdrive",
-        "level": 13
-      },
-      {
         "name": "Lava Plume",
         "level": 12
       },
@@ -2026,16 +1618,8 @@
         "level": 19
       },
       {
-        "name": "Max Flare",
-        "level": 17
-      },
-      {
         "name": "Mind Blown",
         "level": 2
-      },
-      {
-        "name": "Heat Crash",
-        "level": 8
       },
       {
         "name": "Heat Wave",
@@ -2053,8 +1637,8 @@
   },
   {
     "name": "Rapidash",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 100,
       "defense": 70,
       "speed": 105,
@@ -2066,10 +1650,6 @@
         "level": 1
       },
       {
-        "name": "Inferno Overdrive",
-        "level": 13
-      },
-      {
         "name": "Lava Plume",
         "level": 12
       },
@@ -2078,16 +1658,8 @@
         "level": 19
       },
       {
-        "name": "Max Flare",
-        "level": 17
-      },
-      {
         "name": "Mind Blown",
         "level": 2
-      },
-      {
-        "name": "Heat Crash",
-        "level": 8
       },
       {
         "name": "Heat Wave",
@@ -2105,8 +1677,8 @@
   },
   {
     "name": "Slowpoke",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 65,
       "defense": 65,
       "speed": 15,
@@ -2114,32 +1686,12 @@
     },
     "actions": [
       {
-        "name": "Amnesia",
-        "level": 13
-      },
-      {
-        "name": "Barrier",
-        "level": 18
-      },
-      {
-        "name": "Calm Mind",
-        "level": 17
-      },
-      {
         "name": "Confusion",
         "level": 15
       },
       {
-        "name": "Guard Split",
-        "level": 2
-      },
-      {
         "name": "Heart Stamp",
         "level": 11
-      },
-      {
-        "name": "Heart Swap",
-        "level": 1
       },
       {
         "name": "Extrasensory",
@@ -2157,8 +1709,8 @@
   },
   {
     "name": "Slowbro",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 75,
       "defense": 110,
       "speed": 30,
@@ -2166,32 +1718,12 @@
     },
     "actions": [
       {
-        "name": "Amnesia",
-        "level": 13
-      },
-      {
-        "name": "Barrier",
-        "level": 18
-      },
-      {
-        "name": "Calm Mind",
-        "level": 17
-      },
-      {
         "name": "Confusion",
         "level": 15
       },
       {
-        "name": "Guard Split",
-        "level": 2
-      },
-      {
         "name": "Heart Stamp",
         "level": 11
-      },
-      {
-        "name": "Heart Swap",
-        "level": 1
       },
       {
         "name": "Extrasensory",
@@ -2209,8 +1741,8 @@
   },
   {
     "name": "Magnemite",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 35,
       "defense": 70,
       "speed": 45,
@@ -2234,10 +1766,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -2246,27 +1774,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Magneton",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 60,
       "defense": 95,
       "speed": 70,
@@ -2290,10 +1810,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -2302,27 +1818,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Seel",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 45,
       "defense": 55,
       "speed": 45,
@@ -2362,10 +1870,6 @@
         "level": 14
       },
       {
-        "name": "Rain Dance",
-        "level": 12
-      },
-      {
         "name": "Bubble Beam",
         "level": 20
       }
@@ -2373,8 +1877,8 @@
   },
   {
     "name": "Dewgong",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 70,
       "defense": 80,
       "speed": 70,
@@ -2420,17 +1924,13 @@
       {
         "name": "Hydro Pump",
         "level": 2
-      },
-      {
-        "name": "Hydro Vortex",
-        "level": 16
       }
     ]
   },
   {
     "name": "Shellder",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 65,
       "defense": 100,
       "speed": 40,
@@ -2458,10 +1958,6 @@
         "level": 11
       },
       {
-        "name": "Water Sport",
-        "level": 16
-      },
-      {
         "name": "Water Spout",
         "level": 18
       },
@@ -2485,8 +1981,8 @@
   },
   {
     "name": "Cloyster",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 95,
       "defense": 180,
       "speed": 70,
@@ -2496,10 +1992,6 @@
       {
         "name": "Aqua Jet",
         "level": 12
-      },
-      {
-        "name": "Aqua Ring",
-        "level": 10
       },
       {
         "name": "Aqua Tail",
@@ -2541,8 +2033,8 @@
   },
   {
     "name": "Onix",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 45,
       "defense": 160,
       "speed": 70,
@@ -2574,10 +2066,6 @@
         "level": 8
       },
       {
-        "name": "Stealth Rock",
-        "level": 17
-      },
-      {
         "name": "Stone Edge",
         "level": 2
       },
@@ -2605,8 +2093,8 @@
   },
   {
     "name": "Drowzee",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 48,
       "defense": 45,
       "speed": 42,
@@ -2622,32 +2110,12 @@
         "level": 5
       },
       {
-        "name": "Imprison",
-        "level": 7
-      },
-      {
-        "name": "Instruct",
-        "level": 18
-      },
-      {
-        "name": "Kinesis",
-        "level": 13
-      },
-      {
         "name": "Light Screen",
         "level": 1
       },
       {
-        "name": "Lunar Dance",
-        "level": 13
-      },
-      {
         "name": "Luster Purge",
         "level": 2
-      },
-      {
-        "name": "Magic Coat",
-        "level": 16
       },
       {
         "name": "Magic Powder",
@@ -2657,8 +2125,8 @@
   },
   {
     "name": "Hypno",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 73,
       "defense": 70,
       "speed": 67,
@@ -2674,32 +2142,12 @@
         "level": 5
       },
       {
-        "name": "Imprison",
-        "level": 7
-      },
-      {
-        "name": "Instruct",
-        "level": 18
-      },
-      {
-        "name": "Kinesis",
-        "level": 13
-      },
-      {
         "name": "Light Screen",
         "level": 1
       },
       {
-        "name": "Lunar Dance",
-        "level": 13
-      },
-      {
         "name": "Luster Purge",
         "level": 2
-      },
-      {
-        "name": "Magic Coat",
-        "level": 16
       },
       {
         "name": "Magic Powder",
@@ -2709,8 +2157,8 @@
   },
   {
     "name": "Krabby",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 105,
       "defense": 90,
       "speed": 50,
@@ -2753,8 +2201,8 @@
   },
   {
     "name": "Kingler",
-    "type": "Water",
     "stats": {
+      "type": "Water",
       "attack": 130,
       "defense": 115,
       "speed": 75,
@@ -2766,10 +2214,6 @@
         "level": 9
       },
       {
-        "name": "Oceanic Operetta",
-        "level": 14
-      },
-      {
         "name": "Octazooka",
         "level": 1
       },
@@ -2778,16 +2222,8 @@
         "level": 20
       },
       {
-        "name": "Rain Dance",
-        "level": 17
-      },
-      {
         "name": "Aqua Jet",
         "level": 9
-      },
-      {
-        "name": "Aqua Ring",
-        "level": 18
       },
       {
         "name": "Aqua Tail",
@@ -2805,8 +2241,8 @@
   },
   {
     "name": "Voltorb",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 30,
       "defense": 50,
       "speed": 100,
@@ -2830,10 +2266,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -2842,27 +2274,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Electrode",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 50,
       "defense": 70,
       "speed": 150,
@@ -2886,10 +2310,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -2898,27 +2318,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Exeggcute",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 40,
       "defense": 80,
       "speed": 40,
@@ -2934,10 +2346,6 @@
         "level": 3
       },
       {
-        "name": "Aromatherapy",
-        "level": 1
-      },
-      {
         "name": "Bloom Doom",
         "level": 7
       },
@@ -2948,10 +2356,6 @@
       {
         "name": "Bullet Seed",
         "level": 9
-      },
-      {
-        "name": "Cotton Guard",
-        "level": 17
       },
       {
         "name": "Cotton Spore",
@@ -2977,8 +2381,8 @@
   },
   {
     "name": "Exeggutor",
-    "type": "Grass",
     "stats": {
+      "type": "Grass",
       "attack": 95,
       "defense": 85,
       "speed": 55,
@@ -2994,10 +2398,6 @@
         "level": 3
       },
       {
-        "name": "Aromatherapy",
-        "level": 1
-      },
-      {
         "name": "Bloom Doom",
         "level": 7
       },
@@ -3008,10 +2408,6 @@
       {
         "name": "Bullet Seed",
         "level": 9
-      },
-      {
-        "name": "Cotton Guard",
-        "level": 17
       },
       {
         "name": "Cotton Spore",
@@ -3037,8 +2433,8 @@
   },
   {
     "name": "Marowak",
-    "type": "Fire",
     "stats": {
+      "type": "Fire",
       "attack": 80,
       "defense": 110,
       "speed": 45,
@@ -3052,14 +2448,6 @@
       {
         "name": "Sizzly Slide",
         "level": 19
-      },
-      {
-        "name": "Sunny Day",
-        "level": 6
-      },
-      {
-        "name": "V-create",
-        "level": 9
       },
       {
         "name": "Will-O-Wisp",
@@ -3093,8 +2481,8 @@
   },
   {
     "name": "Mewtwo",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 110,
       "defense": 90,
       "speed": 130,
@@ -3110,32 +2498,12 @@
         "level": 5
       },
       {
-        "name": "Imprison",
-        "level": 7
-      },
-      {
-        "name": "Instruct",
-        "level": 18
-      },
-      {
-        "name": "Kinesis",
-        "level": 13
-      },
-      {
         "name": "Light Screen",
         "level": 2
       },
       {
-        "name": "Lunar Dance",
-        "level": 13
-      },
-      {
         "name": "Luster Purge",
         "level": 1
-      },
-      {
-        "name": "Magic Coat",
-        "level": 16
       },
       {
         "name": "Magic Powder",
@@ -3145,8 +2513,8 @@
   },
   {
     "name": "Rhyhorn",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 85,
       "defense": 95,
       "speed": 25,
@@ -3193,8 +2561,8 @@
   },
   {
     "name": "Rhydon",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 130,
       "defense": 120,
       "speed": 40,
@@ -3241,8 +2609,8 @@
   },
   {
     "name": "Aerodactyl",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 105,
       "defense": 65,
       "speed": 130,
@@ -3289,8 +2657,8 @@
   },
   {
     "name": "Mew",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 100,
       "defense": 100,
       "speed": 100,
@@ -3306,32 +2674,12 @@
         "level": 5
       },
       {
-        "name": "Imprison",
-        "level": 7
-      },
-      {
-        "name": "Instruct",
-        "level": 18
-      },
-      {
-        "name": "Kinesis",
-        "level": 13
-      },
-      {
         "name": "Light Screen",
         "level": 2
       },
       {
-        "name": "Lunar Dance",
-        "level": 13
-      },
-      {
         "name": "Luster Purge",
         "level": 1
-      },
-      {
-        "name": "Magic Coat",
-        "level": 16
       },
       {
         "name": "Magic Powder",
@@ -3341,8 +2689,8 @@
   },
   {
     "name": "Aron",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 70,
       "defense": 100,
       "speed": 30,
@@ -3374,10 +2722,6 @@
         "level": 8
       },
       {
-        "name": "Stealth Rock",
-        "level": 17
-      },
-      {
         "name": "Stone Edge",
         "level": 2
       },
@@ -3399,14 +2743,14 @@
       },
       {
         "name": "Continental Crush",
-        "level": 5
+        "level": 50
       }
     ]
   },
   {
     "name": "Lairon",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 90,
       "defense": 140,
       "speed": 40,
@@ -3438,10 +2782,6 @@
         "level": 8
       },
       {
-        "name": "Stealth Rock",
-        "level": 17
-      },
-      {
         "name": "Stone Edge",
         "level": 2
       },
@@ -3469,8 +2809,8 @@
   },
   {
     "name": "Aggron",
-    "type": "Rock",
     "stats": {
+      "type": "Rock",
       "attack": 110,
       "defense": 180,
       "speed": 50,
@@ -3502,10 +2842,6 @@
         "level": 8
       },
       {
-        "name": "Stealth Rock",
-        "level": 17
-      },
-      {
         "name": "Stone Edge",
         "level": 2
       },
@@ -3533,8 +2869,8 @@
   },
   {
     "name": "Minun",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 40,
       "defense": 50,
       "speed": 95,
@@ -3558,10 +2894,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -3570,27 +2902,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Plusle",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 50,
       "defense": 40,
       "speed": 95,
@@ -3614,10 +2938,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -3626,27 +2946,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Manectric",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 75,
       "defense": 60,
       "speed": 105,
@@ -3670,10 +2982,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -3682,27 +2990,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Electrike",
-    "type": "Electric",
     "stats": {
+      "type": "Electric",
       "attack": 45,
       "defense": 40,
       "speed": 65,
@@ -3726,10 +3026,6 @@
         "level": 17
       },
       {
-        "name": "Charge",
-        "level": 16
-      },
-      {
         "name": "Charge Beam",
         "level": 1
       },
@@ -3738,27 +3034,19 @@
         "level": 5
       },
       {
-        "name": "Fusion Bolt",
-        "level": 2
-      },
-      {
         "name": "Overdrive",
         "level": 4
       },
       {
         "name": "Parabolic Charge",
         "level": 7
-      },
-      {
-        "name": "Pika Papow",
-        "level": 14
       }
     ]
   },
   {
     "name": "Medicham",
-    "type": "Psychic",
     "stats": {
+      "type": "Psychic",
       "attack": 60,
       "defense": 75,
       "speed": 80,
@@ -3774,32 +3062,12 @@
         "level": 5
       },
       {
-        "name": "Imprison",
-        "level": 7
-      },
-      {
-        "name": "Instruct",
-        "level": 18
-      },
-      {
-        "name": "Kinesis",
-        "level": 13
-      },
-      {
         "name": "Light Screen",
         "level": 2
       },
       {
-        "name": "Lunar Dance",
-        "level": 13
-      },
-      {
         "name": "Luster Purge",
         "level": 1
-      },
-      {
-        "name": "Magic Coat",
-        "level": 16
       },
       {
         "name": "Magic Powder",
