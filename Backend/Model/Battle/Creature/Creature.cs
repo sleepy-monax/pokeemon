@@ -6,7 +6,7 @@ using Model.Effets;
 
 namespace Model.Battle
 {
-    class Creature
+    public class Creature
     {
         public string Name { get; set; }
         public Stereotype Stereotype { get; set; }

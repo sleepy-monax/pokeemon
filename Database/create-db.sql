@@ -6,7 +6,7 @@ USE Pokeemon;
 
 CREATE TABLE Users (
     id              int identity primary key not null,
-    administrator   bit not null,
+    administrator   bit not null default 0,
     pseudo          varchar(20) not null,
     email           varchar(320) not null,
     password        varchar(64) not null,
@@ -18,6 +18,7 @@ CREATE TABLE Monsters (
     name            varchar(64),
     stereotype      varchar(64) not null,
     xp              int not null,
+    pickable       bit not null default 0
 );
 
 create table UserMonsters(

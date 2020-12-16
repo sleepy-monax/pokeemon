@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Model.Battle
 {
-    class Stereotype
+    public class Stereotype
     {
         public string Name { get; set; } = "";
         public Types Type { get; set; }

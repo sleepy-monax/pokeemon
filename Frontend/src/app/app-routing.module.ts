@@ -6,6 +6,7 @@ import { BattleComponent } from './battle/battle/battle.component';
 import { LandingComponent } from './navigation/landing/landing.component';
 import { ErrorComponent } from './scaffolding/error/error.component';
 import { ShopComponent } from './shopping/shop/shop.component';
+import {PokeeteamComponent} from './pokeeteam/pokeeteam/pokeeteam.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'battle',
     component: BattleComponent
+  },
+  {
+    path: 'team',
+    component: PokeeteamComponent
   },
   {
     path: '**',

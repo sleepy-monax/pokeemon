@@ -2,7 +2,7 @@ using Model.Battle;
 
 namespace Model.Effets
 {
-    interface IEffect
+    public interface IEffect
     {
         Stats Apply(Stats stats);
     }

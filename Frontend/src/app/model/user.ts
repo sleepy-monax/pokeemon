@@ -1,9 +1,9 @@
 export interface User {
-  id?:number;
+  id?: number;
   administrator?: boolean;
-  pseudo:string;
+  pseudo: string;
   email: string;
-  password:string;
+  password: string;
   money?: number;
 }
 

@@ -3,7 +3,7 @@ using Model.Effets;
 
 namespace Model.Battle
 {
-    class Action
+    public class Action
     {
         public string Name { get; set; } = "";
         public Types Type { get; set; }

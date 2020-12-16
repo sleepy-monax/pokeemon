@@ -1,6 +1,6 @@
 namespace Model.Battle
 {
-    struct Stats
+    public struct Stats
     {
         public float Attack { get; set; }
         public float Defense { get; set; }

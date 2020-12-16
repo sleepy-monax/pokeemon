@@ -16,6 +16,7 @@ import { NavigationModule } from './navigation/navigation.module';
 import { ScaffoldingModule } from './scaffolding/scafolding.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { ToolkitModule } from './toolkit/toolkit.module';
+import { PokeeteamModule} from './pokeeteam/pokeeteam.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ToolkitModule } from './toolkit/toolkit.module';
     ReactiveFormsModule,
     ScaffoldingModule,
     ShoppingModule,
-    ToolkitModule
+    ToolkitModule,
+    PokeeteamModule
   ],
   providers: [],
   bootstrap: [RootComponent]

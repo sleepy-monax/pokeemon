@@ -2,7 +2,10 @@
   <img src="favicon.ico"  class="item position image">
   <div class="item position">
     <div>
-      Name
+      {{creature.name == null? creature.stereotype : creature.name}}
+    </div>
+    <div>
+      {{creature.level}}
     </div>
     <div>
       Statistique
