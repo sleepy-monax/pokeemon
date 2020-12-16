@@ -14,11 +14,11 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import xyz.pokeemon.R;
-import xyz.pokeemon.model.Pet;
+import xyz.pokeemon.model.pet.Item;
 
-public class PetAdapter extends ArrayAdapter<Pet> {
+public class PetAdapter extends ArrayAdapter<Item> {
 
-    public PetAdapter(@NonNull Context context, int resource, @NonNull List<Pet> objects) {
+    public PetAdapter(@NonNull Context context, int resource, @NonNull List<Item> objects) {
         super(context, resource, objects);
     }
 
@@ -32,13 +32,13 @@ public class PetAdapter extends ArrayAdapter<Pet> {
             convertView = inflater.inflate(R.layout.list_item_pets, parent, false);
         }
 
-        final Pet pet = getItem(position);
+        final Item pet = getItem(position);
         populateViewWithPet(convertView, pet);
 
         return convertView;
     }
 
-    private void populateViewWithPet(View convertView, Pet pet) {
+    private void populateViewWithPet(View convertView, Item pet) {
         TextView tvHealth = convertView.findViewById(R.id.tv_health),
                 tvAttack = convertView.findViewById(R.id.tv_attack),
                 tvDefend = convertView.findViewById(R.id.tv_defend),

@@ -1,14 +1,16 @@
-package xyz.pokeemon.model;
+package xyz.pokeemon.model.pet;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Stat implements Parcelable {
+    private String type;
     private int attack, health, defense, speed;
 
     public Stat(){}
 
-    public Stat(int attack, int health, int defense, int speed) {
+    public Stat(String type, int attack, int health, int defense, int speed) {
+        this.type=type;
         this.attack = attack;
         this.defense = defense;
         this.speed = speed;
@@ -16,6 +18,7 @@ public class Stat implements Parcelable {
     }
 
     protected Stat(Parcel in) {
+        type = in.readString();
         attack = in.readInt();
         defense = in.readInt();
         speed = in.readInt();
@@ -33,6 +36,14 @@ public class Stat implements Parcelable {
             return new Stat[size];
         }
     };
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public int getAttack() {
         return attack;
@@ -73,6 +84,7 @@ public class Stat implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(type);
         dest.writeInt(attack);
         dest.writeInt(defense);
         dest.writeInt(speed);
@@ -82,6 +94,7 @@ public class Stat implements Parcelable {
     @Override
     public String toString() {
         return "Stat{" +
+                "type=" + type +
                 "attack=" + attack +
                 ", health=" + health +
                 ", defense=" + defense +

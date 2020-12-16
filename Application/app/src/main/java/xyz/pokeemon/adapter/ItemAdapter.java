@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import xyz.pokeemon.R;
-import xyz.pokeemon.model.Item;
+import xyz.pokeemon.model.shop.Item;
 
 public class ItemAdapter extends ArrayAdapter<Item> {
 
@@ -42,7 +42,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                 tvPrice = convertView.findViewById(R.id.tv_item_price);
 
         tvName.setText(item.getName());
-        tvDescription.setText(item.getDescription());
+        tvDescription.setText(item.getEffect().getType());
         tvPrice.setText(item.getPrice()+"");
     }
 }

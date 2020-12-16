@@ -2,19 +2,10 @@ package xyz.pokeemon.radar.location;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.location.Location;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.Toast;
-
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -24,8 +15,7 @@ import java.util.List;
 import java.util.Random;
 
 import xyz.pokeemon.R;
-import xyz.pokeemon.model.Pet;
-import xyz.pokeemon.radar.RadarFragment;
+import xyz.pokeemon.model.pet.Item;
 import xyz.pokeemon.radar.animations.AnimationEffects;
 import xyz.pokeemon.serialization.Utils;
 
@@ -39,7 +29,7 @@ public class PetGenerationManager {
     private Button b;
     private PositionManager positionManager;
     private AnimationEffects animationEffect;
-    private List<Pet> pets;
+    private List<Item> pets;
 
 
     /**
@@ -123,11 +113,11 @@ public class PetGenerationManager {
      * @param context get the context of the current view.
      * @return return the pet list read in the json file.
      */
-    private List<Pet> initialiseListPet(Context context) {
+    private List<Item> initialiseListPet(Context context) {
         String jsonFileString = Utils.getJsonFromAssets(context, "creatures.json");
 
         Gson gson = new Gson();
-        Type listPetType = new TypeToken<List<Pet>>() {}.getType();
+        Type listPetType = new TypeToken<List<Item>>() {}.getType();
 
         pets = gson.fromJson(jsonFileString, listPetType);
         return pets;

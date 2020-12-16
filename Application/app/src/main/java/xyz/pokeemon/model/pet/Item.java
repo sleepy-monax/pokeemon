@@ -1,25 +1,29 @@
-package xyz.pokeemon.model;
+package xyz.pokeemon.model.pet;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Item implements Parcelable, Serializable {
 
-    private String name, description;
-    private int price;
+    private String name;
+    private Stat stats;
+    private List<Action> actions;
 
-    public Item(String name, String description, int price) {
+    public Item(String name, Stat stat) {
         this.name = name;
-        this.description = description;
-        this.price = price;
+        this.stats = stat;
+        actions = new ArrayList<>();
     }
 
     protected Item(Parcel in) {
         name = in.readString();
-        description = in.readString();
-        price = in.readInt();
+        stats = in.readParcelable(Stat.class.getClassLoader());
+        actions = new ArrayList<>();
+        in.readList(actions, Action.class.getClassLoader());
     }
 
     public static final Creator<Item> CREATOR = new Creator<Item>() {
@@ -34,6 +38,7 @@ public class Item implements Parcelable, Serializable {
         }
     };
 
+
     public String getName() {
         return name;
     }
@@ -42,27 +47,29 @@ public class Item implements Parcelable, Serializable {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public Stat getStats() {
+        return stats;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setStats(Stat stats) {
+        this.stats = stats;
     }
 
-    public int getPrice() {
-        return price;
+    public List<Action> getActions() {
+        return actions;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setActions(List<Action> actions) {
+        this.actions = actions;
     }
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price;
+        return "Pet{" +
+                "name='" + name + '\'' +
+                ", stat=" + stats +
+                ", actions=" + actions +
+                '}';
     }
 
     @Override
@@ -73,7 +80,7 @@ public class Item implements Parcelable, Serializable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
-        parcel.writeString(description);
-        parcel.writeInt(price);
+        parcel.writeParcelable(stats, i);
+        parcel.writeList(actions);
     }
 }

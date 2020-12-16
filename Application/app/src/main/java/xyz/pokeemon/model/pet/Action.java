@@ -1,4 +1,4 @@
-package xyz.pokeemon.model;
+package xyz.pokeemon.model.pet;
 
 import android.os.Parcel;
 import android.os.Parcelable;

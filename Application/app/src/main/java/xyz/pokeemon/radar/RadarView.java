@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.RectF;
 import android.graphics.SweepGradient;
 import android.location.Location;
 import android.os.Build;
@@ -105,7 +106,7 @@ public class RadarView extends View {
         canvas.rotate(rotation, 0.5f, 0.5f);
         canvas.scale(size, size);
 
-        canvas.drawArc(-1, -1, 1, 1, 0, 360 * SWEEP_ANGLE, true, sweepPaint);
+        canvas.drawArc(new RectF(-1, -1, 1, 1), 0, 360 * SWEEP_ANGLE, true, sweepPaint);
 
         canvas.restore();
     }
