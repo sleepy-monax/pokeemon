@@ -2,28 +2,147 @@
         {
             "name": "Potion",
             "description": "Heal 20 HP",
-	          "price": 20
+	          "price": 20,
+            "effect": {
+              "type": "regen",
+              "amount": 20
+            }
         },
         {
 
             "name": "Great Potion",
             "description": "Heal 50 HP",
-	          "price": 50
-
+            "price": 50,
+            "effect": {
+              "type": "regen",
+              "amount": 50
+            }
         },
         {
             "name": "Nice Potion",
             "description": "Heal 80 HP",
-	          "price": 80
+            "price": 80,
+            "effect": {
+              "type": "regen",
+              "amount": 80
+            }
         },
         {
           "name": "Big Potion",
           "description": "Heal 120 HP",
-          "price": 120
+          "price": 120,
+          "effect": {
+            "type": "regen",
+            "amount": 120
+          }
         },
         {
           "name": "THE Potion",
           "description": "Heal 200 HP",
-          "price": 200
+          "price": 200,
+          "effect": {
+            "type": "regen",
+            "amount": 200
+          }
+        },
+        {
+          "name": "Potion of minor damage",
+          "description": "Deal 15 damage",
+          "price": 40,
+          "effect": {
+            "type": "damage",
+            "amount": 15
+          }
+        },
+        {
+          "name": "Potion of great damage",
+          "description": "Deal 30 damage",
+          "price": 60,
+          "effect": {
+            "type": "damage",
+            "amount": 30
+          }
+        },
+        {
+          "name": "Potion of INSANE damage",
+          "description": "Deal 100 damage",
+          "price": 500,
+          "effect": {
+            "type": "damage",
+            "amount": 100
+          }
+        },
+        {
+          "name": "Potion of death",
+          "description": "Kill the ennemy monster",
+          "price": 10000,
+          "effect": {
+            "type": "damage",
+            "amount": 10000
+          }
+        },
+        {
+          "name": "Potion of weakness",
+          "description": "Divide by 2 the attack of the monster",
+          "price": 100,
+          "effect": {
+            "type": "alteration",
+            "attack": 0.5
+          }
+        },
+        {
+          "name": "Potion of defense reduction",
+          "description": "Divide by 2 the defense of the monster",
+          "price": 80,
+          "effect": {
+            "type": "alteration",
+            "defense": 0.5
+          }
+        },
+        {
+          "name": "Potion of slowness",
+          "description": "Divide by 2 the speed of the monster",
+          "price": 75,
+          "effect": {
+            "type": "alteration",
+            "speed": 0.5
+          }
+        },
+        {
+          "name": "Potion of strength",
+          "description": "Boost the attack of the monster",
+          "price": 100,
+          "effect": {
+            "type": "alteration",
+            "attack": 2
+          }
+        },
+        {
+          "name": "Potion of toughness",
+          "description": "Boost the defense of the monster",
+          "price": 100,
+          "effect": {
+            "type": "alteration",
+            "defense": 2
+          }
+        },
+        {
+          "name": "Potion of swiftness",
+          "description": "Boost  the speed of the monster",
+          "price": 100,
+          "effect": {
+            "type": "alteration",
+            "speed": 0.5
+          }
+        },
+        {
+          "name": "Potion of rage",
+          "description": "The pokemon become furious",
+          "price": 150,
+          "effect": {
+            "type": "alteration",
+            "attack": 2.5,
+            "defense": 0.6
+          }
         }
 ]

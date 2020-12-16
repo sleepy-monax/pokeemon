@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-// @ts-ignore
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import itemsJson from '../../../../../Assets/items.json';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Item } from 'src/model/item';
 import { UserItemService } from 'src/app/services/user-item-service';
 import { UserApiService } from 'src/app/services/user-api.service';
@@ -13,7 +12,7 @@ import { UserItem } from 'src/app/model/user-item';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.less']
 })
-export class ShopComponent implements OnInit {
+export class ShopComponent implements OnInit, OnDestroy {
 
   items: Item[] = itemsJson;
   userItem: UserItem = null;
@@ -65,11 +64,6 @@ export class ShopComponent implements OnInit {
         nameItem: event.name,
         quantity: event.quantity
       };
-      /*this.userItemApi.getById(this.id)
-        .subscribe(userItem => {
-          const userItemTest = userItem;
-          console.log("User test : " + userItemTest);
-        });*/
       this._subscription.push(
         this.userItemApi.create(this.userItem)
           .subscribe()
