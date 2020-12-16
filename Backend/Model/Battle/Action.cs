@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Model.Effets;
 
 namespace Model.Battle
 {
@@ -12,6 +13,6 @@ namespace Model.Battle
         public string Description { get; set; } = "";
         public int Probability { get; set; }
 
-        public Statut? Statut { get; set; }
+        public IEffect? Effect { get; set; }
     }
 }

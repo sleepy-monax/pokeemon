@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using Model.Effets;
 
 namespace Model.Battle
 {
@@ -32,8 +34,17 @@ namespace Model.Battle
             }
         }
 
-        public Stats Stats => Status.Aggregate(Stereotype.Stats, (current, status) => status.Apply(current));
+        public Stats Stats => Effects.Aggregate(Stereotype.Stats, (current, effect) => effect.Apply(current));
 
-        public List<Statut> Status { get; set; } = new List<Statut>();
+        public bool Alive => Stats.Health > 0;
+
+        public ObservableCollection<IEffect> Effects { get; set; } = new ObservableCollection<IEffect>();
+
+        public List<UnLockableAction> AllActions { get; set; } = new List<UnLockableAction>();
+
+        public List<Action> AvaillableActions => AllActions
+            .FindAll(unlockable => unlockable.Level <= Level)
+            .Select(unlockable => unlockable.Action)
+            .ToList();
     }
 }
