@@ -17,7 +17,7 @@ CREATE TABLE Monsters (
     id              int identity primary key not null,
     name            varchar(64),
     stereotype      varchar(64) not null,
-    level           int not null,
+    xp              int not null,
 );
 
 create table UserMonsters(
