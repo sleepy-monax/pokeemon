@@ -2,6 +2,8 @@ namespace Model.Battle
 {
     public struct Stats
     {
+        public Types Type { get; set; }
+
         public float Attack { get; set; }
         public float Defense { get; set; }
         public float Speed { get; set; }
