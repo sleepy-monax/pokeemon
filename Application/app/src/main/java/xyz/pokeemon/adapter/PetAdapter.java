@@ -59,8 +59,12 @@ public class PetAdapter extends ArrayAdapter<Pet> {
         tvDefend.setText(pet.getStats().getDefense()+"");
         tvSpeed.setText(pet.getStats().getSpeed()+"");
 
-        AssetManager assetManager = convertView.getContext().getAssets();
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.iv_item_pokeemon);
+        putImagePet(convertView, pet);
+    }
+
+    private void putImagePet(View v, Pet pet){
+        AssetManager assetManager = v.getContext().getAssets();
+        ImageView imageView = (ImageView) v.findViewById(R.id.iv_item_pokeemon);
         try (InputStream inputStream = assetManager.open("creatures/"+pet.getName()+".png")) {
             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
             imageView.setImageBitmap(bitmap);

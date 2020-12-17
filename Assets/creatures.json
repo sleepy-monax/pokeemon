@@ -2480,38 +2480,6 @@
     ]
   },
   {
-    "name": "Mewtwo",
-    "stats": {
-      "type": "Psychic",
-      "attack": 110,
-      "defense": 90,
-      "speed": 130,
-      "health": 106
-    },
-    "actions": [
-      {
-        "name": "Hyperspace Hole",
-        "level": 4
-      },
-      {
-        "name": "Hypnosis",
-        "level": 5
-      },
-      {
-        "name": "Light Screen",
-        "level": 2
-      },
-      {
-        "name": "Luster Purge",
-        "level": 1
-      },
-      {
-        "name": "Magic Powder",
-        "level": 10
-      }
-    ]
-  },
-  {
     "name": "Rhyhorn",
     "stats": {
       "type": "Rock",
@@ -2652,38 +2620,6 @@
       {
         "name": "Meteor Beam",
         "level": 6
-      }
-    ]
-  },
-  {
-    "name": "Mew",
-    "stats": {
-      "type": "Psychic",
-      "attack": 100,
-      "defense": 100,
-      "speed": 100,
-      "health": 100
-    },
-    "actions": [
-      {
-        "name": "Hyperspace Hole",
-        "level": 4
-      },
-      {
-        "name": "Hypnosis",
-        "level": 5
-      },
-      {
-        "name": "Light Screen",
-        "level": 2
-      },
-      {
-        "name": "Luster Purge",
-        "level": 1
-      },
-      {
-        "name": "Magic Powder",
-        "level": 10
       }
     ]
   },
@@ -2956,50 +2892,6 @@
     ]
   },
   {
-    "name": "Manectric",
-    "stats": {
-      "type": "Electric",
-      "attack": 75,
-      "defense": 60,
-      "speed": 105,
-      "health": 70
-    },
-    "actions": [
-      {
-        "name": "Aura Wheel",
-        "level": 13
-      },
-      {
-        "name": "Bolt Beak",
-        "level": 9
-      },
-      {
-        "name": "Bolt Strike",
-        "level": 8
-      },
-      {
-        "name": "Buzzy Buzz",
-        "level": 17
-      },
-      {
-        "name": "Charge Beam",
-        "level": 1
-      },
-      {
-        "name": "Discharge",
-        "level": 5
-      },
-      {
-        "name": "Overdrive",
-        "level": 4
-      },
-      {
-        "name": "Parabolic Charge",
-        "level": 7
-      }
-    ]
-  },
-  {
     "name": "Electrike",
     "stats": {
       "type": "Electric",
@@ -3044,6 +2936,50 @@
     ]
   },
   {
+    "name": "Manectric",
+    "stats": {
+      "type": "Electric",
+      "attack": 75,
+      "defense": 60,
+      "speed": 105,
+      "health": 70
+    },
+    "actions": [
+      {
+        "name": "Aura Wheel",
+        "level": 13
+      },
+      {
+        "name": "Bolt Beak",
+        "level": 9
+      },
+      {
+        "name": "Bolt Strike",
+        "level": 8
+      },
+      {
+        "name": "Buzzy Buzz",
+        "level": 17
+      },
+      {
+        "name": "Charge Beam",
+        "level": 1
+      },
+      {
+        "name": "Discharge",
+        "level": 5
+      },
+      {
+        "name": "Overdrive",
+        "level": 4
+      },
+      {
+        "name": "Parabolic Charge",
+        "level": 7
+      }
+    ]
+  },
+  {
     "name": "Medicham",
     "stats": {
       "type": "Psychic",
@@ -3051,6 +2987,70 @@
       "defense": 75,
       "speed": 80,
       "health": 60
+    },
+    "actions": [
+      {
+        "name": "Hyperspace Hole",
+        "level": 4
+      },
+      {
+        "name": "Hypnosis",
+        "level": 5
+      },
+      {
+        "name": "Light Screen",
+        "level": 2
+      },
+      {
+        "name": "Luster Purge",
+        "level": 1
+      },
+      {
+        "name": "Magic Powder",
+        "level": 10
+      }
+    ]
+  },
+  {
+    "name": "Mew",
+    "stats": {
+      "type": "Psychic",
+      "attack": 100,
+      "defense": 100,
+      "speed": 100,
+      "health": 100
+    },
+    "actions": [
+      {
+        "name": "Hyperspace Hole",
+        "level": 4
+      },
+      {
+        "name": "Hypnosis",
+        "level": 5
+      },
+      {
+        "name": "Light Screen",
+        "level": 2
+      },
+      {
+        "name": "Luster Purge",
+        "level": 1
+      },
+      {
+        "name": "Magic Powder",
+        "level": 10
+      }
+    ]
+  },
+  {
+    "name": "Mewtwo",
+    "stats": {
+      "type": "Psychic",
+      "attack": 110,
+      "defense": 90,
+      "speed": 130,
+      "health": 106
     },
     "actions": [
       {
