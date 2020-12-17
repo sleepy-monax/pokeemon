@@ -44,7 +44,7 @@
         android:layout_marginStart="97dp"
         android:layout_marginTop="43dp"
         android:layout_marginEnd="95dp"
-        android:hint="Pasxwword"
+        android:hint="Password"
         android:inputType="textPassword"
         android:textColorHint="@color/colorText"/>
 
