@@ -9,17 +9,16 @@ namespace Infrastructure.SqlServer.UserItems
 {
     public class SqlServerUserItemsRepository : IUserItemsRepository
     {
-        
-        private  IFactory<IUserItems> _factory = new UserItemsFactory();
+        private IFactory<IUserItems> _factory = new UserItemsFactory();
         private static readonly string TableName = "UserItems";
         public static readonly string ColId = "id";
         public static readonly string ColIdUser = "idUser";
         public static readonly string ColNameItem = "nameItem";
         public static readonly string ColQuantity = "quantity";
-      
+
         private static readonly string ReqQuery = $"select * from {TableName}";
         private static readonly string ReqGet = ReqQuery + $" where {ColId} = @{ColId}";
-        
+
         private static readonly string ReqCreate = $@"
             insert into {TableName} ({ColIdUser}, {ColNameItem}, {ColQuantity})
             output inserted.{ColId}
@@ -27,7 +26,7 @@ namespace Infrastructure.SqlServer.UserItems
         ";
 
         private static readonly string ReqDelete = $"delete from {TableName} where {ColId} = @{ColId}";
-        
+
         private static readonly string ReqUpdate = $@"
             update {TableName} set
             {ColIdUser} = @{ColIdUser},
@@ -41,7 +40,7 @@ namespace Infrastructure.SqlServer.UserItems
             PropertyDescriptorCollection props =
                 TypeDescriptor.GetProperties(typeof(T));
             DataTable table = new DataTable();
-            for(int i = 0 ; i < props.Count ; i++)
+            for (int i = 0; i < props.Count; i++)
             {
                 PropertyDescriptor prop = props[i];
                 table.Columns.Add(prop.Name, prop.PropertyType);
@@ -55,9 +54,9 @@ namespace Infrastructure.SqlServer.UserItems
                 }
                 table.Rows.Add(values);
             }
-            return table;        
+            return table;
         }
-        
+
         public IEnumerable<IUserItems> Query()
         {
             IList<IUserItems> usersItems = new List<IUserItems>();
@@ -99,12 +98,12 @@ namespace Infrastructure.SqlServer.UserItems
                 connection.Open();
                 var command = connection.CreateCommand();
                 command.CommandText = ReqCreate;
-                
+
                 command.Parameters.AddWithValue($"@{ColIdUser}", userItems.IdUser);
                 command.Parameters.AddWithValue($"@{ColNameItem}", userItems.NameItem);
                 command.Parameters.AddWithValue($"@{ColQuantity}", userItems.Quantity);
 
-                userItems.Id = (int) command.ExecuteScalar();
+                userItems.Id = (int)command.ExecuteScalar();
             }
 
             return userItems;
@@ -135,7 +134,7 @@ namespace Infrastructure.SqlServer.UserItems
                 command.Parameters.AddWithValue($"@{ColIdUser}", userItems.IdUser);
                 command.Parameters.AddWithValue($"@{ColNameItem}", userItems.NameItem);
                 command.Parameters.AddWithValue($"@{ColQuantity}", userItems.Quantity);
-                
+
                 command.Parameters.AddWithValue($"@{ColId}", id);
 
                 return command.ExecuteNonQuery() == 1;

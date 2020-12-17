@@ -15,15 +15,15 @@ namespace Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> Query()
         {
-            return Ok(_userRepository.Query().Select(user => (User) user));
+            return Ok(_userRepository.Query().Select(user => (User)user));
         }
-        
+
         [HttpGet]
         [Route(template: "{id}")]
         public ActionResult<User> GetById(int id)
         {
-            IUser user = (User) _userRepository.Get(id);
-            return user != null ? (ActionResult<User>) Ok(user) : NotFound();
+            IUser user = (User)_userRepository.Get(id);
+            return user != null ? (ActionResult<User>)Ok(user) : NotFound();
         }
 
         [HttpPost]
@@ -31,7 +31,7 @@ namespace Api.Controllers
         {
             return Ok(_userRepository.Create(user));
         }
-        
+
         [HttpPut]
         [Route(template: "{id}")]
         public ActionResult Put(int id, [FromBody] User user)

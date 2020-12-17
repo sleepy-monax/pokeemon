@@ -93,8 +93,11 @@ namespace Infrastructure.SqlServer.Users
         public IUser Create(IUser user)
         {
             var exist = UserExist(user);
+
             if (exist != null)
+            {
                 return new User(exist.Pseudo, exist.Email);
+            }
 
             CorrectValue(user);
             user = new User((User)user);
