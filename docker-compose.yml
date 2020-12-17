@@ -16,11 +16,12 @@ services:
             context: .
             dockerfile: Configs/Docker/backend.Dockerfile
 
-        env_file: Configs/Docker/database.env
+        env_file:
+            - Configs/Docker/database.env
+            - Configs/Docker/backend.env
 
         ports:
-            - "5000:80"
-            - "5001:81"
+            - "5000:5000"
 
         depends_on:
             - database
