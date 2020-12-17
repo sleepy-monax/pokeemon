@@ -3,7 +3,11 @@
 </app-title>
 
 <div class="coinsDiv">
-  You have {{coins}} coins !
+  You have {{user == null ? 0 : user.money }} coins !
+</div>
+
+<div *ngIf="!isHidden" class="hiddenDiv">
+  <b>You don't have money for that !</b>
 </div>
 
 <div *ngFor="let item of items">
@@ -12,6 +16,4 @@
   </app-item>
 </div>
 
-<div *ngIf="!isHidden" class="hiddenDiv">
-  <b>You don't have money for that !</b>
-</div>
+

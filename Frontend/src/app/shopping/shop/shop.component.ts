@@ -17,13 +17,12 @@ export class ShopComponent implements OnInit, OnDestroy {
 
   items: Items = itemsJson;
   userItem: UserItem = null;
-  user: User = null;
+  user: User;
   id = 1;
 
   private subscription: Subscription[] = [];
 
   quantity = 1;
-  coins = 0;
   isHidden = true;
 
   constructor(private userItemApi: UserItemService, private userApi: UserApiService) {
@@ -32,32 +31,25 @@ export class ShopComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.userApi.getById(this.id)
       .subscribe(user => {
-        this.coins = user.money;
+        this.user = user;
         }
       );
   }
 
   modifyCoinsAndItems(event): void {
     console.log('Coins spent : ', event.price);
-    const diff = this.coins - event.price;
+    const diff = this.user.money - event.price;
     if (diff < 0) {
       console.log('No money for this');
       this.isHidden = false;
-      return;
     } else {
-      this.coins -= event.price;
+      this.user.money -= event.price;
       // Modif user coins
-      this.userApi.getById(this.id)
-        .subscribe(userGet => {
-            this.user = userGet;
-            console.log('avant update : ' + this.user.money);
-            userGet.money = this.coins;
-
-            console.log(this.user);
-            this.userApi.update(userGet.id, this.user);
-            console.log('après update : ' + this.user.money);
-          }
-        );
+      console.log(this.user.money);
+      this.subscription.push(
+        this.userApi.update(this.user.id, this.user)
+          .subscribe()
+      );
       this.isHidden = true;
       // Add item to user
       this.userItem = {
@@ -65,11 +57,6 @@ export class ShopComponent implements OnInit, OnDestroy {
         nameItem: event.name,
         quantity: event.quantity
       };
-      /*this.userItemApi.getById(this.id)
-        .subscribe(userItem => {
-          const userItemTest = userItem;
-          console.log("User test : " + userItemTest);
-        });*/
       this.subscription.push(
         this.userItemApi.create(this.userItem)
           .subscribe()
@@ -84,6 +71,4 @@ export class ShopComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.forEach(sub => sub && sub.unsubscribe());
   }
-
-
 }
