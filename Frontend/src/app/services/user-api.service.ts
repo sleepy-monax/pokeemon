@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class UserApiService implements UserRepository{
-  private static URL: string = "https://" + environment.serverAddress +":" + environment.apiPort +"/users";
+  private static URL: string = 'https://' + environment.serverAddress + ':' + environment.apiPort + '/users';
 
   constructor(private http: HttpClient) { }
 

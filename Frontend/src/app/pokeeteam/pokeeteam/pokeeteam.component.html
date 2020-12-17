@@ -1,5 +1,7 @@
-<app-team></app-team>
+<app-team [creatures]="creaturePickable"></app-team>
 <hr>
-<div *ngFor="let creature of creatures">
-  <app-creature [creature]="creature"></app-creature>
+<div class="grid-container">
+  <div *ngFor="let creature of creatures">
+    <app-creature [creature]="creature" (click)="openDialog(creature)"></app-creature>
+  </div>
 </div>

@@ -2,12 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Model.Battle;
 using Model.Effets;
+using Model.Shared;
+using Action = Model.Battle.Action;
 
-namespace Model.Battle
+namespace Model.Creature
 {
-    public class Creature
+    public class Creature : ICreature
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
         public Stereotype Stereotype { get; set; }
         public int Xp { get; set; }
@@ -34,6 +39,8 @@ namespace Model.Battle
             }
         }
 
+        public bool Pickable { get; set; }
+
         public Stats Stats => Effects.Aggregate(Stereotype.Stats, (current, effect) => effect.Apply(current));
 
         public bool Alive => Stats.Health > 0;
@@ -46,5 +53,6 @@ namespace Model.Battle
             .FindAll(unlockable => unlockable.Level <= Level)
             .Select(unlockable => unlockable.Action)
             .ToList();
+
     }
 }

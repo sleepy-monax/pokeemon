@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Model.Creature;
 using Model.Effets;
 
 namespace Model.Battle

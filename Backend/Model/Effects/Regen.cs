@@ -1,5 +1,6 @@
 using System;
 using Model.Battle;
+using Model.Creature;
 
 namespace Model.Effets
 {

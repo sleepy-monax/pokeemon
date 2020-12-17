@@ -39,15 +39,15 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-  close() {
+  close(): void {
     this.dialogRef.close({
-      data: { quantity: <number>0 }
+      data: { quantity: 0 as number }
     });
   }
 
-  buy() {
+  buy(): void {
     this.dialogRef.close({
-      data: { quantity: <number>this.quantity, price: <number>this.price }
+      data: { quantity: this.quantity as number, price: this.price as number }
     });
   }
 

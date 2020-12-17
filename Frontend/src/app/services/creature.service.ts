@@ -29,6 +29,6 @@ export class CreatureService {
   }
 
   get(idUser: number): Observable<Creatures> {
-    return this.http.get<Creatures>(CreatureService.URL + '/' + idUser);
+    return this.http.get<Creatures>(CreatureService.URL + '/user/' + idUser);
   }
 }

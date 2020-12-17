@@ -1,14 +1,17 @@
-<div class="container">
-  <img src="favicon.ico"  class="item position image">
-  <div class="item position">
+<div class="container" *ngIf="!isEmpty">
+  <img src="{{image}}"  class="item image">
+  <div class="item">
     <div>
-      {{creature.name == null? creature.stereotype : creature.name}}
+      {{creature.name}}
     </div>
     <div>
-      {{creature.level}}
-    </div>
-    <div>
-      Statistique
+      <mat-icon style="color: #FD0101; transform: rotateY(180deg)">favorite</mat-icon>{{creature.stats.health}}
+      <mat-icon style="color: #ffcf01">flash_on</mat-icon>{{creature.stats.attack}}
+      <mat-icon style="color: #0184fd">shield</mat-icon>{{creature.stats.defense}}
+      <mat-icon style="color: #88cf88; transform: rotateY(180deg)">reply_all</mat-icon>{{creature.stats.speed}}
     </div>
   </div>
+</div>
+<div class="container" *ngIf="isEmpty">
+  Add creatures to your team
 </div>

@@ -1,5 +1,4 @@
-﻿using System;
-namespace Model.Battle
+﻿namespace Model.Creature
 {
     public enum Types
     {

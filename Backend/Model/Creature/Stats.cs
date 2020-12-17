@@ -1,4 +1,6 @@
-namespace Model.Battle
+using Model.Battle;
+
+namespace Model.Creature
 {
     public struct Stats
     {

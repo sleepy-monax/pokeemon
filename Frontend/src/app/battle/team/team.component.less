@@ -1,10 +1,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "item item2"
-    "item3 item4";
+  grid-template-rows: 1fr 1fr;
   color: #333333;
   gap: 20px;
 }
@@ -13,8 +10,3 @@
   background-color: whitesmoke;
   border-radius: 10px;
 }
-
-.item { grid-area: item; }
-.item2 { grid-area: item2; }
-.item3 { grid-area: item3; }
-.item4 { grid-area: item4; }

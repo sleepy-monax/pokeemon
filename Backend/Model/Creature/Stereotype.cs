@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using Model.Battle;
 
-namespace Model.Battle
+namespace Model.Creature
 {
     public class Stereotype
     {

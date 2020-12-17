@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 import { MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { take } from 'rxjs/operators';
 import { CheckoutComponent } from '../checkout/checkout.component';
+import {DialogPokeeComponent} from "../../pokeeteam/dialog-pokee/dialog-pokee.component";
 
 @Component({
   selector: 'app-item',
@@ -17,7 +18,7 @@ export class ItemComponent implements OnInit {
   @Input() basePrice: number;
 
   @Output() emitCoinsUsed = new EventEmitter<object>();
-  //@Output() emitNameItem = new EventEmitter();
+  // @Output() emitNameItem = new EventEmitter();
 
   @ViewChild(CheckoutComponent) buyDialog: CheckoutComponent;
 
@@ -26,21 +27,21 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  increment() {
+  increment(): void {
     this.quantity += 1;
     this.price = this.basePrice * this.quantity;
   }
 
-  decrement() {
-    if (this.quantity == 1 || this.quantity == 0) {
-      this.quantity = 0
+  decrement(): void {
+    if (this.quantity === 1 || this.quantity === 0) {
+      this.quantity = 0;
     } else {
       this.quantity -= 1;
     }
     this.price = this.basePrice * this.quantity;
   }
 
-  openBuyDialog() {
+  openBuyDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -55,13 +56,13 @@ export class ItemComponent implements OnInit {
       dataBasePrice: this.basePrice,
     };
 
-    if (this.dialog.openDialogs.length == 0) {
+    if (this.dialog.openDialogs.length === 0) {
       const dialogRef = this.dialog.open(CheckoutComponent, dialogConfig);
 
       dialogRef.afterClosed()
         .subscribe(
           data => {
-            console.log("Dialog output:", data);
+            console.log('Dialog output:', data);
             if (data.data.quantity > 0) {
               this.quantity = data.data.quantity;
               this.price = data.data.price;

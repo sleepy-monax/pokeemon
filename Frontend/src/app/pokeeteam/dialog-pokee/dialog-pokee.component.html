@@ -1,0 +1,16 @@
+<mat-dialog-content>
+  <app-creature [creature]="data.dataCreature"></app-creature>
+  <div *ngFor="let value of data.dataCreature.stereotype.actions">
+    {{value.name}}: {{value.level}}
+  </div>
+  <div class="grid-container">
+    <app-button (click)="chooseYou(0)">Emplacement 1</app-button>
+    <app-button (click)="chooseYou(1)">Emplacement 2</app-button>
+    <app-button (click)="chooseYou(2)">Emplacement 3</app-button>
+    <app-button (click)="chooseYou(3)">Emplacement 4</app-button>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <app-button (click)="close()">Close</app-button>
+</mat-dialog-actions>

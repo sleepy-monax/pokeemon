@@ -11,7 +11,7 @@ import { ToolkitModule } from '../toolkit/toolkit.module';
 import { BattleComponent } from './battle/battle.component';
 import { BattleGroundComponent } from './battle-ground/battle-ground.component';
 import { BattleMenuComponent } from './battle-menu/battle-menu.component';
-import { MatIconModule } from '@angular/material/icon';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -33,9 +33,8 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     FormsModule,
-    MatIconModule,
-
-    ToolkitModule
+    ToolkitModule,
+    MatIconModule
   ]
 })
 export class BattleModule { }
