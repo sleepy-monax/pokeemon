@@ -1,6 +1,9 @@
-<div>
-    Chat
-    <app-connection> </app-connection>
+<div class="title">
+    <div class="font-weight: bold;">
+        Chat
+    </div>
+    <div class="spacer"></div>
+    <app-connection></app-connection>
 </div>
 
 <div class="messages">
@@ -8,8 +11,10 @@
 </div>
 
 <div class="send-container">
-    <input type="text" placeholder="Type a message" [(ngModel)]="newMessage" />
-    <app-button icon="send" color="blue" (click)="sendMessage()">
-        Send
-    </app-button>
+    <div class="send-textbox">
+        <input type="text" style="flex-grow: 1;" placeholder="Type a message" [(ngModel)]="newMessage" />
+        <mat-icon (click)="sendMessage()">
+            send
+        </mat-icon>
+    </div>
 </div>
