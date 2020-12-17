@@ -27,5 +27,17 @@ namespace Api.Controllers
         {
             return Ok(_creatureRepository.GetByUser(id).Select(creature => (Creature) creature));
         }
+
+        [HttpPut]
+        [Route("{id}")]
+        public ActionResult Put(int id, [FromBody] Creature creature)
+        {
+            if (_creatureRepository.Update(id, creature))
+            {
+                return Ok();
+            }
+
+            return NotFound();
+        }
     }
 }

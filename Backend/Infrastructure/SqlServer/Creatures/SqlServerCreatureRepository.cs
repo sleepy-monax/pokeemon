@@ -19,10 +19,18 @@ namespace Infrastructure.SqlServer.Creatures
 
         public static readonly string ReqQuerry = $"select * from {TableName}";
 
-        public static readonly string ReqGetByUser = $@"select Monsters.* from Monsters
-        inner join UserMonsters UM on Monsters.id = UM.idMonster
+        public static readonly string ReqGetByUser = $@"select {TableName}.* from {TableName}
+        inner join {TableJointure} UM on {TableName}.id = UM.idMonster
             inner join Users U on U.id = UM.idUser
             where U.id = @{ColId}";
+
+        public static readonly string ReqUpdate = $@"
+            update {TableName} set
+            {ColName} = @{ColName},
+            {ColStereotype} = @{ColStereotype},
+            {ColXp} = @{ColXp},
+            {ColPickable} = @{ColPickable}
+            where {ColId} = @{ColId}";
 
         public IEnumerable<ICreature> Query()
         {
@@ -60,7 +68,21 @@ namespace Infrastructure.SqlServer.Creatures
 
         public bool Update(int id, ICreature creature)
         {
-            throw new System.NotImplementedException();
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var query = connection.CreateCommand();
+                query.CommandText = ReqUpdate;
+
+                query.Parameters.AddWithValue($"@{ColName}", creature.Name);
+                query.Parameters.AddWithValue($"@{ColStereotype}", creature.Stereotype.Name);
+                query.Parameters.AddWithValue($"@{ColPickable}", creature.Pickable);
+                query.Parameters.AddWithValue($"@{ColXp}", creature.Xp);
+                
+                query.Parameters.AddWithValue($"@{ColId}", creature.Id);
+
+                return query.ExecuteNonQuery() == 1;
+            }
         }
 
         public IEnumerable<ICreature> GetByUser(int idUser)
