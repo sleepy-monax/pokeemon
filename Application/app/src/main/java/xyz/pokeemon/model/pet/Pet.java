@@ -7,34 +7,34 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Item implements Parcelable, Serializable {
+public class Pet implements Parcelable, Serializable {
 
     private String name;
     private Stat stats;
     private List<Action> actions;
 
-    public Item(String name, Stat stat) {
+    public Pet(String name, Stat stat) {
         this.name = name;
         this.stats = stat;
         actions = new ArrayList<>();
     }
 
-    protected Item(Parcel in) {
+    protected Pet(Parcel in) {
         name = in.readString();
         stats = in.readParcelable(Stat.class.getClassLoader());
         actions = new ArrayList<>();
         in.readList(actions, Action.class.getClassLoader());
     }
 
-    public static final Creator<Item> CREATOR = new Creator<Item>() {
+    public static final Creator<Pet> CREATOR = new Creator<Pet>() {
         @Override
-        public Item createFromParcel(Parcel in) {
-            return new Item(in);
+        public Pet createFromParcel(Parcel in) {
+            return new Pet(in);
         }
 
         @Override
-        public Item[] newArray(int size) {
-            return new Item[size];
+        public Pet[] newArray(int size) {
+            return new Pet[size];
         }
     };
 

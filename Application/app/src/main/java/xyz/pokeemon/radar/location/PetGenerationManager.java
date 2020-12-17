@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Random;
 
 import xyz.pokeemon.R;
-import xyz.pokeemon.model.pet.Item;
+import xyz.pokeemon.model.pet.Pet;
 import xyz.pokeemon.radar.animations.AnimationEffects;
 import xyz.pokeemon.serialization.Utils;
 
@@ -29,7 +29,7 @@ public class PetGenerationManager {
     private Button b;
     private PositionManager positionManager;
     private AnimationEffects animationEffect;
-    private List<Item> pets;
+    private List<Pet> pets;
 
 
     /**
@@ -113,11 +113,11 @@ public class PetGenerationManager {
      * @param context get the context of the current view.
      * @return return the pet list read in the json file.
      */
-    private List<Item> initialiseListPet(Context context) {
+    private List<Pet> initialiseListPet(Context context) {
         String jsonFileString = Utils.getJsonFromAssets(context, "creatures.json");
 
         Gson gson = new Gson();
-        Type listPetType = new TypeToken<List<Item>>() {}.getType();
+        Type listPetType = new TypeToken<List<Pet>>() {}.getType();
 
         pets = gson.fromJson(jsonFileString, listPetType);
         return pets;

@@ -23,13 +23,13 @@ import java.util.List;
 import xyz.pokeemon.R;
 import xyz.pokeemon.adapter.PetAdapter;
 import xyz.pokeemon.model.pet.Action;
-import xyz.pokeemon.model.pet.Item;
+import xyz.pokeemon.model.pet.Pet;
 import xyz.pokeemon.serialization.Utils;
 
 
 public class TeamFragment extends Fragment {
 
-    private List<Item> pets;
+    private List<Pet> pets;
 
     public TeamFragment() {
         // Required empty public constructor
@@ -68,13 +68,13 @@ public class TeamFragment extends Fragment {
         lvPets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Item item = (Item) lvPets.getItemAtPosition(position);
+                Pet pet = (Pet) lvPets.getItemAtPosition(position);
                 final AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
 
                 //Set information.
                 builder.setTitle("Stats");
                 String message = "";
-                for (Action action: item.getActions()) {
+                for (Action action: pet.getActions()) {
                     message += "Name: " + action.getName() + " \t "
                             + "Level: " + action.getLevel()
                             + "\n";
@@ -103,7 +103,7 @@ public class TeamFragment extends Fragment {
         String jsonFileString = Utils.getJsonFromAssets(getContext(), "creatures.json");
 
         Gson gson = new Gson();
-        Type listPetType = new TypeToken<List<Item>>() {}.getType();
+        Type listPetType = new TypeToken<List<Pet>>() {}.getType();
 
         pets = gson.fromJson(jsonFileString, listPetType);
     }
