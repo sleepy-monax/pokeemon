@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ToolkitModule } from '../toolkit/toolkit.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,6 +17,7 @@ import { ToolkitModule } from '../toolkit/toolkit.module';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
+    RouterModule,
 
     CommonModule,
     ToolkitModule,

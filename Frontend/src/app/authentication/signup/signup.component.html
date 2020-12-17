@@ -11,7 +11,7 @@
         Pseudo existe déjà.
       </label>
 
-      <input type="text" id="pseudo" class="userName" placeholder="UserName" formControlName="pseudo"
+      <input type="text" id="pseudo" class="userName" placeholder="Username" formControlName="pseudo"
         [pattern]="pseudoPattern" matTooltip="Seulement des caracteres alphanumeriques" matTooltipPosition="below">
 
       <label [ngClass]="emailclass" for="email" class="WarningEmail">
@@ -23,15 +23,17 @@
         matTooltip="exemple@exemple.com" matTooltipPosition="below">
 
       <input type="password" class="password" placeholder="Password" formControlName="password"
-        (ngModelChange)="checkPassword()" [pattern]="passwordPattern"
+        (ngModelChange)="checkPassword()"
         matTooltip="Doit contenir : Un chiffre 0-9, Une lettre minuscule a-z, Une lettre majuscule A-Z, Un caractere special ,;:!"
         matTooltipPosition="below">
 
       <input type="password" class="checkPassword" placeholder="Confirm Password" formControlName="verifPassword"
-        (ngModelChange)="checkPassword()" [pattern]="passwordPattern">
+        (ngModelChange)="checkPassword()">
 
-      <app-button class="signUpButton" [isDisabled]="isDisabled || player.invalid">Sign up</app-button>
-      <app-button class="logInButton" routerLink="/signin">Sign in</app-button>
+      <div class="buttons">
+        <app-button class="logInButton" routerLink="/signin">Sign in</app-button>
+        <app-button class="signUpButton" [isDisabled]="isDisabled || player.invalid">Sign up</app-button>
+      </div>
     </form>
 
   </div>

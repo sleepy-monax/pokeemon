@@ -4,6 +4,6 @@ export const environment = {
   webSocketPort: 5000,
   webSocketEndpoint: 'endpoint',
   webSocketProtocole: 'ws',
-  apiPort: 5001
+  apiPort: 5000
 };
 

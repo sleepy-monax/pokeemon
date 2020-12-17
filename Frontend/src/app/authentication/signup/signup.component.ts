@@ -16,7 +16,6 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   pseudoPattern: string = '^[a-zA-Z0-9]{1,20}';
   emailPattern: string = '^.+@.+\\..+';
-  passwordPattern: string = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\\w\\s]).{8,}$';
 
   player: FormGroup = this.fb.group({
     pseudo: ['', Validators.required],

@@ -9,8 +9,11 @@
       <input type="text" class="userName" placeholder="Username" formControlName="pseudo">
       <input type="password" class="password" placeholder="Password" formControlName="password">
 
-      <button [disabled]="player.invalid">Log in</button>
-      <button routerLink="/signup">Sign up</button>
+      <div class="buttons">
+        <app-button routerLink="/signup">Sign up</app-button>
+
+        <app-button [isDisabled]="player.invalid">Log in</app-button>
+      </div>
     </form>
   </div>
 </app-centered>

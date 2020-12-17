@@ -14,7 +14,12 @@ export class ButtonComponent implements OnInit {
 
   constructor(@Attribute('icon') icon: string, @Attribute('color') color: string) {
     this.icon = icon;
-    this.color = color;
+
+    if (color === null) {
+      this.color = 'blue';
+    } else {
+      this.color = color;
+    }
   }
 
   ngOnInit(): void {
