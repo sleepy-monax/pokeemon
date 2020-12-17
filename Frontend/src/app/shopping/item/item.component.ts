@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-import { take } from 'rxjs/operators';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CheckoutComponent } from '../checkout/checkout.component';
-import {DialogPokeeComponent} from "../../pokeeteam/dialog-pokee/dialog-pokee.component";
 
 @Component({
   selector: 'app-item',
@@ -18,7 +16,6 @@ export class ItemComponent implements OnInit {
   @Input() basePrice: number;
 
   @Output() emitCoinsUsed = new EventEmitter<object>();
-  // @Output() emitNameItem = new EventEmitter();
 
   @ViewChild(CheckoutComponent) buyDialog: CheckoutComponent;
 
@@ -63,10 +60,10 @@ export class ItemComponent implements OnInit {
         .subscribe(
           data => {
             console.log('Dialog output:', data);
-            if (data.data.quantity > 0) {
-              this.quantity = data.data.quantity;
-              this.price = data.data.price;
-              this.emitCoinsUsed.emit({price : data.data.price, name : this.name, quantity : data.data.quantity});
+            if (data.quantity > 0) {
+              this.quantity = data.quantity;
+              this.price = data.price;
+              this.emitCoinsUsed.emit({price : data.price, name : this.name, quantity : data.quantity});
             } else {
               this.quantity = 1;
               this.price = this.basePrice * this.quantity;

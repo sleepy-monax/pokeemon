@@ -41,17 +41,17 @@ export class CheckoutComponent implements OnInit {
 
   close(): void {
     this.dialogRef.close({
-      data: { quantity: 0 as number }
+      quantity: 0 as number
     });
   }
 
   buy(): void {
     this.dialogRef.close({
-      data: { quantity: this.quantity as number, price: this.price as number }
+      quantity: this.quantity as number, price: this.price as number
     });
   }
 
-  updatePrice(event: any) {
+  updatePrice(event: any): void {
     this.price = this.basePrice * this.quantity;
   }
 }

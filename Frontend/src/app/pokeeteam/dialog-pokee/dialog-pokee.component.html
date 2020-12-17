@@ -3,7 +3,7 @@
   <div *ngFor="let value of data.dataCreature.stereotype.actions">
     {{value.name}}: {{value.level}}
   </div>
-  <div class="grid-container">
+  <div class="grid-container" *ngIf="!data.dataCreature.pickable">
     <app-button (click)="chooseYou(0)">Emplacement 1</app-button>
     <app-button (click)="chooseYou(1)">Emplacement 2</app-button>
     <app-button (click)="chooseYou(2)">Emplacement 3</app-button>

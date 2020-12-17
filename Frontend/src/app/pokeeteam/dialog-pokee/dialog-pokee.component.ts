@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {Creature} from '../../model/creature';
 
 @Component({
   selector: 'app-dialog-pokee',
@@ -17,10 +18,12 @@ export class DialogPokeeComponent implements OnInit {
   }
 
   close(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(null);
   }
 
   chooseYou(pos: number): void {
-    console.log('here');
+    this.dialogRef.close({
+      position: pos as number, creature: this.data.dataCreature as Creature
+    });
   }
 }
