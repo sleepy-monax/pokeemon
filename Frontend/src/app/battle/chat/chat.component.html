@@ -1,8 +1,15 @@
-<p>chat works!</p>
-<li *ngFor="let msg of messages">{{ msg.text }}</li>
+<div>
+    Chat
+    <app-connection> </app-connection>
+</div>
 
-<input type="text" placeholder="Type a message" [(ngModel)]="newMessage" />
+<div class="messages">
+    <li *ngFor="let msg of messages">{{ msg.text }}</li>
+</div>
 
-<app-button icon="send" color="blue" (click)="sendMessage()">
-    Send
-</app-button>
+<div class="send-container">
+    <input type="text" placeholder="Type a message" [(ngModel)]="newMessage" />
+    <app-button icon="send" color="blue" (click)="sendMessage()">
+        Send
+    </app-button>
+</div>
