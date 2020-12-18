@@ -69,7 +69,7 @@ export class SignupComponent implements OnInit, OnDestroy {
           if (user.id != 0) {
             this.pseudoclass.isHidden = true;
             this.pseudoclass.isHidden = true;
-            this.router.navigate([""]);
+            this.router.navigate(["/signin"]);
           }
           else {
             console.log(user)

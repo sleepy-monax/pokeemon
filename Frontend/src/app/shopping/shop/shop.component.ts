@@ -7,6 +7,7 @@ import { UserItemService } from 'src/app/services/user-item-service';
 import { UserApiService } from 'src/app/services/user-api.service';
 import { User } from 'src/app/model/user';
 import { UserItem } from 'src/app/model/user-item';
+import {GlobalUser} from '../../helpers/global-user';
 
 @Component({
   selector: 'app-shop',
@@ -25,11 +26,11 @@ export class ShopComponent implements OnInit, OnDestroy {
   quantity = 1;
   isHidden = true;
 
-  constructor(private userItemApi: UserItemService, private userApi: UserApiService) {
+  constructor(private userItemApi: UserItemService, private userApi: UserApiService, private globalUser: GlobalUser) {
   }
 
   ngOnInit(): void {
-    this.userApi.getById(this.id)
+    this.userApi.getById(this.globalUser.user.id)
       .subscribe(user => {
         this.user = user;
         }
@@ -53,7 +54,7 @@ export class ShopComponent implements OnInit, OnDestroy {
       this.isHidden = true;
       // Add item to user
       this.userItem = {
-        idUser: this.id,
+        idUser: this.globalUser.user.id,
         nameItem: event.name,
         quantity: event.quantity
       };

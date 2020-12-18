@@ -5,6 +5,7 @@ export interface User {
   email: string;
   password: string;
   money?: number;
+  token?: string;
 }
 
 export declare type Users = User[];

@@ -37,6 +37,13 @@
             Pseudo = pseudo;
             Email = email;
         }
+        
+        /*public User(string pseudo, string password)
+        {
+            Id = 0;
+            Pseudo = pseudo;
+            Password = password;
+        }*/
 
         public User(User user)
         {

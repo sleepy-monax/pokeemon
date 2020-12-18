@@ -39,6 +39,8 @@ namespace Infrastructure.SqlServer.Users
             {ColMoney} = @{ColMoney}
             where {ColId} = @{ColId}
         ";
+        
+        private static readonly string ReqGetUser = ReqQuery + $" where {ColPseudo} = @{ColPseudo} and {ColPassword} = @{ColPassword}";
 
         public IEnumerable<IUser> Query()
         {
@@ -72,6 +74,17 @@ namespace Infrastructure.SqlServer.Users
                 var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
                 return reader.Read() ? _factory.CreateFromReader(reader) : null;
             }
+        }
+
+        public IUser GetUser(IUser user)
+        {
+            IUser userBis = UserExist(user);
+            var hash = BCrypt.Net.BCrypt.Verify(user.Password, userBis.Password);
+            if (hash)
+            {
+                user.Id = userBis.Id;
+            }
+            return user;
         }
 
         private IUser UserExist(IUser user)

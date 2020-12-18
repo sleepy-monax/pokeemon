@@ -9,5 +9,6 @@ namespace Model.User
         IUser Create(IUser user);
         bool Delete(int id);
         bool Update(int id, IUser user);
+        IUser GetUser(IUser user);
     }
 }

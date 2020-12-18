@@ -43,6 +43,14 @@ namespace Api.Controllers
 
             return NotFound();
         }
+
+        [HttpPost]
+        [Route("authenticate")]
+        public ActionResult<User> GetToken([FromBody] User us)
+        {
+            IUser user = (User)_userRepository.GetUser(us);
+            return user != null ? (ActionResult<User>)Ok(user) : null;
+        }
     }
 }
 

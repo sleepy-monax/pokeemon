@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RootComponent } from './scaffolding/root/root.component';
@@ -18,6 +18,9 @@ import { ShoppingModule } from './shopping/shopping.module';
 import { ToolkitModule } from './toolkit/toolkit.module';
 import { PokeeteamModule} from './pokeeteam/pokeeteam.module';
 import {AccountModule} from './account/account.module';
+import {JwtInterceptor} from './helpers/jwt-interceptor';
+import {ErrorInterceptor} from './helpers/error-interceptor';
+import {GlobalUser} from './helpers/global-user';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,11 @@ import {AccountModule} from './account/account.module';
     PokeeteamModule,
     AccountModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    GlobalUser
+  ],
   bootstrap: [RootComponent]
 })
 export class AppModule { }

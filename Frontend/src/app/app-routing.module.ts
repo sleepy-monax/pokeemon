@@ -8,15 +8,17 @@ import { ErrorComponent } from './scaffolding/error/error.component';
 import { ShopComponent } from './shopping/shop/shop.component';
 import {PokeeteamComponent} from './pokeeteam/pokeeteam/pokeeteam.component';
 import {AccountComponent} from './account/account/account.component';
+import {AuthGuard} from './helpers/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingComponent
+    component: LandingComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'signin',
-    component: SigninComponent
+    component: SigninComponent,
   },
   {
     path: 'signup',
@@ -24,23 +26,28 @@ const routes: Routes = [
   },
   {
     path: 'landing',
-    component: LandingComponent
+    component: LandingComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'shop',
-    component: ShopComponent
+    component: ShopComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'battle',
-    component: BattleComponent
+    component: BattleComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'team',
-    component: PokeeteamComponent
+    component: PokeeteamComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'account',
-    component: AccountComponent
+    component: AccountComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
