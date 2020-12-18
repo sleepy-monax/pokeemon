@@ -1,4 +1,5 @@
 using System;
+using Model.Messages;
 
 namespace Api.Services
 {
@@ -6,7 +7,7 @@ namespace Api.Services
     {
         public LatencyService(SessionService bs)
         {
-            bs.RegisterRequestHandler<object>("ping", (session, payload) => session.Send("pong"));
+            bs.RegisterRequestHandler<ClientPing>( (session, payload) => session.Send(new ServerPongMessage()));
         }
     }
 }

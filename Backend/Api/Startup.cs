@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Model.Battle;
 
 namespace Api
 {
@@ -41,7 +42,7 @@ namespace Api
             services.AddControllers();
             services.AddSingleton<SessionService>();
             services.AddSingleton<LatencyService>();
-            services.AddSingleton<ChatService>();
+            services.AddSingleton<Battle>();
             services.AddLogging();
         }
 
@@ -73,8 +74,9 @@ namespace Api
 
             app.UseWebSockets();
 
+            // Warm up services...
             app.ApplicationServices.GetService(typeof(LatencyService));
-            app.ApplicationServices.GetService(typeof(ChatService));
+            app.ApplicationServices.GetService(typeof(BattleService));
 
             app.Use(async (context, next) =>
             {

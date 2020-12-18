@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
-using Infrastructure.WebSocket;
+using Anotations;
+using Infrastructure.WebSockets;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
@@ -15,23 +17,40 @@ namespace Api.Services
         private readonly Dictionary<string, Session> _sessions = new Dictionary<string, Session>();
         private readonly Dictionary<string, Func<Session, JObject, Task>> _requestHandlers = new Dictionary<string, Func<Session, JObject, Task>>();
 
-        public void RegisterRequestHandler<T>(string type, Func<Session, T, Task> action)
+        public void RegisterRequestHandler<T>(Func<Session, T, Task> function)
         {
-            _requestHandlers.Add(type, (session, json) =>
+            if (typeof(T).GetCustomAttributes(
+                typeof(MessageTypeAttribute), true
+            ).FirstOrDefault() is MessageTypeAttribute attribute)
             {
-                var contract = new DefaultContractResolver
+                _requestHandlers.Add(attribute.TypeName, (session, json) =>
                 {
-                    NamingStrategy = new SnakeCaseNamingStrategy()
-                };
+                    var contract = new DefaultContractResolver
+                    {
+                        NamingStrategy = new SnakeCaseNamingStrategy()
+                    };
 
-                var serializer = new JsonSerializer
-                {
-                    ContractResolver = contract
-                };
+                    var serializer = new JsonSerializer
+                    {
+                        ContractResolver = contract
+                    };
 
-                var message = json.ToObject<Message<T>>();
+                    var message = json.ToObject<Package<T>>();
 
-                return action(session, message.Payload);
+                    return function(session, message.Message);
+                });
+            }
+            else
+            {
+                throw new Exception("The message doesn't have a MessageTypeAttribute attached to it!");
+            }
+        }
+        
+        public void RegisterRequestHandler<T>( Action<Session, T> action)
+        {
+            RegisterRequestHandler<T>( (session, data) =>
+            {
+                return new Task(() => action(session, data));
             });
         }
 
@@ -74,11 +93,11 @@ namespace Api.Services
             }
         }
 
-        public async Task Broadcast<T>(string type, T payload)
+        public async Task Broadcast<T>( T payload)
         {
             foreach (var kv in _sessions)
             {
-                await kv.Value.Send(type, payload);
+                await kv.Value.Send(payload);
             }
         }
 

@@ -1,37 +1,42 @@
-using System.Collections.Generic;
-using Model.Battle;
+using System;
+using Model.Messages;
 
 namespace Api.Services
 {
-    class BattleService
+    public class BattleService
     {
-        private readonly Dictionary<string, Battle> _battles;
-
         public BattleService(SessionService bs)
         {
-            /* bs.RegisterRequestHandler<Model.Chat.Message>("battle-create", (session, payload) =>
-             {
-             });
+            bs.RegisterRequestHandler<ClientCreate>((session, message) =>
+            {
 
-             bs.RegisterRequestHandler<Model.Chat.Message>("battle-join", (session, payload) =>
-             {
-             });
+            });
 
-             bs.RegisterRequestHandler<Model.Chat.Message>("battle-leave", (session, payload) =>
-             {
-             });
+            bs.RegisterRequestHandler<ClientJoin>((session, payload) =>
+            {
+            });
 
-             bs.RegisterRequestHandler<Model.Chat.Message>("battle-attack", (session, payload) =>
-             {
-             });
+            bs.RegisterRequestHandler<ClientLeave>((session, payload) =>
+            {
+            });
 
-             bs.RegisterRequestHandler<Model.Chat.Message>("battle-useitem", (session, payload) =>
-             {
-             });
+            bs.RegisterRequestHandler<ClientAttack>((session, payload) =>
+            {
+            });
 
-             bs.RegisterRequestHandler<Model.Chat.Message>("battle-switch", (session, payload) =>
-             {
-             });*/
+            bs.RegisterRequestHandler<ClientUseItem>((session, payload) =>
+            {
+            });
+
+            bs.RegisterRequestHandler<ClientSwitchCreature>((session, payload) =>
+            {
+            });
+
+            bs.RegisterRequestHandler<ClientChat>((session, payload) =>
+            {
+                Console.WriteLine("Chat: " + payload.Text);
+                return bs.Broadcast(payload);
+            });
         }
     }
 }

@@ -12,20 +12,18 @@ namespace Model.Battle
         public Action<Player> OnPlayerJoin;
         public Action<Player> OnPlayerLeave;
 
-        Player CurrentPlayer(Player player)
+        Player CurrentPlayer()
         {
             if (_turn)
             {
                 return _firstPlayer;
             }
-            else
-            {
-                return _secondlayer;
-            }
+
+            return _secondlayer;
         }
 
 
-        Player OtherPlayer(Player player)
+        Player OtherPlayer()
         {
             if (!_turn)
             {
@@ -37,18 +35,23 @@ namespace Model.Battle
             }
         }
 
-        public void Join(Player player)
+        public bool Join(Player player)
         {
             if (_firstPlayer == null)
             {
                 _firstPlayer = player;
                 OnPlayerJoin?.Invoke(player);
+                return true;
             }
-            else if (_secondlayer == null)
+
+            if (_secondlayer == null)
             {
                 _secondlayer = player;
                 OnPlayerJoin?.Invoke(player);
+                return true;
             }
+
+            return false;
         }
 
         public void Leave(Player player)

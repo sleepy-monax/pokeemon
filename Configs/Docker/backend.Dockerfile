@@ -7,6 +7,7 @@ COPY Backend/Pokeemon.sln .
 COPY Backend/Api /app/Backend/Api
 COPY Backend/Infrastructure /app/Backend/Infrastructure
 COPY Backend/Model /app/Backend/Model
+COPY Backend/Anotations /app/Backend/Anotations
 COPY Assets /app/Assets
 
 RUN dotnet dev-certs https -ep /app/Backend/pokeemon/cert.pfx -p localhost

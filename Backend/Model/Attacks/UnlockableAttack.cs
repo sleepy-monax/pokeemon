@@ -1,8 +1,8 @@
-namespace Model.Action
+namespace Model.Attacks
 {
     public struct UnLockableAction
     {
         public int Level { get; set; }
-        public Action? Action { get; set; }
+        public Attack? Action { get; set; }
     }
 }

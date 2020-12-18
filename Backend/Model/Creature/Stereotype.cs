@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Model.Action;
+using Model.Attacks;
 using Model.Battle;
 
 namespace Model.Creature

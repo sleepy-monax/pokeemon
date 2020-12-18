@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
-using Model.Action;
+using Model.Attacks;
 using Model.Effets;
 using Newtonsoft.Json.Linq;
 
@@ -10,13 +10,13 @@ namespace Infrastructure.Json
     {
         private static string ATTACKS_PATH = "Assets/attacks.json";
 
-        private static Dictionary<string, Action> _actions;
+        private static Dictionary<string, Attack> _actions;
 
-        public static Action getByName(string name)
+        public static Attack getByName(string name)
         {
             if (_actions == null)
             {
-                _actions = new Dictionary<string, Action>();
+                _actions = new Dictionary<string, Attack>();
 
                 var actionsJson = JArray.Parse(File.ReadAllText(ATTACKS_PATH));
 
@@ -24,7 +24,7 @@ namespace Infrastructure.Json
                 {
                     if (actionToken is JObject actionObject)
                     {
-                        Action action = new Action
+                        Attack attack = new Attack
                         {
                             Name = actionObject["name"].ToObject<string>(),
                             Description = actionObject["description"].ToObject<string>(),
@@ -36,7 +36,7 @@ namespace Infrastructure.Json
                             Effect = EffectFactory.createFromJson(actionObject["price"] as JObject)
                         };
 
-                        _actions[action.Name] = action;
+                        _actions[attack.Name] = attack;
                     }
                 }
             }

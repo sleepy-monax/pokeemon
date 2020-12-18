@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Model.Action;
+using Model.Attacks;
 using Model.Effets;
 
 namespace Model.Creature
@@ -47,7 +47,7 @@ namespace Model.Creature
 
         public List<UnLockableAction> AllActions => Stereotype.Actions;
 
-        public List<Action.Action> AvaillableActions => AllActions
+        public List<Attack> AvaillableActions => AllActions
             .FindAll(unlockable => unlockable.Level <= Level)
             .Select(unlockable => unlockable.Action)
             .ToList();

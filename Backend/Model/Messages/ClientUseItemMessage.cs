@@ -1,6 +1,9 @@
-namespace Model.Battle
+using Anotations;
+
+namespace Model.Messages
 {
-    class UseItemMessage : BattleMessage
+    [MessageType("battle-use-item")]
+    public class ClientUseItem : ClientMessage
     {
         public string Item { get; set; }
         public bool TargetEnemy { get; set; }

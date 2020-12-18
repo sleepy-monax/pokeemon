@@ -1,12 +1,12 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Infrastructure.WebSocket
+namespace Infrastructure.WebSockets
 {
-    public class Message<T>
+    public class Package<T>
     {
         public string Type { get; set; }
-        public T Payload { get; set; }
+        public T Message { get; set; }
 
         public string ToJson()
         {

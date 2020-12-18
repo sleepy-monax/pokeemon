@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using Model.Creature;
 using Model.Effets;
 
-namespace Model.Action
+namespace Model.Attacks
 {
-    public class Action
+    public class Attack
     {
         public string Name { get; set; } = "";
         public string Description { get; set; } = "";
@@ -15,9 +13,9 @@ namespace Model.Action
 
         public IEffect? Effect { get; set; }
 
-        public Action Clone()
+        public Attack Clone()
         {
-            return (Action)this.MemberwiseClone();
+            return (Attack)this.MemberwiseClone();
         }
     }
 }
