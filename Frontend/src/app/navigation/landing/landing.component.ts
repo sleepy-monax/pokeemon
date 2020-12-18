@@ -1,12 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {CreatureService} from '../../services/creature.service';
-import {Creatures} from '../../model/creature';
-import {UserApiService} from '../../services/user-api.service';
-import {Users} from '../../model/user';
-import {first} from 'rxjs/operators';
-import {AuthenticationService} from '../../services/authentication.service';
-import {GlobalUser} from '../../helpers/global-user';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { CreatureService } from '../../services/creature.service';
+import { Creatures } from '../../model/creature';
+import { UserApiService } from '../../services/user-api.service';
+import { Users } from '../../model/user';
+import { first } from 'rxjs/operators';
+import { AuthenticationService } from '../../services/authentication.service';
+import { GlobalUser } from '../../helpers/global-user';
+import { BattleService } from 'src/app/services/battle.service';
 
 @Component({
   selector: 'app-landing',
@@ -16,14 +17,16 @@ import {GlobalUser} from '../../helpers/global-user';
 export class LandingComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription[] = [];
-  id : number;
+  id: number;
   creatures: Creatures = [];
   loading = false;
   users: Users;
+  public battles: any[];
 
   constructor(private creatureService: CreatureService,
-              private userService: UserApiService,
-              private globalUser: GlobalUser) { }
+    private userService: UserApiService,
+    private globalUser: GlobalUser,
+    private battleService: BattleService) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -40,10 +43,22 @@ export class LandingComponent implements OnInit, OnDestroy {
         });
     });
 
+    this.battleService.battles.subscribe((value: any[]) => {
+      this.battles = value;
+    });
+
+    this.battleService.refreshList();
   }
 
   ngOnDestroy(): void {
     this.subscription.forEach(sub => sub && sub.unsubscribe());
   }
 
+  public create() {
+    this.battleService.create();
+  }
+
+  public join(battle) {
+    this.battleService.join(battle);
+  }
 }

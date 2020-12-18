@@ -58,9 +58,9 @@ export class WebsocketService {
     };
   }
 
-  public send<T>(type: string, payload: T): void {
-    const message = { type, payload };
-    this.socket.send(JSON.stringify(message));
+  public send<T>(type: string, message: T): void {
+    const pkg = { type, message };
+    this.socket.send(JSON.stringify(pkg));
   }
 
   public close(): void {

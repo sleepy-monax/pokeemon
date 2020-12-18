@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Infrastructure.SqlServer.Creatures;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
 using Model.Creature;
 
 namespace Api.Controllers

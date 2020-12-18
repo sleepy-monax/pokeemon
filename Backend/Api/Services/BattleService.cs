@@ -135,5 +135,10 @@ namespace Api.Services
                 return bs.Broadcast(message);
             });
         }
+
+        public List<string> GetAvailable()
+        {
+            return _battles.Keys.ToList();
+        }
     }
 }
