@@ -21,5 +21,4 @@ export class CreatureComponent implements OnInit {
       this.isEmpty = false;
     }
   }
-
 }

@@ -12,6 +12,7 @@ import { BattleComponent } from './battle/battle.component';
 import { BattleGroundComponent } from './battle-ground/battle-ground.component';
 import { BattleMenuComponent } from './battle-menu/battle-menu.component';
 import {MatIconModule} from "@angular/material/icon";
+import { HealthBarComponent } from './health-bar/health-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatIconModule} from "@angular/material/icon";
     ConnectionComponent,
     BattleComponent,
     BattleGroundComponent,
-    BattleMenuComponent],
+    BattleMenuComponent,
+    HealthBarComponent],
   exports: [
     ChatComponent,
     MessageComponent,
