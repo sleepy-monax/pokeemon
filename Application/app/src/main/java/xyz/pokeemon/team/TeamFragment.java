@@ -103,7 +103,7 @@ public class TeamFragment extends Fragment {
         String jsonFileString = Utils.getJsonFromAssets(getContext(), "creatures.json");
 
         Gson gson = new Gson();
-        Type listCreatureType = new Tycreatureoken<List<Creature>>() {}.getType();
+        Type listCreatureType = new TypeToken<List<Creature>>() {}.getType();
 
         creatures = gson.fromJson(jsonFileString, listCreatureType);
     }
