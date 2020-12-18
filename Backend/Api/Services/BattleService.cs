@@ -43,7 +43,7 @@ namespace Api.Services
                 Creatures = creatures,
                 Items = items,
             };
-
+            
             return player;
         }
 
@@ -52,6 +52,8 @@ namespace Api.Services
             LeaveBattle(session);
             
             var player = CreatePlayer(playerId);
+
+            player.OnMessageSent = message => session.Send(message); 
             battle.Join(player);
             
             session.MountService(new BattleSessionService
@@ -130,7 +132,6 @@ namespace Api.Services
 
             bs.RegisterRequestHandler<ClientChat>((session, message) =>
             {
-                Console.WriteLine("Chat: " + message.Text);
                 return bs.Broadcast(message);
             });
         }

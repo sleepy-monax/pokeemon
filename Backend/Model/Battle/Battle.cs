@@ -171,14 +171,29 @@ namespace Model.Battle
             if (_firstPlayer == null)
             {
                 _firstPlayer = player;
-                _firstPlayer.SendMessage(new ServerBattleMessage{BattleId = Id});
+                _firstPlayer.SendMessage(new ServerJoinBattle{BattleId = Id, Player = player});
+
+                if (_secondPlayer != null)
+                {
+                    _firstPlayer.SendMessage(new ServerOtherJoinBattle{BattleId = Id, Player = _secondPlayer});
+                    _secondPlayer.SendMessage(new ServerOtherJoinBattle{BattleId = Id, Player = player});
+                }
+                
                 return true;
             }
 
             if (_secondPlayer == null)
             {
                 _secondPlayer = player;
-                _secondPlayer.SendMessage(new ServerBattleMessage{BattleId = Id});
+                _secondPlayer.SendMessage(new ServerJoinBattle{BattleId = Id, Player = player});
+
+
+                if (_firstPlayer != null)
+                {
+                    _firstPlayer.SendMessage(new ServerOtherJoinBattle{BattleId = Id, Player = player});
+                    _secondPlayer.SendMessage(new ServerOtherJoinBattle{BattleId = Id, Player = _firstPlayer});
+                }
+                
                 return true;
             }
 
