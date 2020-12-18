@@ -10,7 +10,7 @@ namespace Api.Controllers
     
     [ApiController]
     [Route("creatures")]
-    public class MonsterControler : ControllerBase
+    public class CreatureControler : ControllerBase
     {
         
         private ICreatureRepository _creatureRepository = new SqlServerCreatureRepository();

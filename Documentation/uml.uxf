@@ -1,4 +1,4 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>417</x><y>360</y><w>350</w><h>130</h></coordinates><panel_attributes>Monster
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>417</x><y>360</y><w>350</w><h>130</h></coordinates><panel_attributes>Creature
 --
 getStats() : Stats</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>387</x><y>1190</y><w>330</w><h>180</h></coordinates><panel_attributes>Fire
 --

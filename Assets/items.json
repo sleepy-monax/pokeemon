@@ -74,7 +74,7 @@
         },
         {
           "name": "Potion of death",
-          "description": "Kill the ennemy monster",
+          "description": "Kill the ennemy creature",
           "price": 10000,
           "effect": {
             "type": "damage",
@@ -83,7 +83,7 @@
         },
         {
           "name": "Potion of weakness",
-          "description": "Divide by 2 the attack of the monster",
+          "description": "Divide by 2 the attack of the creature",
           "price": 100,
           "effect": {
             "type": "alteration",
@@ -92,7 +92,7 @@
         },
         {
           "name": "Potion of defense reduction",
-          "description": "Divide by 2 the defense of the monster",
+          "description": "Divide by 2 the defense of the creature",
           "price": 80,
           "effect": {
             "type": "alteration",
@@ -101,7 +101,7 @@
         },
         {
           "name": "Potion of slowness",
-          "description": "Divide by 2 the speed of the monster",
+          "description": "Divide by 2 the speed of the creature",
           "price": 75,
           "effect": {
             "type": "alteration",
@@ -110,7 +110,7 @@
         },
         {
           "name": "Potion of strength",
-          "description": "Boost the attack of the monster",
+          "description": "Boost the attack of the creature",
           "price": 100,
           "effect": {
             "type": "alteration",
@@ -119,7 +119,7 @@
         },
         {
           "name": "Potion of toughness",
-          "description": "Boost the defense of the monster",
+          "description": "Boost the defense of the creature",
           "price": 100,
           "effect": {
             "type": "alteration",
@@ -128,7 +128,7 @@
         },
         {
           "name": "Potion of swiftness",
-          "description": "Boost  the speed of the monster",
+          "description": "Boost  the speed of the creature",
           "price": 100,
           "effect": {
             "type": "alteration",

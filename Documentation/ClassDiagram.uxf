@@ -5,7 +5,7 @@
 - email : String
 - password : hash
 --
-+ User (login : String, password: String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>931</x><y>290</y><w>160</w><h>110</h></coordinates><panel_attributes>Monster
++ User (login : String, password: String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>931</x><y>290</y><w>160</w><h>110</h></coordinates><panel_attributes>Creature
 --
 - name : String
 - baseStats : BaseStats
@@ -56,7 +56,7 @@ m2=*</panel_attributes><additional_attributes>10;10;20;190</additional_attribute
 + getBaseDefense() : double
 + getBaseSpeed() : double
 + getWeakness(weakness: Element) : double</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>668</x><y>605</y><w>90</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>70;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>808</x><y>605</y><w>140</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;60</additional_attributes></element><element><id>Relation</id><coordinates><x>768</x><y>605</y><w>50</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;30;70</additional_attributes></element><element><id>Relation</id><coordinates><x>678</x><y>445</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>488</x><y>445</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>235</x><y>445</y><w>210</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>190;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1142</x><y>59</y><w>140</w><h>80</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
-/IMonster/
+/ICreature/
 --
 + isAlive() : boolean
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1072</x><y>129</y><w>110</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1222</x><y>340</y><w>130</w><h>80</h></coordinates><panel_attributes>&lt;interface&gt;

@@ -9,8 +9,8 @@ namespace Infrastructure.SqlServer.Creatures
 
         private IFactory<ICreature> _factory = new CreatureFactory();
     
-        public static readonly string TableName = "Monsters";
-        public static readonly string TableJointure = "UserMonsters";
+        public static readonly string TableName = "Creatures";
+        public static readonly string TableJointure = "UserCreatures";
         public static readonly string ColId = "id";
         public static readonly string ColName = "name";
         public static readonly string ColStereotype = "stereotype";
@@ -20,7 +20,7 @@ namespace Infrastructure.SqlServer.Creatures
         public static readonly string ReqQuerry = $"select * from {TableName}";
 
         public static readonly string ReqGetByUser = $@"select {TableName}.* from {TableName}
-        inner join {TableJointure} UM on {TableName}.id = UM.idMonster
+        inner join {TableJointure} UM on {TableName}.id = UM.idCreature
             inner join Users U on U.id = UM.idUser
             where U.id = @{ColId}";
 

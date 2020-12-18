@@ -13,7 +13,7 @@ CREATE TABLE Users (
     money           int not null default 120
 );
 
-CREATE TABLE Monsters (
+CREATE TABLE Creatures (
     id              int identity primary key not null,
     name            varchar(64),
     stereotype      varchar(64) not null,
@@ -21,14 +21,14 @@ CREATE TABLE Monsters (
     pickable       bit not null default 0
 );
 
-create table UserMonsters(
+create table UserCreatures(
     idUser         int not null,
-    idMonster      int not null,
+    idCreature      int not null,
 
     foreign key (idUser) references Users,
-    foreign key (idMonster) references Monsters,
+    foreign key (idCreature) references Creatures,
 
-    primary key (idUser, idMonster)
+    primary key (idUser, idCreature)
 );
 
 create table UserItems(

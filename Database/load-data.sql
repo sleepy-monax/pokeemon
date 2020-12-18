@@ -21,7 +21,7 @@ values
     (0, 'Hasmaper', 'hasmaper@gmail.com', '$2y$10$RwlE94BWgcp381ixPyebLeGfE7lo.CfsZIow56KERxt425q.6ds/q'),
     (0, 'Voomaster', 'voomaster@gmail.com', '$2y$10$pYHcf7hxqji32/FPZ5DLz.ECcmoqmsmEusSa2tVkGPUMErwrVbsvC');
 
-insert into Monsters (stereotype, xp)
+insert into Creatures (stereotype, xp)
 values
     ('Bulbasaur', 1),
     ('Ivysaur', 12),
@@ -105,7 +105,7 @@ values
     ('Shellder', 12),
     ('Magneton', 95);
 
-insert into UserMonsters (idUser, idMonster)
+insert into UserCreatures (idUser, idCreature)
 values
     (3, 12),
     (2, 11),
