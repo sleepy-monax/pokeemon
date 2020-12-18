@@ -7,7 +7,7 @@ values
     (0, 'Mathieu', 'mathieu.address@gmail.com', '$2y$10$bDhoBBfKLyxZAxHyaEUbTuq9xPvrKHcc3UGfL5BfPEuT1F8LgG4r6'),
     (0, 'Sasha', 'sasha.address@gmail.com', '$2y$10$wsv0V7BgSIGDpp3YLu/mKO8kNAjgPwpW.C9aViBF4OebPrjjdX8OO'),
     (0, 'Nicolas', 'nicolas.address@gmail.com', '$2y$10$IjnVQV4JAag4ghVVu7M/3.zWE6TF3bn6e5d4i4GhnnaFjfZYpdBnW'),
-    (0, 'Alberto', 'alberto@gmail.com', '$2y$10$Wy8Pt6vu0eCK93GvCHWIK.dD3Y4.Iak2LjonAdTy.2e8ngMiMPBY6'),
+    (0, 'Palermo', 'palermo@gmail.com', '$2y$10$VpmAXpwHgncftNGt8mhefe5rVzK1NyoSWGAAezBNRpPsp/sztSKcK'),
     (0, 'Ramirez', 'ramirez@gmail.com', '$2y$10$r3PTG.ov88WoB8mW1XkxHuI0m2SZxl8OPQ3SbP9a7G2jY6MOEyhOO'),
     (0, 'Gonzales', 'gonzales@gmail.com', '$2y$10$beD.BYTaXxZ4Xd.MvSst8etJGmcJE8b1vO3J.4aFk5AF07mZWQMvy'),
     (0, 'Mirador', 'Mirador@gmail.com', '$2y$10$V4eHKmVMOkJE7F303Y18aeMNYFG7x1JMYeGH9vtxScT3Y8iVC6J/G'),
@@ -107,6 +107,13 @@ values
 
 insert into UserCreatures (idUser, idCreature)
 values
+    (6, 12),
+    (6, 11),
+    (6, 36),
+    (6, 38),
+    (6, 32),
+    (6, 28),
+    (2, 10),
     (3, 12),
     (2, 11),
     (1, 36),
