@@ -30,6 +30,7 @@ export class AuthenticationService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
         this.globalUser.user = user;
+        console.log(this.globalUser.user);
         return user;
       }));
   }

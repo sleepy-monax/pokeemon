@@ -79,6 +79,7 @@ namespace Infrastructure.SqlServer.Users
         public IUser GetUser(IUser user)
         {
             IUser userBis = UserExist(user);
+            Console.WriteLine("ALLLLLLLLLLLLOOOOO" + userBis);
             var hash = BCrypt.Net.BCrypt.Verify(user.Password, userBis.Password);
             if (hash)
             {

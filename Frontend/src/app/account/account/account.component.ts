@@ -3,6 +3,7 @@ import {User} from '../../model/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {UserApiService} from '../../services/user-api.service';
+import {GlobalUser} from '../../helpers/global-user';
 
 @Component({
   selector: 'app-account',
@@ -11,7 +12,7 @@ import {UserApiService} from '../../services/user-api.service';
 })
 export class AccountComponent implements OnInit, OnDestroy {
   user: User;
-  id = 2;
+  id: number;
 
   pseudoclass: any = {
     isHidden: true
@@ -28,12 +29,14 @@ export class AccountComponent implements OnInit, OnDestroy {
 
   subscription: Subscription[] = [];
 
-  constructor(private fb: FormBuilder, private userApi: UserApiService) {
+  constructor(private fb: FormBuilder,
+              private userApi: UserApiService,
+              private globalUser: GlobalUser) {
   }
 
   ngOnInit(): void {
     this.subscription.push(
-      this.userApi.getById(this.id)
+      this.userApi.getById(this.globalUser.user.id)
         .subscribe( user => {
           this.user = user;
           if (user != null) {
@@ -57,9 +60,9 @@ export class AccountComponent implements OnInit, OnDestroy {
     if (this.user == this.player.value) {
       return;
     }
-    this.id = this.user.id;
+
     this.user = this.player.value;
-    this.user.id = this.id;
+    this.user.id = this.globalUser.user.id;
 
     this.subscription.push(
       this.userApi.update(this.user.id, this.user)

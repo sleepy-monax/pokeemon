@@ -19,7 +19,6 @@ export class ShopComponent implements OnInit, OnDestroy {
   items: Items = itemsJson;
   userItem: UserItem = null;
   user: User;
-  id = 1;
 
   private subscription: Subscription[] = [];
 
