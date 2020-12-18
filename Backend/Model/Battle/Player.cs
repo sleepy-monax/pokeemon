@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Linq;
 using Model.Creature;
 
 namespace Model.Battle
 {
     public class Player
     {
-        private ICreature[] _creatures;
-        private int _active = 0;
+        private Creature.Creature[] Creatures { get; set; }
 
-        public ICreature ActiveCreature => _creatures[_active];
+        public int Active { get; set; }
 
-        public Player()
-        {
-        }
+        public Creature.Creature ActiveCreature => Creatures[Active];
+
+        public bool Defeated => Creatures.All(creature => !creature.Alive);
     }
 }

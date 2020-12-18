@@ -7,7 +7,6 @@ namespace Model.Action
     public class Action
     {
         public string Name { get; set; } = "";
-        public Types Type { get; set; }
         public string Description { get; set; } = "";
 
         public int Accuracy { get; set; }
@@ -15,5 +14,10 @@ namespace Model.Action
         public int Probability { get; set; }
 
         public IEffect? Effect { get; set; }
+
+        public Action Clone()
+        {
+            return (Action)this.MemberwiseClone();
+        }
     }
 }

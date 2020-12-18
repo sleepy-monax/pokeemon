@@ -9,29 +9,29 @@ namespace Api.Services
 
         public BattleService(SessionService bs)
         {
-            bs.RegisterRequestHandler<Model.Chat.Message>("battle-create", (session, payload) =>
-            {
-            });
+            /* bs.RegisterRequestHandler<Model.Chat.Message>("battle-create", (session, payload) =>
+             {
+             });
 
-            bs.RegisterRequestHandler<Model.Chat.Message>("battle-join", (session, payload) =>
-            {
-            });
+             bs.RegisterRequestHandler<Model.Chat.Message>("battle-join", (session, payload) =>
+             {
+             });
 
-            bs.RegisterRequestHandler<Model.Chat.Message>("battle-leave", (session, payload) =>
-            {
-            });
+             bs.RegisterRequestHandler<Model.Chat.Message>("battle-leave", (session, payload) =>
+             {
+             });
 
-            bs.RegisterRequestHandler<Model.Chat.Message>("battle-attack", (session, payload) =>
-            {
-            });
+             bs.RegisterRequestHandler<Model.Chat.Message>("battle-attack", (session, payload) =>
+             {
+             });
 
-            bs.RegisterRequestHandler<Model.Chat.Message>("battle-useitem", (session, payload) =>
-            {
-            });
+             bs.RegisterRequestHandler<Model.Chat.Message>("battle-useitem", (session, payload) =>
+             {
+             });
 
-            bs.RegisterRequestHandler<Model.Chat.Message>("battle-switch", (session, payload) =>
-            {
-            });
+             bs.RegisterRequestHandler<Model.Chat.Message>("battle-switch", (session, payload) =>
+             {
+             });*/
         }
     }
 }

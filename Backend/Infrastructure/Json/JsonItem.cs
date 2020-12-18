@@ -6,19 +6,19 @@ using Newtonsoft.Json.Linq;
 
 namespace Infrastructure.Json
 {
-    public class JsonItem
+    public static class JsonItem
     {
-        private Dictionary<string, Item> _items;
+        private static Dictionary<string, Item> _items;
 
         private static string ITEMS_PATH = "Assets/items.json";
 
-        public Item getByName(string name)
+        public static Item getByName(string name)
         {
             if (_items == null)
             {
-                var itemsJson = JArray.Parse(File.ReadAllText(ITEMS_PATH));
-
                 _items = new Dictionary<string, Item>();
+
+                var itemsJson = JArray.Parse(File.ReadAllText(ITEMS_PATH));
 
                 foreach (var itemToken in itemsJson)
                 {
