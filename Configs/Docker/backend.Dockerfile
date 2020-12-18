@@ -10,7 +10,6 @@ COPY Backend/Model /app/Backend/Model
 COPY Assets /app/Assets
 
 RUN dotnet dev-certs https -ep /app/Backend/pokeemon/cert.pfx -p localhost
-RUN ls -la /app/Backend/
 
 RUN dotnet build --configuration Release
 RUN dotnet publish -c Release -o /app/Backend/pokeemon --no-restore

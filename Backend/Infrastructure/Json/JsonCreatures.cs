@@ -10,7 +10,7 @@ namespace Infrastructure.Json
     {
         public static Stereotype get(Stereotype stereotype)
         {
-            var jsonString = File.ReadAllText("../../Assets/creatures.json");
+            var jsonString = File.ReadAllText("Assets/creatures.json");
             List<Stereotype> stereotypes = JsonConvert.DeserializeObject<List<Stereotype>>(jsonString);
             Stereotype st = new Stereotype();
             foreach (var ster in stereotypes)
