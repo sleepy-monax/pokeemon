@@ -6,8 +6,8 @@
     <form class="right-content" [formGroup]="player" (ngSubmit)="submit()">
       <app-title class="title">Sign in</app-title>
 
-      <input type="text" class="userName" placeholder="Username" formControlName="pseudo">
-      <input type="password" class="password" placeholder="Password" formControlName="password">
+      <input type="text" placeholder="Username" formControlName="pseudo">
+      <input type="password" placeholder="Password" formControlName="password">
 
       <div class="buttons">
         <app-button routerLink="/signup">Sign up</app-button>

@@ -151,7 +151,9 @@ namespace Infrastructure.SqlServer.Users
                 command.CommandText = ReqUpdate;
 
                 command.Parameters.AddWithValue($"@{ColPseudo}", user.Pseudo);
-                command.Parameters.AddWithValue($"@{ColPassword}", user.Password);
+                
+                var hash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                command.Parameters.AddWithValue($"@{ColPassword}", hash);
                 command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
                 command.Parameters.AddWithValue($"@{ColMoney}", user.Money);
 

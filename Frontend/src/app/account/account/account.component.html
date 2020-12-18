@@ -1,0 +1,22 @@
+<h1>{{user == null ? "" : user.pseudo }}'s account</h1>
+
+<div >
+  <form class="container" [formGroup]="player" *ngIf="player" (ngSubmit)="submit()">
+
+    <input type="text" id="pseudo" placeholder="Username" formControlName="pseudo"
+           [pattern]="pseudoPattern" matTooltip="Seulement des caracteres alphanumeriques" matTooltipPosition="below">
+
+    <input type="email" id="email" class="email" placeholder="Email" formControlName="email" [pattern]="emailPattern"
+           matTooltip="exemple@exemple.com" matTooltipPosition="below">
+
+    <input type="password" class="password" placeholder="Password" formControlName="password"
+           (ngModelChange)="checkPassword()"
+           matTooltip="Doit contenir : Un chiffre 0-9, Une lettre minuscule a-z, Une lettre majuscule A-Z, Un caractere special ,;:!"
+           matTooltipPosition="below">
+
+    <input type="password" class="checkPassword" placeholder="Confirm Password" formControlName="confirmPassword"
+           (ngModelChange)="checkPassword()">
+
+      <app-button [isDisabled]="isDisabled || player.invalid">Update information</app-button>
+  </form>
+</div>

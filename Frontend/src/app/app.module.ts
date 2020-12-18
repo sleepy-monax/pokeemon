@@ -17,6 +17,7 @@ import { ScaffoldingModule } from './scaffolding/scafolding.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { ToolkitModule } from './toolkit/toolkit.module';
 import { PokeeteamModule} from './pokeeteam/pokeeteam.module';
+import {AccountModule} from './account/account.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PokeeteamModule} from './pokeeteam/pokeeteam.module';
     ScaffoldingModule,
     ShoppingModule,
     ToolkitModule,
-    PokeeteamModule
+    PokeeteamModule,
+    AccountModule
   ],
   providers: [],
   bootstrap: [RootComponent]
