@@ -1,4 +1,4 @@
-namespace Model.Battle
+namespace Model.Action
 {
     public struct UnLockableAction
     {

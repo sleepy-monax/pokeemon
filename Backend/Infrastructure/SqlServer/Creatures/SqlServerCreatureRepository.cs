@@ -8,7 +8,7 @@ namespace Infrastructure.SqlServer.Creatures
     {
 
         private IFactory<ICreature> _factory = new CreatureFactory();
-        
+    
         public static readonly string TableName = "Monsters";
         public static readonly string TableJointure = "UserMonsters";
         public static readonly string ColId = "id";

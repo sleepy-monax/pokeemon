@@ -13,6 +13,7 @@ namespace Infrastructure.SqlServer.Creatures
         public ICreature CreateFromReader(SqlDataReader reader)
         {
             string name = reader.GetString(reader.GetOrdinal(SqlServerCreatureRepository.ColStereotype));
+
             Creature creature = new Creature
             {
                 Id = reader.GetInt32(reader.GetOrdinal(SqlServerCreatureRepository.ColId)),
@@ -21,7 +22,9 @@ namespace Infrastructure.SqlServer.Creatures
                 Xp = reader.GetInt32(reader.GetOrdinal(SqlServerCreatureRepository.ColXp)),
                 Pickable = reader.GetBoolean(reader.GetOrdinal(SqlServerCreatureRepository.ColPickable))
             };
-            creature.Stereotype = JsonCreatures.get(new Stereotype{Name = name});
+
+            creature.Stereotype = JsonStereotypes.get(new Stereotype{Name = name});
+
             return creature;
         }
     }

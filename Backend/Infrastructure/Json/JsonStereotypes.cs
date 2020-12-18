@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Infrastructure.Json
 {
-    public class JsonCreatures
+    public class JsonStereotypes
     {
         public static Stereotype get(Stereotype stereotype)
         {

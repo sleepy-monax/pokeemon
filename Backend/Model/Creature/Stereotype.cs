@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Model.Action;
 using Model.Battle;
 
 namespace Model.Creature
@@ -9,6 +10,6 @@ namespace Model.Creature
 
         public Stats Stats { get; set; } = new Stats();
 
-        public List<Action> Actions { get; set; } = new List<Action>();
+        public List<UnLockableAction> Actions { get; set; } = new List<UnLockableAction>();
     }
 }

@@ -2,10 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Model.Battle;
+using Model.Action;
 using Model.Effets;
-using Model.Shared;
-using Action = Model.Battle.Action;
 
 namespace Model.Creature
 {
@@ -47,9 +45,9 @@ namespace Model.Creature
 
         public ObservableCollection<IEffect> Effects { get; set; } = new ObservableCollection<IEffect>();
 
-        public List<UnLockableAction> AllActions { get; set; } = new List<UnLockableAction>();
+        public List<UnLockableAction> AllActions => Stereotype.Actions;
 
-        public List<Action> AvaillableActions => AllActions
+        public List<Action.Action> AvaillableActions => AllActions
             .FindAll(unlockable => unlockable.Level <= Level)
             .Select(unlockable => unlockable.Action)
             .ToList();
