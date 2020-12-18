@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Chat" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Anotations\Anotations.csproj" />
   </ItemGroup>
 

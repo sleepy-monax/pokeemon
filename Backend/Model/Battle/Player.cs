@@ -16,7 +16,7 @@ namespace Model.Battle
 
         public bool Defeated => Creatures.All(creature => !creature.Alive);
 
-        void SendMessage(Object message)
+        public void SendMessage(Object message)
         {
             OnMessageSent?.Invoke(message);
         }

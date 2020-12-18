@@ -5,6 +5,7 @@ namespace Model.Messages
     [MessageType("battle-attack")]
     public class ClientAttack : ClientMessage
     {
-        public string Name { get; set; }
+        public string AttackName { get; set; }
+        
     }
 }

@@ -31,6 +31,19 @@ namespace Infrastructure.WebSockets
             }
         }
 
+        public bool HasService<T>()
+        {
+            foreach (var srv in _Services)
+            {
+                if (srv is T casted)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public void MountService<T>(T service) where T : ISessionService
         {
             if (_Services.Any(srv => srv is T))
@@ -105,7 +118,7 @@ namespace Infrastructure.WebSockets
         
         public async Task Send<T>(T payload)
         {
-            if (typeof(T).GetCustomAttributes(
+            if (payload.GetType().GetCustomAttributes(
                 typeof(MessageTypeAttribute), true
             ).FirstOrDefault() is MessageTypeAttribute attribute)
             {

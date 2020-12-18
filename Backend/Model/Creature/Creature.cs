@@ -42,6 +42,7 @@ namespace Model.Creature
         public Stats Stats => Effects.Aggregate(Stereotype.Stats, (current, effect) => effect.Apply(current));
 
         public bool Alive => Stats.Health > 0;
+        public bool Defeated => !Alive;
 
         public ObservableCollection<IEffect> Effects { get; set; } = new ObservableCollection<IEffect>();
 
@@ -49,6 +50,7 @@ namespace Model.Creature
 
         public List<Attack> AvaillableActions => AllActions
             .FindAll(unlockable => unlockable.Level <= Level)
+            .FindAll(unlockable => unlockable.Action.PowerPoint > 0)
             .Select(unlockable => unlockable.Action)
             .ToList();
 

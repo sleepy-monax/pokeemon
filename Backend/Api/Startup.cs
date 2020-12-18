@@ -42,7 +42,7 @@ namespace Api
             services.AddControllers();
             services.AddSingleton<SessionService>();
             services.AddSingleton<LatencyService>();
-            services.AddSingleton<Battle>();
+            services.AddSingleton<BattleService>();
             services.AddLogging();
         }
 

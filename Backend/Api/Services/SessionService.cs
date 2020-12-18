@@ -5,6 +5,7 @@ using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Anotations;
+using Infrastructure;
 using Infrastructure.WebSockets;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -16,6 +17,7 @@ namespace Api.Services
     {
         private readonly Dictionary<string, Session> _sessions = new Dictionary<string, Session>();
         private readonly Dictionary<string, Func<Session, JObject, Task>> _requestHandlers = new Dictionary<string, Func<Session, JObject, Task>>();
+        private IdAllocator _allocator = new IdAllocator("session");
 
         public void RegisterRequestHandler<T>(Func<Session, T, Task> function)
         {
@@ -53,25 +55,11 @@ namespace Api.Services
                 return new Task(() => action(session, data));
             });
         }
-
-        string GenerateSessionId()
-        {
-            var rand = new Random();
-
-            var name = "";
-
-            do
-            {
-                var randomNumber = rand.Next(1, int.MaxValue);
-                name = $"session-{randomNumber:X}";
-            } while (_sessions.ContainsKey(name));
-
-            return name;
-        }
+        
 
         public async Task AcceptConnection(WebSocket socket)
         {
-            var sessionId = GenerateSessionId();
+            var sessionId = _allocator.Alloc();
             var session = new Session(sessionId, socket);
             _sessions.Add(sessionId, session);
 
@@ -84,6 +72,7 @@ namespace Api.Services
                 _sessions.Remove(sessionId);
 
                 Console.WriteLine($"User {sessionId} left the game.");
+                _allocator.Free(sessionId);
 
                 await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", CancellationToken.None);
             }
