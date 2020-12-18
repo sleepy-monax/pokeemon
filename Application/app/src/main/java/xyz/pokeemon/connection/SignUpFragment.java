@@ -3,6 +3,7 @@ package xyz.pokeemon.connection;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import xyz.pokeemon.MainActivity;
 import xyz.pokeemon.R;
 import xyz.pokeemon.connection.home.HomeFragment;
 import xyz.pokeemon.model.User;
@@ -23,7 +25,7 @@ public class SignUpFragment extends Fragment {
     private EditText password, confirmPassword, pseudo, email;
 
     private UserRepository repository = new UserRepository();
-    private boolean pseudoIsCorrect, emailIsCorrect, passwordIsCorrect;
+    private boolean pseudoIsCorrect, emailIsCorrect;
 
     public SignUpFragment() {
         // Required empty public constructor
@@ -88,38 +90,20 @@ public class SignUpFragment extends Fragment {
 
             }
         });
-
-        password.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (charSequence.toString().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\\w\\s]).{8,}$")) {
-                    passwordIsCorrect = true;
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
     }
 
     public void submit(View view) {
         signUpBtn = view.findViewById(R.id.btn_signup_signup);
 
         signUpBtn.setOnClickListener(v -> {
-            if (pseudoIsCorrect && passwordIsCorrect && emailIsCorrect) {
+            if (pseudoIsCorrect && emailIsCorrect) {
                 if (password.getText().toString().equals(confirmPassword.getText().toString())) {
                     final User user =new User(
                             pseudo.getText().toString(),
                             email.getText().toString(),
                             password.getText().toString()
                     );
+                    MainActivity.setUser(user);
                     repository.create(
                             user
                     ).observe(getViewLifecycleOwner(), us -> {

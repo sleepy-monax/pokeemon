@@ -21,15 +21,15 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 import xyz.pokeemon.R;
-import xyz.pokeemon.adapter.PetAdapter;
-import xyz.pokeemon.model.pet.Action;
-import xyz.pokeemon.model.pet.Pet;
+import xyz.pokeemon.adapter.CreatureAdapter;
+import xyz.pokeemon.model.creature.Action;
+import xyz.pokeemon.model.creature.Creature;
 import xyz.pokeemon.serialization.Utils;
 
 
 public class TeamFragment extends Fragment {
 
-    private List<Pet> pets;
+    private List<Creature> creatures;
 
     public TeamFragment() {
         // Required empty public constructor
@@ -45,36 +45,36 @@ public class TeamFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_team, container, false);
-        initialiseListPet();
-        final ListView lvPets = view.findViewById(R.id.lv_team);
-        petOnClick(lvPets);
-        PetAdapter adapter = new PetAdapter(
+        initialiseListCreature();
+        final ListView lvCreatures = view.findViewById(R.id.lv_team);
+        creatureOnClick(lvCreatures);
+        CreatureAdapter adapter = new CreatureAdapter(
                 getContext(),
                 R.id.lv_team,
-                pets
+                creatures
         );
 
-        lvPets.setAdapter(adapter);
+        lvCreatures.setAdapter(adapter);
         return view;
     }
 
 
     /**
-     * @param lvPets corresponds to each pet in the view.
+     * @param lvCreatures corresponds to each creature in the view.
      *
-     *  This method set on click on each pet on the pet listView.
+     *  This method set on click on each creature on the creature listView.
      */
-    public void petOnClick(ListView lvPets){
-        lvPets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    public void creatureOnClick(ListView lvCreatures){
+        lvCreatures.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Pet pet = (Pet) lvPets.getItemAtPosition(position);
+                Creature creature = (Creature) lvCreatures.getItemAtPosition(position);
                 final AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
 
                 //Set information.
                 builder.setTitle("Stats");
                 String message = "";
-                for (Action action: pet.getActions()) {
+                for (Action action: creature.getActions()) {
                     message += "Name: " + action.getName() + " \t "
                             + "Level: " + action.getLevel()
                             + "\n";
@@ -99,13 +99,13 @@ public class TeamFragment extends Fragment {
         });
     }
 
-    private void initialiseListPet() {
+    private void initialiseListCreature() {
         String jsonFileString = Utils.getJsonFromAssets(getContext(), "creatures.json");
 
         Gson gson = new Gson();
-        Type listPetType = new TypeToken<List<Pet>>() {}.getType();
+        Type listCreatureType = new Tycreatureoken<List<Creature>>() {}.getType();
 
-        pets = gson.fromJson(jsonFileString, listPetType);
+        creatures = gson.fromJson(jsonFileString, listCreatureType);
     }
 
 }

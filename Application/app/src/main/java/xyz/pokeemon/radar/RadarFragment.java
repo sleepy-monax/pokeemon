@@ -9,38 +9,31 @@ import androidx.fragment.app.Fragment;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
 import xyz.pokeemon.R;
-import xyz.pokeemon.radar.location.PetGenerationManager;
+import xyz.pokeemon.radar.location.CreatureGenerationManager;
 
 
 /**
  *  This class represents the radar container.
  *  It will contains the RadarView.
  *  It will check the app permissions to have access to geolocation coordinates.
- *  It generates a button randomly on the radar to represent a pet that you can capture.
+ *  It generates a button randomly on the radar to represent a creature that you can capture.
  */
 public class RadarFragment extends Fragment {
     private TextView tvLatitude, tvLongitude;
     private RadarView radarView = null;
-    private PetGenerationManager petGenerationManager;
+    private CreatureGenerationManager creatureGenerationManager;
 
     private android.location.LocationManager locationManager;
 
@@ -128,12 +121,12 @@ public class RadarFragment extends Fragment {
 
     /**
      *  Generate a button randomly on the radar.
-     *  The button corresponds to a pet.
+     *  The button corresponds to a creature.
      */
     public void generateRandomButton(View v){
         //Display a button with a blinking dot
-        petGenerationManager = new PetGenerationManager();
-        petGenerationManager.generatePosition(v, getActivity());
+        creatureGenerationManager = new CreatureGenerationManager();
+        creatureGenerationManager.generatePosition(v, getActivity());
     }
 
 
@@ -143,7 +136,7 @@ public class RadarFragment extends Fragment {
      *  This can be compared to a compass system.
 
      public void updateButtonPosition(Location loca, Button b){
-     petGenerationManager.updateButtonPosition(loca, b);
+     creatureGenerationManager.updateButtonPosition(loca, b);
      }
      */
 }

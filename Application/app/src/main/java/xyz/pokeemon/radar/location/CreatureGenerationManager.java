@@ -15,8 +15,10 @@ import java.util.List;
 import java.util.Random;
 
 import xyz.pokeemon.R;
-import xyz.pokeemon.model.pet.Pet;
+import xyz.pokeemon.model.User;
+import xyz.pokeemon.model.creature.Creature;
 import xyz.pokeemon.radar.animations.AnimationEffects;
+import xyz.pokeemon.repository.UserRepository;
 import xyz.pokeemon.serialization.Utils;
 
 /**
@@ -25,11 +27,13 @@ import xyz.pokeemon.serialization.Utils;
  *  Apply animation on the generated button.
  *  Apply button position update.
  */
-public class PetGenerationManager {
+public class CreatureGenerationManager {
     private Button b;
     private PositionManager positionManager;
     private AnimationEffects animationEffect;
-    private List<Pet> pets;
+    private List<Creature> creatures;
+    private UserRepository repository = new UserRepository();
+    private User user;
 
 
     /**
@@ -71,15 +75,15 @@ public class PetGenerationManager {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                pets = initialiseListPet(v.getContext());
+                creatures = initialiseListCreature(v.getContext());
 
-                //Generate random for pet capture.
+                //Generate random for creature capture.
                 Random random = new Random();
-                int randomIndex = random.nextInt(pets.size());
-
+                int randomIndex = random.nextInt(creatures.size());
+                Creature creature = creatures.get(randomIndex);
                 //Set information.
-                builder.setTitle("Captured Pet");
-                builder.setMessage("You have captured : " + pets.get(randomIndex).getName());
+                builder.setTitle("Captured Creature");
+                builder.setMessage("You have captured : " + creature.getName());
 
                 //Closing button on the alert dialog.
                 builder.setNegativeButton("OK",
@@ -89,6 +93,7 @@ public class PetGenerationManager {
                             public void onClick(DialogInterface dialog, int which)
                             {
                                 dialog.dismiss();
+                                //repository.addCreature(user, creature);
                             }
                         });
 
@@ -111,22 +116,22 @@ public class PetGenerationManager {
 
     /**
      * @param context get the context of the current view.
-     * @return return the pet list read in the json file.
+     * @return return the creature list read in the json file.
      */
-    private List<Pet> initialiseListPet(Context context) {
+    private List<Creature> initialiseListCreature(Context context) {
         String jsonFileString = Utils.getJsonFromAssets(context, "creatures.json");
 
         Gson gson = new Gson();
-        Type listPetType = new TypeToken<List<Pet>>() {}.getType();
+        Type listCreatureType = new TypeToken<List<Creature>>() {}.getType();
 
-        pets = gson.fromJson(jsonFileString, listPetType);
-        return pets;
+        creatures = gson.fromJson(jsonFileString, listCreatureType);
+        return creatures;
     }
 
     /**
-     *  Register the pet capture in the database.
+     *  Register the creature capture in the database.
      */
-    public void registerPetCapture(){
+    public void registerCreatureCapture(){
 
     }
 

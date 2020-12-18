@@ -9,7 +9,7 @@ import xyz.pokeemon.model.User;
 public interface UserService {
 
     @GET("users")
-    Call<User> getUser(User user);
+    Call<User> getUser();
 
     @POST("users")
     Call<User> postUser(@Body User user);

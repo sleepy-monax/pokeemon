@@ -16,7 +16,6 @@ import java.util.List;
 
 import xyz.pokeemon.R;
 import xyz.pokeemon.adapter.ItemAdapter;
-import xyz.pokeemon.model.pet.Action;
 import xyz.pokeemon.model.shop.Item;
 import xyz.pokeemon.serialization.Utils;
 
@@ -60,9 +59,9 @@ public class ShopFragment extends Fragment {
     }
 
     /**
-     * @param lvItem corresponds to each pet in the view.
+     * @param lvItem corresponds to each creature in the view.
      *
-     *  This method set on click on each pet on the pet listView.
+     *  This method set on click on each creature on the creature listView.
      */
     public void itemOnClick(ListView lvItem){
         lvItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {

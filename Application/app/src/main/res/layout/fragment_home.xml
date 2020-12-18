@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
 
     <TextView
         android:id="@+id/textView2"
@@ -11,7 +12,8 @@
         android:layout_height="80dp"
         android:gravity="center"
         android:text="Account"
-        android:textSize="40dp"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/home_text_size"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -20,7 +22,8 @@
         android:layout_height="80dp"
         android:layout_marginTop="40dp"
         android:text="Money"
-        android:textSize="40dp"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/home_text_size"
         android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -32,8 +35,9 @@
         android:layout_width="411dp"
         android:layout_height="80dp"
         android:layout_marginTop="40dp"
-        android:text="Pseudo"
-        android:textSize="40dp"
+        android:hint="Pseudo"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/home_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,8 +48,9 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginTop="40dp"
-        android:text="Email"
-        android:textSize="40dp"
+        android:hint="Email"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/home_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +61,9 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginTop="40dp"
-        android:text="Password"
-        android:textSize="40dp"
+        android:hint="Password"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/home_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,4 +1,4 @@
-package xyz.pokeemon.model.pet;
+package xyz.pokeemon.model.creature;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,34 +7,34 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pet implements Parcelable, Serializable {
+public class Creature implements Parcelable, Serializable {
 
     private String name;
     private Stat stats;
     private List<Action> actions;
 
-    public Pet(String name, Stat stat) {
+    public Creature(String name, Stat stat) {
         this.name = name;
         this.stats = stat;
         actions = new ArrayList<>();
     }
 
-    protected Pet(Parcel in) {
+    protected Creature(Parcel in) {
         name = in.readString();
         stats = in.readParcelable(Stat.class.getClassLoader());
         actions = new ArrayList<>();
         in.readList(actions, Action.class.getClassLoader());
     }
 
-    public static final Creator<Pet> CREATOR = new Creator<Pet>() {
+    public static final Creator<Creature> CREATOR = new Creator<Creature>() {
         @Override
-        public Pet createFromParcel(Parcel in) {
-            return new Pet(in);
+        public Creature createFromParcel(Parcel in) {
+            return new Creature(in);
         }
 
         @Override
-        public Pet[] newArray(int size) {
-            return new Pet[size];
+        public Creature[] newArray(int size) {
+            return new Creature[size];
         }
     };
 
@@ -65,7 +65,7 @@ public class Pet implements Parcelable, Serializable {
 
     @Override
     public String toString() {
-        return "Pet{" +
+        return "Creature{" +
                 "name='" + name + '\'' +
                 ", stat=" + stats +
                 ", actions=" + actions +

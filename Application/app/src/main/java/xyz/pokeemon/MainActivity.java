@@ -10,6 +10,8 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import xyz.pokeemon.connection.home.HomeFragment;
+import xyz.pokeemon.model.User;
 import xyz.pokeemon.shop.ShopFragment;
 import xyz.pokeemon.connection.SignInFragment;
 import xyz.pokeemon.team.TeamFragment;
@@ -17,6 +19,7 @@ import xyz.pokeemon.radar.RadarFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static User user;
     private View decorView;
     private Fragment selectedFragment;
     private BottomNavigationView bottomNavigationView;
@@ -31,14 +34,18 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.ic_radar:
                             selectedFragment = new RadarFragment();
                             break;
-                        case R.id.ic_pets:
+                        case R.id.ic_creatures:
                             selectedFragment = new TeamFragment();
                             break;
                         case R.id.ic_shop:
                             selectedFragment = new ShopFragment();
                             break;
                         case R.id.ic_account:
-                            selectedFragment = new SignInFragment();
+                            if(user==null){
+                                selectedFragment = new SignInFragment();
+                            }else{
+                                selectedFragment = new HomeFragment();
+                            }
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(
@@ -84,5 +91,13 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 |View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static void setUser(User user) {
+        MainActivity.user = user;
     }
 }

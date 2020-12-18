@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 import java.io.Serializable;
 
-import xyz.pokeemon.model.pet.Stat;
-
 public class Item implements Parcelable, Serializable {
 
     private String name, description;
