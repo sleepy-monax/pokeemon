@@ -9,9 +9,7 @@
         public string Password { get; set; }
         public int Money { get; set; }
 
-        public User()
-        {
-        }
+        public User() {}
 
         public User(int id, string pseudo, string email, string password)
         {

@@ -1,6 +1,6 @@
 namespace Model.Battle
 {
-    class Battle
+    public class Battle
     {
         
     }

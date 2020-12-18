@@ -1,4 +1,6 @@
-﻿namespace Model.UserItems
+﻿using Model.Effets;
+
+namespace Model.UserItems
 {
     public class UserItem : IUserItems
     {

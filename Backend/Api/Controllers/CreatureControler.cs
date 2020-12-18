@@ -7,12 +7,10 @@ using Model.Creature;
 
 namespace Api.Controllers
 {
-    
     [ApiController]
     [Route("creatures")]
     public class CreatureControler : ControllerBase
     {
-        
         private ICreatureRepository _creatureRepository = new SqlServerCreatureRepository();
 
         [HttpGet]
@@ -20,7 +18,7 @@ namespace Api.Controllers
         {
             return Ok(_creatureRepository.Query().Select(creature => (Creature) creature));
         }
-        
+
         [HttpGet]
         [Route("user/{id}")]
         public ActionResult<IEnumerable<ICreature>> GetByUser(int id)
