@@ -11,22 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import xyz.pokeemon.MainActivity;
 import xyz.pokeemon.R;
 import xyz.pokeemon.model.User;
 
 public class HomeFragment extends Fragment {
 
-    private User user;
-
-    private TextView tvMoney;
     private EditText edPseudo, edEmail, edPassword;
 
     public HomeFragment() {
     }
 
-    public HomeFragment(User user) {
-        this.user = user;
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,13 +39,15 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        tvMoney = view.findViewById(R.id.tv_home_money);
         edPseudo = view.findViewById(R.id.ed_home_pseudo_user);
         edEmail = view.findViewById(R.id.ed_home_email);
         edPassword = view.findViewById(R.id.ed_home_password);
+
+
+        edPseudo.setText(MainActivity.user.getPseudo());
+        edEmail.setText(MainActivity.user.getEmail());
+        edPassword.setText(MainActivity.user.getPassword());
+
     }
 
-    public void displayReceiveData(User user) {
-        this.user = user;
-    }
 }

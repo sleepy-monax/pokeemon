@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Infrastructure.SqlServer.Creatures;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +37,12 @@ namespace Api.Controllers
             }
 
             return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult<Boolean> Post([FromBody] Creature creature)
+        {
+            return Ok(_creatureRepository.Create(creature.Id, creature));
         }
     }
 }

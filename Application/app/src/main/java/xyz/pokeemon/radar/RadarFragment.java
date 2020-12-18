@@ -126,7 +126,7 @@ public class RadarFragment extends Fragment {
     public void generateRandomButton(View v){
         //Display a button with a blinking dot
         creatureGenerationManager = new CreatureGenerationManager();
-        creatureGenerationManager.generatePosition(v, getActivity());
+        creatureGenerationManager.generateButton(v, getActivity(), this);
     }
 
 

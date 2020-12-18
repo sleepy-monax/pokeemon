@@ -93,11 +93,11 @@ public class MainActivity extends AppCompatActivity {
                 |View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
     }
 
-    public static User getUser() {
+    public User getUser() {
         return user;
     }
 
-    public static void setUser(User user) {
-        MainActivity.user = user;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

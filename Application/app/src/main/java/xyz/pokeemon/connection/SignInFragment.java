@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,14 +14,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import xyz.pokeemon.MainActivity;
 import xyz.pokeemon.R;
 import xyz.pokeemon.connection.home.HomeFragment;
+import xyz.pokeemon.model.User;
 import xyz.pokeemon.repository.UserRepository;
 
 public class SignInFragment extends Fragment {
-
-    private Button btnGotoSignUp, btnSignIn;
     private UserRepository repository = new UserRepository();
     private EditText email, password;
     private boolean pseudoIsCorrect, emailIsCorrect;
@@ -46,28 +48,30 @@ public class SignInFragment extends Fragment {
     public void submit(View view){
         email = (EditText) view.findViewById(R.id.et_signin_email);
         password = (EditText) view.findViewById(R.id.et_signin_password);
-        btnSignIn = (Button) view.findViewById(R.id.btn_signin_login);
-
+        Button btnSignIn = (Button) view.findViewById(R.id.btn_signin_login);
+        int index = 1;
         btnSignIn.setOnClickListener(v->{
-            Log.i("Aya", btnSignIn.toString());
-            /**
-            if(email.getText().toString().equals(repository.query().getValue().getEmail())
-                && password.getText().toString().equals(repository.query().getValue().getPassword())){
-             */
-                MainActivity.setUser(repository.query().getValue());
-                FragmentTransaction ft = SignInFragment.this.getParentFragmentManager().beginTransaction();
-                ft.replace(R.id.fl_wrapper, new HomeFragment());
-                ft.addToBackStack(null);
-                ft.commit();
-            //}
-            //else {
-                Toast.makeText(view.getContext(), "Error", Toast.LENGTH_LONG).show();
-            //}
+            User us = new User(email.getText().toString(), password.getText().toString());
+
+            repository.getUserLog(us).observe(getViewLifecycleOwner(), user -> {
+
+                if (user == null || user.getId() == 0) {
+                    Toast.makeText(view.getContext(), "Error ID", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    MainActivity.user = user;
+                    FragmentTransaction ft = SignInFragment.this.getParentFragmentManager().beginTransaction();
+                    ft.replace(R.id.fl_wrapper, new HomeFragment());
+                    ft.addToBackStack(null);
+                    ft.commit();
+                }
+            }
+        );
         });
     }
 
     public void goToSignUp(View view){
-        btnGotoSignUp = (Button) view.findViewById(R.id.btn_signin_signup);
+        Button btnGotoSignUp = (Button) view.findViewById(R.id.btn_signin_signup);
         btnGotoSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

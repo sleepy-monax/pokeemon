@@ -83,6 +83,8 @@ namespace Infrastructure.SqlServer.Users
             if (hash)
             {
                 user.Id = userBis.Id;
+                user.Pseudo = userBis.Pseudo;
+                user.Email = userBis.Email;
             }
             return user;
         }

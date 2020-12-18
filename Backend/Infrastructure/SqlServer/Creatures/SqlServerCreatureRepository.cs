@@ -16,6 +16,8 @@ namespace Infrastructure.SqlServer.Creatures
         public static readonly string ColStereotype = "stereotype";
         public static readonly string ColXp = "xp";
         public static readonly string ColPickable = "pickable";
+        public static readonly string ColIdUser = "idUser";
+        public static readonly string ColIdCreature = "idCreature";
 
         public static readonly string ReqQuerry = $"select * from {TableName}";
 
@@ -31,6 +33,11 @@ namespace Infrastructure.SqlServer.Creatures
             {ColXp} = @{ColXp},
             {ColPickable} = @{ColPickable}
             where {ColId} = @{ColId}";
+
+        public static readonly string ReqCreateCreature = $@"insert into {TableName} (stereotype, xp) output inserted.{ColId} 
+        values (@{ColStereotype}, @{ColXp})";
+        public static readonly string ReqCreateJointure = $@"insert into {TableJointure} ({ColIdUser}, {ColIdCreature}) output inserted.{ColId} 
+        values (@{ColIdUser}, @{ColIdCreature})";
 
         public IEnumerable<ICreature> Query()
         {
@@ -51,14 +58,24 @@ namespace Infrastructure.SqlServer.Creatures
             return creatures;
         }
 
-        public ICreature Get(int id)
+        public bool Create(int id, ICreature creature)
         {
-            throw new System.NotImplementedException();
-        }
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                var query = connection.CreateCommand();
+                query.CommandText = ReqCreateCreature;
 
-        public ICreature Create(ICreature creature)
-        {
-            throw new System.NotImplementedException();
+                var isAdd = (int) query.ExecuteScalar();
+
+                if (isAdd != 0)
+                {
+                    query.CommandText = ReqCreateJointure;
+                    return (int) query.ExecuteScalar() != 0;
+                }
+
+                return false;
+            }
         }
 
         public bool Delete(int id)

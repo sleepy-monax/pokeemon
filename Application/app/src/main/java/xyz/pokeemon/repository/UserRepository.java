@@ -8,10 +8,9 @@ import androidx.lifecycle.MutableLiveData;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import xyz.pokeemon.api.ApiClient;
+import xyz.pokeemon.api.Api;
 import xyz.pokeemon.api.UserService;
 import xyz.pokeemon.model.User;
-import xyz.pokeemon.model.creature.Creature;
 
 public class UserRepository {
 
@@ -19,13 +18,13 @@ public class UserRepository {
     }
 
     private UserService getUserService() {
-        return ApiClient.getClient().create(UserService.class);
+        return Api.get().create(UserService.class);
     }
 
 
-    public LiveData<User> query(){
+    public LiveData<User> getUserLog(User user){
         final MutableLiveData<User> mutableLiveData = new MutableLiveData<>();
-        getUserService().getUser().enqueue(new Callback<User>() {
+        getUserService().getUser(user).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 mutableLiveData.postValue(response.body());
@@ -55,9 +54,5 @@ public class UserRepository {
         });
 
         return mutableLiveData;
-    }
-
-    public void addCreature(User user, Creature creature){
-
     }
 }

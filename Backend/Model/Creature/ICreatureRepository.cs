@@ -5,8 +5,7 @@ namespace Model.Creature
     public interface ICreatureRepository
     {
         IEnumerable<ICreature> Query();
-        ICreature Get(int id);
-        ICreature Create(ICreature creature);
+        bool Create(int id, ICreature creature);
         bool Delete(int id);
         bool Update(int id, ICreature creature);
         IEnumerable<ICreature> GetByUser(int idUser);

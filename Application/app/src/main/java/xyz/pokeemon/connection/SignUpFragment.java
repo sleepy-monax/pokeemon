@@ -103,7 +103,7 @@ public class SignUpFragment extends Fragment {
                             email.getText().toString(),
                             password.getText().toString()
                     );
-                    MainActivity.setUser(user);
+                    MainActivity.user = user;//doesn't work
                     repository.create(
                             user
                     ).observe(getViewLifecycleOwner(), us -> {
