@@ -56,7 +56,6 @@ namespace Api.Services
             });
         }
         
-
         public async Task AcceptConnection(WebSocket socket)
         {
             var sessionId = _allocator.Alloc();
@@ -68,10 +67,10 @@ namespace Api.Services
                 session.AcknowledgeConnection().Wait();
 
                 await session.Service((type, data) => DispatchRequest(session, type, data));
-
-                _sessions.Remove(sessionId);
-
+                
                 Console.WriteLine($"User {sessionId} left the game.");
+                
+                _sessions.Remove(sessionId);
                 _allocator.Free(sessionId);
 
                 await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", CancellationToken.None);

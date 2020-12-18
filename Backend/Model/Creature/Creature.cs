@@ -12,7 +12,9 @@ namespace Model.Creature
         public int Id { get; set; }
 
         public string Name { get; set; }
+        
         public Stereotype Stereotype { get; set; }
+        
         public int Xp { get; set; }
 
         public int Level
@@ -44,7 +46,7 @@ namespace Model.Creature
         public bool Alive => Stats.Health > 0;
         public bool Defeated => !Alive;
 
-        public ObservableCollection<IEffect> Effects { get; set; } = new ObservableCollection<IEffect>();
+        public List<IEffect> Effects { get; set; } = new List<IEffect>();
 
         public List<UnLockableAction> AllActions => Stereotype.Actions;
 
@@ -53,6 +55,5 @@ namespace Model.Creature
             .FindAll(unlockable => unlockable.Action.PowerPoint > 0)
             .Select(unlockable => unlockable.Action)
             .ToList();
-
     }
 }

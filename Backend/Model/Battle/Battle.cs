@@ -10,10 +10,12 @@ namespace Model.Battle
         public String Id { get;  }
         private bool _turn = false;
 
-        private Player _firstPlayer;
-        private Player _secondPlayer;
+        private Player? _firstPlayer;
+        private Player? _secondPlayer ;
+
+        public bool IsAppening => _firstPlayer != null && _secondPlayer != null;
         
-        Player CurrentPlayer()
+        Player? CurrentPlayer()
         {
             if (_turn)
             {
@@ -23,7 +25,7 @@ namespace Model.Battle
             return _secondPlayer;
         }
         
-        Player OtherPlayer()
+        Player? OtherPlayer()
         {
             if (!_turn)
             {
@@ -52,6 +54,11 @@ namespace Model.Battle
             {
                 CurrentPlayer().SendMessage(new ServerError("player-defeated"));
                 return false;
+            }
+
+            if (OtherPlayer().Defeated)
+            {
+                CurrentPlayer().SendMessage(new ServerError("you-already-win"));
             }
 
             return true;
@@ -106,6 +113,56 @@ namespace Model.Battle
             OtherPlayer().ActiveCreature.Effects.Add(attack.Effect);
             attack.PowerPoint--;
             
+            EndTurn();
+        }
+
+        public void Switch(Player player, ClientSwitchCreature message)
+        {
+            if (!BeginTurn(player))
+            {
+                return;
+            }
+
+            var oldActive = CurrentPlayer().Active;
+            
+            CurrentPlayer().Active = message.CreatureIndex;
+
+            if (CurrentPlayer().ActiveCreature.Defeated)
+            {
+                player.SendMessage(new ServerError("creature-not-able-to-fight"));
+
+                CurrentPlayer().Active = oldActive;
+            }
+            else
+            {
+                EndTurn();
+            }
+        }
+
+        public void Use(Player player, ClientUseItem message)
+        {
+            if (!BeginTurn(player))
+            {
+                return;
+            }
+
+            var item = player.Items.First(item => item.Name == message.Item);
+
+            if (item == null)
+            {
+                player.SendMessage(new ServerError("no-such-item"));
+                return;
+            }
+
+            if (message.TargetEnemy)
+            {
+                OtherPlayer().ActiveCreature.Effects.Add(item.Effect);
+            }
+            else
+            {
+                CurrentPlayer().ActiveCreature.Effects.Add(item.Effect);
+            }
+
             EndTurn();
         }
 
