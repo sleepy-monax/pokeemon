@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+<<<<<<< Updated upstream
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+=======
+import { MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+>>>>>>> Stashed changes
 import { CheckoutComponent } from '../checkout/checkout.component';
 
 @Component({
