@@ -7,7 +7,7 @@ using Model.UserItems;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("userItems")]
+    [Route("items")]
     public class UserItemsController : ControllerBase
     {
 
@@ -25,6 +25,13 @@ namespace Api.Controllers
         {
             IUserItems userItems = (UserItem) _userItemsRepository.Get(id);
             return userItems != null ? (ActionResult<UserItem>) Ok(userItems) : NotFound();
+        }
+        
+        [HttpGet]
+        [Route(template: "user/{idUser}")]
+        public ActionResult<IEnumerable<IUserItems>> GetByUser(int idUser)
+        {
+            return Ok(_userItemsRepository.GetByUser(idUser).Select(userItem => (UserItem) userItem));
         }
         
         [HttpPost]

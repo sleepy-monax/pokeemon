@@ -9,5 +9,6 @@ namespace Model.UserItems
         IUserItems Create(IUserItems userItems);
         bool Delete(int id);
         bool Update(int id, IUserItems userItems);
+        IEnumerable<IUserItems> GetByUser(int idUser);
     }
 }

@@ -7,6 +7,5 @@ namespace Model.UserItems
         int IdUser { get; set; }
         string NameItem { get; set; }
         int Quantity { get; set; }
-
     }
 }

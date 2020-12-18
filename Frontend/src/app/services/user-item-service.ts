@@ -3,12 +3,13 @@ import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {UserItem, UserItems} from '../model/user-item';
 import {Observable} from 'rxjs';
+import {UserItemRepository} from '../model/user-item-repository';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserItemService {
-  private static URL: string = 'https://' + environment.serverAddress + ':' + environment.apiPort + '/userItems';
+export class UserItemService implements UserItemRepository {
+  private static URL: string = 'https://' + environment.serverAddress + ':' + environment.apiPort + '/items';
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +31,10 @@ export class UserItemService {
 
   getById(id: number): Observable<UserItem> {
     return this.http.get<UserItem>(UserItemService.URL + '/' + id);
+  }
+
+  getByUser(idUser: number): Observable<UserItems> {
+    return this.http.get<UserItems>(UserItemService.URL + '/user/' + idUser);
   }
 
 }

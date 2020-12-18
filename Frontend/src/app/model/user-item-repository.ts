@@ -7,4 +7,6 @@ export interface UserItemRepository {
   create(userItem: UserItem): Observable<UserItem>;
   delete(id: number): Observable<any>;
   update(id: number, userItem: UserItem): Observable<any>;
+  getById(id: number): Observable<UserItem>;
+  getByUser(id: number): Observable<UserItems>;
 }

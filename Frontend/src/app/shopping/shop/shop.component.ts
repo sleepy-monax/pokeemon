@@ -57,10 +57,27 @@ export class ShopComponent implements OnInit, OnDestroy {
         nameItem: event.name,
         quantity: event.quantity
       };
-      this.subscription.push(
-        this.userItemApi.create(this.userItem)
-          .subscribe()
-      );
+      this.userItemApi.getByUser(this.userItem.idUser)
+        .subscribe(userItems => {
+          let compteur = 0;
+          userItems.forEach(item => {
+            if (this.userItem.nameItem == item.nameItem) {
+              this.userItem.quantity += item.quantity;
+              this.subscription.push(
+                this.userItemApi.update(item.id, this.userItem)
+                  .subscribe()
+              );
+              compteur += 1;
+              return;
+            }
+          });
+          if (compteur == 0) {
+            this.subscription.push(
+              this.userItemApi.create(this.userItem)
+                .subscribe()
+            );
+          }
+      });
       console.log('Item ajouté : ' +
         'Id User : ' + this.userItem.idUser +
         ' - Nom :  ' + this.userItem.nameItem +
