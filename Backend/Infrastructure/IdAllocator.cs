@@ -25,7 +25,7 @@ namespace Infrastructure
             {
                 var randomNumber = _random.Next(1, int.MaxValue);
                 name = $"{Prefix}-{randomNumber:X}";
-            } while (!_used.Contains(name));
+            } while (_used.Contains(name));
 
             return name;
         }

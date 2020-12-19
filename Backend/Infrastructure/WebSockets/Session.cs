@@ -69,6 +69,7 @@ namespace Infrastructure.WebSockets
         {
             while (Socket.State == WebSocketState.Open)
             {
+                Console.WriteLine("Entering session loop...");
                 var buffer = new byte[1024 * 4];
                 var package = new List<byte>();
 
@@ -112,12 +113,12 @@ namespace Infrastructure.WebSockets
         public async Task InvalidRequest(string type)
         {
             Console.WriteLine($"User sent an invalid request '{type}'.");
-
             await Send(new ServerError("invalid-request"));
         }
         
         public async Task Send<T>(T payload)
         {
+            Console.WriteLine("Message " + payload.ToString());
             if (payload.GetType().GetCustomAttributes(
                 typeof(MessageTypeAttribute), true
             ).FirstOrDefault() is MessageTypeAttribute attribute)

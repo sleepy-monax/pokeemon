@@ -25,6 +25,8 @@ namespace Api.Services
                 typeof(MessageTypeAttribute), true
             ).FirstOrDefault() is MessageTypeAttribute attribute)
             {
+                Console.WriteLine("Registering " + attribute.TypeName + " Handler...");
+            
                 _requestHandlers.Add(attribute.TypeName, (session, json) =>
                 {
                     var contract = new DefaultContractResolver
@@ -37,9 +39,9 @@ namespace Api.Services
                         ContractResolver = contract
                     };
 
-                    var message = json.ToObject<Package<T>>();
+                    var package = json.ToObject<Package<T>>();
 
-                    return function(session, message.Message);
+                    return function(session, package.Message);
                 });
             }
             else
@@ -91,12 +93,16 @@ namespace Api.Services
 
         private async Task DispatchRequest(Session session, string type, JObject message)
         {
+            Console.WriteLine("Dispatching " + type + " " + message.ToString() + "...");
+            
             if (_requestHandlers.ContainsKey(type))
             {
                 await _requestHandlers[type](session, message);
             }
             else
             {
+                Console.WriteLine("No handler...");
+                
                 await session.InvalidRequest(type);
             }
         }
