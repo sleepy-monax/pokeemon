@@ -21,7 +21,7 @@ namespace Api.Services
         private IUserRepository _userRepository = new SqlServerUserRepository();
         private ICreatureRepository _creatureRepository = new SqlServerCreatureRepository();
         private IUserItemsRepository _userItemsRepository = new SqlServerUserItemsRepository();
-        
+
         private IdAllocator _allocator = new IdAllocator("battle");
         private Dictionary<string, Battle> _battles = new Dictionary<string, Battle>();
 
@@ -32,30 +32,30 @@ namespace Api.Services
                 .ToList()
                 .FindAll(creature => creature.Pickable)
                 .ToArray();
-                
+
             var items = _userItemsRepository
                 .GetByUser(id)
                 .Select(userItems => JsonItem.getByName(userItems.NameItem))
                 .ToList();
-                
+
             var player = new Player
             {
                 Creatures = creatures,
                 Items = items,
             };
-            
+
             return player;
         }
 
         private void JoinBattle(Session session, int playerId, Battle battle)
         {
             LeaveBattle(session);
-            
+
             var player = CreatePlayer(playerId);
 
-            player.OnMessageSent = message => session.Send(message); 
+            player.OnMessageSent = message => session.Send(message);
             battle.Join(player);
-            
+
             session.MountService(new BattleSessionService
             {
                 Player = player,
@@ -74,20 +74,20 @@ namespace Api.Services
                     _battles.Remove(service.Battle.Id);
                     _allocator.Free(service.Battle.Id);
                 }
-                
+
                 session.UnMountService<BattleSessionService>();
             });
         }
 
-        public BattleService(SessionService bs)
+        public BattleService(SessionService ss)
         {
-            bs.RegisterRequestHandler<ClientCreate>((session, message) =>
+            ss.RegisterRequestHandler<ClientCreate>((session, message) =>
             {
                 var battle = new Battle(_allocator.Alloc());
                 JoinBattle(session, message.UserId, battle);
             });
 
-            bs.RegisterRequestHandler<ClientJoin>((session, message) =>
+            ss.RegisterRequestHandler<ClientJoin>((session, message) =>
             {
                 var battle = _battles[message.BattleId];
 
@@ -101,12 +101,12 @@ namespace Api.Services
                 }
             });
 
-            bs.RegisterRequestHandler<ClientLeave>((session, message) =>
+            ss.RegisterRequestHandler<ClientLeave>((session, message) =>
             {
                 LeaveBattle(session);
             });
 
-            bs.RegisterRequestHandler<ClientAttack>((session, message) =>
+            ss.RegisterRequestHandler<ClientAttack>((session, message) =>
             {
                 session.WithService<BattleSessionService>(service =>
                 {
@@ -114,7 +114,7 @@ namespace Api.Services
                 });
             });
 
-            bs.RegisterRequestHandler<ClientUseItem>((session, message) =>
+            ss.RegisterRequestHandler<ClientUseItem>((session, message) =>
             {
                 session.WithService<BattleSessionService>(service =>
                 {
@@ -122,7 +122,7 @@ namespace Api.Services
                 });
             });
 
-            bs.RegisterRequestHandler<ClientSwitchCreature>((session, message) =>
+            ss.RegisterRequestHandler<ClientSwitchCreature>((session, message) =>
             {
                 session.WithService<BattleSessionService>(service =>
                 {
@@ -130,9 +130,9 @@ namespace Api.Services
                 });
             });
 
-            bs.RegisterRequestHandler<ClientChat>((session, message) =>
+            ss.RegisterRequestHandler<ClientChat>((session, message) =>
             {
-                return bs.Broadcast(message);
+                return ss.Broadcast(message);
             });
         }
 

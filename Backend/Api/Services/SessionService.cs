@@ -26,7 +26,7 @@ namespace Api.Services
             ).FirstOrDefault() is MessageTypeAttribute attribute)
             {
                 Console.WriteLine("Registering " + attribute.TypeName + " Handler...");
-            
+
                 _requestHandlers.Add(attribute.TypeName, (session, json) =>
                 {
                     var contract = new DefaultContractResolver
@@ -49,15 +49,15 @@ namespace Api.Services
                 throw new Exception("The message doesn't have a MessageTypeAttribute attached to it!");
             }
         }
-        
-        public void RegisterRequestHandler<T>( Action<Session, T> action)
+
+        public void RegisterRequestHandler<T>(Action<Session, T> action)
         {
-            RegisterRequestHandler<T>( (session, data) =>
-            {
-                return new Task(() => action(session, data));
-            });
+            RegisterRequestHandler<T>((session, data) =>
+           {
+               return new Task(() => action(session, data));
+           });
         }
-        
+
         public async Task AcceptConnection(WebSocket socket)
         {
             var sessionId = _allocator.Alloc();
@@ -69,9 +69,9 @@ namespace Api.Services
                 session.AcknowledgeConnection().Wait();
 
                 await session.Service((type, data) => DispatchRequest(session, type, data));
-                
+
                 Console.WriteLine($"User {sessionId} left the game.");
-                
+
                 _sessions.Remove(sessionId);
                 _allocator.Free(sessionId);
 
@@ -83,7 +83,7 @@ namespace Api.Services
             }
         }
 
-        public async Task Broadcast<T>( T payload)
+        public async Task Broadcast<T>(T payload)
         {
             foreach (var kv in _sessions)
             {
@@ -94,7 +94,7 @@ namespace Api.Services
         private async Task DispatchRequest(Session session, string type, JObject message)
         {
             Console.WriteLine("Dispatching " + type + " " + message.ToString() + "...");
-            
+
             if (_requestHandlers.ContainsKey(type))
             {
                 await _requestHandlers[type](session, message);
@@ -102,7 +102,7 @@ namespace Api.Services
             else
             {
                 Console.WriteLine("No handler...");
-                
+
                 await session.InvalidRequest(type);
             }
         }
