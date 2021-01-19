@@ -105,19 +105,18 @@ namespace Infrastructure.SqlServer.Creatures
         public IEnumerable<ICreature> GetByUser(int idUser)
         {
             IList<ICreature> creatures = new List<ICreature>();
-            using (var connection = Database.GetConnection())
+            using var connection = Database.GetConnection();
+            
+            connection.Open();
+            var query = connection.CreateCommand();
+            query.CommandText = ReqGetByUser;
+
+            query.Parameters.AddWithValue($"@{ColId}", idUser);
+
+            var reader = query.ExecuteReader(CommandBehavior.CloseConnection);
+            while (reader.Read())
             {
-                connection.Open();
-                var query = connection.CreateCommand();
-                query.CommandText = ReqGetByUser;
-
-                query.Parameters.AddWithValue($"@{ColId}", idUser);
-
-                var reader = query.ExecuteReader(CommandBehavior.CloseConnection);
-                while (reader.Read())
-                {
-                    creatures.Add(_factory.CreateFromReader(reader));
-                }
+                creatures.Add(_factory.CreateFromReader(reader));
             }
 
             return creatures;

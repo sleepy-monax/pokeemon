@@ -35,7 +35,7 @@ namespace Api.Services
 
             var items = _userItemsRepository
                 .GetByUser(id)
-                .Select(userItems => JsonItem.getByName(userItems.NameItem))
+                .Select(userItems => JsonItem.GetByName(userItems.NameItem))
                 .ToList();
 
             var player = new Player
@@ -87,7 +87,7 @@ namespace Api.Services
                 JoinBattle(session, message.UserId, battle);
             });
 
-            ss.RegisterRequestHandler<ClientJoin>((session, message) =>
+            ss.RegisterRequestHandler<ClientJoin>(async (session, message) =>
             {
                 var battle = _battles[message.BattleId];
 
@@ -97,7 +97,7 @@ namespace Api.Services
                 }
                 else
                 {
-                    session.Send(new ServerError("no-such-battle"));
+                    await session.Send(new ServerError("no-such-battle"));
                 }
             });
 

@@ -8,11 +8,11 @@ namespace Infrastructure.Json
 {
     public static class JsonItem
     {
-        private static Dictionary<string, Item> _items;
+        private static readonly string ITEMS_PATH = "Assets/items.json";
 
-        private static string ITEMS_PATH = "Assets/items.json";
+        private static Dictionary<string, Item>? _items;
 
-        public static Item getByName(string name)
+        public static Item GetByName(string name)
         {
             if (_items == null)
             {

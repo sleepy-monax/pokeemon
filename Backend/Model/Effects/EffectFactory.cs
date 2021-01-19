@@ -20,11 +20,11 @@ namespace Model.Effets
                     };
 
                 case "change_type":
-                    Enum.TryParse(json["new_type"]?.ToObject<string>() ?? "normal", out Types new_type);
+                    Enum.TryParse(json["new_type"]?.ToObject<string>() ?? "normal", out Types newType);
 
                     return new ChangeType
                     {
-                        newType = new_type,
+                        NewType = newType,
                     };
 
                 case "regen":

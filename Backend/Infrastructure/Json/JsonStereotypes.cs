@@ -1,26 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Model.Attacks;
 using Model.Creature;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 
 namespace Infrastructure.Json
 {
     public class JsonStereotypes
     {
-        public static Stereotype get(Stereotype stereotype)
+        private static readonly string STEREOTYPES_PATH = "Assets/creatures.json";
+        private static Dictionary<string, Stereotype>? _stereotypes;
+
+        public static Stereotype GetByName(string name)
         {
-            var jsonString = File.ReadAllText("Assets/creatures.json");
-            List<Stereotype> stereotypes = JsonConvert.DeserializeObject<List<Stereotype>>(jsonString);
-            Stereotype st = new Stereotype();
-            foreach (var ster in stereotypes)
+            if (_stereotypes == null)
             {
-                if (ster.Name.Equals(stereotype.Name))
+                _stereotypes = new Dictionary<string, Stereotype>();
+                
+                var sterotypesJson = JArray.Parse(File.ReadAllText(STEREOTYPES_PATH));
+
+                foreach (var stereotypeToken in sterotypesJson)
                 {
-                    st = ster;
+                    if (stereotypeToken is JObject stereotypeObject)
+                    {                        
+                        Stereotype stereotype = new Stereotype()
+                        {
+                            Name = stereotypeObject["name"].ToObject<string>(),
+                            Stats = stereotypeObject["stats"].ToObject<Stats>(),
+                            Actions = new List<UnLockableAction>(),
+                        };
+
+                        _stereotypes[stereotype.Name] = stereotype;
+                    }
                 }
             }
-            return st;
+
+            return _stereotypes[name];
         }
     }
 }

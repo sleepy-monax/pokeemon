@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using Infrastructure.Json;
@@ -17,13 +18,14 @@ namespace Infrastructure.SqlServer.Creatures
             Creature creature = new Creature
             {
                 Id = reader.GetInt32(reader.GetOrdinal(SqlServerCreatureRepository.ColId)),
-                Name = reader.IsDBNull(reader.GetOrdinal(SqlServerCreatureRepository.ColName)) ? name : 
-                    reader.GetString(reader.GetOrdinal(SqlServerCreatureRepository.ColName)),
+                Name = reader.IsDBNull(reader.GetOrdinal(SqlServerCreatureRepository.ColName))
+                    ? name
+                    : reader.GetString(reader.GetOrdinal(SqlServerCreatureRepository.ColName)),
                 Xp = reader.GetInt32(reader.GetOrdinal(SqlServerCreatureRepository.ColXp)),
-                Pickable = reader.GetBoolean(reader.GetOrdinal(SqlServerCreatureRepository.ColPickable))
+                Pickable = reader.GetBoolean(reader.GetOrdinal(SqlServerCreatureRepository.ColPickable)),
+                Stereotype = JsonStereotypes.GetByName(name)
             };
 
-            creature.Stereotype = JsonStereotypes.get(new Stereotype{Name = name});
 
             return creature;
         }

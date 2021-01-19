@@ -8,11 +8,11 @@ namespace Infrastructure.Json
 {
     public static class JsonAttacks
     {
-        private static string ATTACKS_PATH = "Assets/attacks.json";
+        private static readonly string ATTACKS_PATH = "Assets/attacks.json";
 
-        private static Dictionary<string, Attack> _actions;
+        private static Dictionary<string, Attack>? _actions ;
 
-        public static Attack getByName(string name)
+        public static Attack GetByName(string name)
         {
             if (_actions == null)
             {
@@ -22,26 +22,25 @@ namespace Infrastructure.Json
 
                 foreach (var actionToken in actionsJson)
                 {
-                    if (actionToken is JObject actionObject)
+                    if (!(actionToken is JObject actionObject)) continue;
+                    
+                    Attack attack = new Attack
                     {
-                        Attack attack = new Attack
-                        {
-                            Name = actionObject["name"].ToObject<string>(),
-                            Description = actionObject["description"].ToObject<string>(),
+                        Name = actionObject["name"].ToObject<string>(),
+                        Description = actionObject["description"].ToObject<string>(),
 
-                            Accuracy = actionObject["accuracy"].ToObject<int>(),
-                            PowerPoint = actionObject["power_point"].ToObject<int>(),
-                            Probability = actionObject["probability"].ToObject<int>(),
+                        Accuracy = actionObject["accuracy"].ToObject<int>(),
+                        PowerPoint = actionObject["power_point"].ToObject<int>(),
+                        Probability = actionObject["probability"].ToObject<int>(),
 
-                            Effect = EffectFactory.createFromJson(actionObject["price"] as JObject)
-                        };
+                        Effect = EffectFactory.createFromJson(actionObject["effect"] as JObject)
+                    };
 
-                        _actions[attack.Name] = attack;
-                    }
+                    _actions[attack.Name] = attack;
                 }
             }
 
-            return _actions["name"].Clone();
+            return _actions[name].Clone();
         }
     }
 }
