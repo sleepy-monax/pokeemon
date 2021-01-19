@@ -41,13 +41,9 @@ public class HomeFragment extends Fragment {
 
         edPseudo = view.findViewById(R.id.ed_home_pseudo_user);
         edEmail = view.findViewById(R.id.ed_home_email);
-        edPassword = view.findViewById(R.id.ed_home_password);
-
 
         edPseudo.setText(MainActivity.user.getPseudo());
         edEmail.setText(MainActivity.user.getEmail());
-        edPassword.setText(MainActivity.user.getPassword());
-
     }
 
 }

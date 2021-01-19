@@ -72,14 +72,11 @@ public class SignInFragment extends Fragment {
 
     public void goToSignUp(View view){
         Button btnGotoSignUp = (Button) view.findViewById(R.id.btn_signin_signup);
-        btnGotoSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = SignInFragment.this.getParentFragmentManager().beginTransaction();
-                ft.replace(R.id.fl_wrapper, new SignUpFragment());
-                ft.addToBackStack(null);
-                ft.commit();
-            }
+        btnGotoSignUp.setOnClickListener(v -> {
+            FragmentTransaction ft = SignInFragment.this.getParentFragmentManager().beginTransaction();
+            ft.replace(R.id.fl_wrapper, new SignUpFragment());
+            ft.addToBackStack(null);
+            ft.commit();
         });
     }
 }

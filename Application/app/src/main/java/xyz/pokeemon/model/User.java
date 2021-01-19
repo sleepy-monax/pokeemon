@@ -23,9 +23,9 @@ public class User {
         this.password = password;
     }
 
-    public User(String email, String password) {
-        this.pseudo ="";
-        this.email = email;
+    public User(String pseudo, String password) {
+        this.pseudo =pseudo;
+        this.email = "";
         this.password = password;
     }
 
