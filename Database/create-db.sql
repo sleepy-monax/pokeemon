@@ -18,7 +18,7 @@ CREATE TABLE Creatures (
     name            varchar(64),
     stereotype      varchar(64) not null,
     xp              int not null,
-    pickable       bit not null default 0
+    pickable        bit not null default 0
 );
 
 create table UserCreatures(
@@ -38,5 +38,4 @@ create table UserItems(
     quantity        int not null,
 
     foreign key (idUser) references Users,
-
 );
