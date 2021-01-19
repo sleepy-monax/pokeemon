@@ -2,24 +2,24 @@ USE Pokeemon;
 
 insert into Users (administrator, pseudo, email, password)
 values
-    (1, 'Admin', 'admin@pokeemon.xyz', '$2y$10$o3Vauecd8ox6ZuVjNFK8h.RazFoFMG0vmqf1hILRwc2R0E2Q7X556'),
-    (0, 'Guillaume', 'guillaume.charlier.2017@gmail.com', '$2y$10$q2k5JIEzWc8Sr0Lh8AtRbe/Ch./Kqn2/rxglxd3TtF.aQCpZJ0Qgm'),
-    (0, 'Mathieu', 'mathieu.address@gmail.com', '$2y$10$bDhoBBfKLyxZAxHyaEUbTuq9xPvrKHcc3UGfL5BfPEuT1F8LgG4r6'),
-    (0, 'Sasha', 'sasha.address@gmail.com', '$2y$10$wsv0V7BgSIGDpp3YLu/mKO8kNAjgPwpW.C9aViBF4OebPrjjdX8OO'),
-    (0, 'Nicolas', 'nicolas.address@gmail.com', '$2y$10$IjnVQV4JAag4ghVVu7M/3.zWE6TF3bn6e5d4i4GhnnaFjfZYpdBnW'),
-    (0, 'Palermo', 'palermo@gmail.com', '$2y$10$VpmAXpwHgncftNGt8mhefe5rVzK1NyoSWGAAezBNRpPsp/sztSKcK'),
-    (0, 'Ramirez', 'ramirez@gmail.com', '$2y$10$r3PTG.ov88WoB8mW1XkxHuI0m2SZxl8OPQ3SbP9a7G2jY6MOEyhOO'),
-    (0, 'Gonzales', 'gonzales@gmail.com', '$2y$10$beD.BYTaXxZ4Xd.MvSst8etJGmcJE8b1vO3J.4aFk5AF07mZWQMvy'),
-    (0, 'Mirador', 'Mirador@gmail.com', '$2y$10$V4eHKmVMOkJE7F303Y18aeMNYFG7x1JMYeGH9vtxScT3Y8iVC6J/G'),
-    (0, 'Portos', 'portos@gmail.com', '$2y$10$DDWJiUH8nFWifsIwi1rVSOoBbuWfM9DAwz5Z6WuyZPsYQ3gI0agNW'),
-    (0, 'Aramis', 'aramis@gmail.com', '$2y$10$1fkfcgZ1q5OMtxBBJBI/zOIjsFp8QrPeAIL8sfxftQzsMg.g/ehN6'),
-    (0, 'Atos', 'atos@gmail.com', '$2y$10$ZDEHOGBzBAEZUUNZYisb9eQrAC9b48eW6i.LfYstILj6XaLwJ4Ixq'),
-    (0, 'Alfred', 'alfred@gmail.com', '$2y$10$RV8T0Sx.d4MEOIhamjFzzOqutj3Galou7bAQyIYV7HIb.5gLZ89tK'),
-    (0, 'Ramses', 'ramses@gmail.com', '$2y$10$wXTkrGaWtRqvo5oJtKsLH.2ograf2U8pqjMR2lU5hGx9EymRU4TWm'),
-    (0, 'Picpiliqueboo', 'picpiliqueboo@gmail.com', '$2y$10$0QpS/Ym42YyWuTT/KDAqkO08JojfN5/ieHLHHAwUEXbajTN6bwE92'),
-    (0, 'Gosmonio', 'gosmonio@gmail.com', '$2y$10$tUvkmcW1Yq58s9wgEXG2f.1Kjq3yxSPExjkYyn3vqfZmLDm..3gRK'),
-    (0, 'Hasmaper', 'hasmaper@gmail.com', '$2y$10$RwlE94BWgcp381ixPyebLeGfE7lo.CfsZIow56KERxt425q.6ds/q'),
-    (0, 'Voomaster', 'voomaster@gmail.com', '$2y$10$pYHcf7hxqji32/FPZ5DLz.ECcmoqmsmEusSa2tVkGPUMErwrVbsvC');
+    (1, 'Admin', 'admin@pokeemon.xyz', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Guillaume', 'guillaume.charlier.2017@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Mathieu', 'mathieu.address@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Sasha', 'sasha.address@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Nicolas', 'nicolas.address@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Palermo', 'palermo@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Ramirez', 'ramirez@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Gonzales', 'gonzales@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Mirador', 'Mirador@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Portos', 'portos@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Aramis', 'aramis@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Atos', 'atos@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Alfred', 'alfred@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Ramses', 'ramses@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Picpiliqueboo', 'picpiliqueboo@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Gosmonio', 'gosmonio@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Hasmaper', 'hasmaper@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu'),
+    (0, 'Voomaster', 'voomaster@gmail.com', '$2y$12$OlJyUd8GEBPP08leToVvke/a7u1Oord9yuDWAFvRIIdNaWXZ9y9xu');
 
 insert into Creatures (stereotype, xp)
 values
@@ -119,7 +119,6 @@ values
     (7, 38),
     (18, 32),
     (10, 28),
-    (2, 10),
     (18, 23),
     (17, 19),
     (6, 21),

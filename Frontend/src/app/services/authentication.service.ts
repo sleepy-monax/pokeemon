@@ -27,10 +27,12 @@ export class AuthenticationService {
     return this.http.post<any>(`https://${environment.serverAddress}:${environment.apiPort}/users/authenticate`, { pseudo, password, email })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
-        this.globalUser.user = user;
-        console.log(this.globalUser.user);
+        if (user.id !== 0) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+          this.globalUser.user = user;
+          console.log(this.globalUser.user);
+        }
         return user;
       }));
   }

@@ -58,7 +58,7 @@ export class SigninComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          if (data.id != 0) {
+          if (data.id !== 0) {
             this.router.navigate(['']);
           } else {
             this.player.reset();
