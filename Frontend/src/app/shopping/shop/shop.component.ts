@@ -29,7 +29,7 @@ export class ShopComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.userApi.getById(this.globalUser.user.id)
+    this.userApi.getById(JSON.parse(localStorage.getItem('currentUser')).id)
       .subscribe(user => {
         this.user = user;
         }
@@ -53,7 +53,7 @@ export class ShopComponent implements OnInit, OnDestroy {
       this.isHidden = true;
       // Add item to user
       this.userItem = {
-        idUser: this.globalUser.user.id,
+        idUser: JSON.parse(localStorage.getItem('currentUser')).id,
         nameItem: event.name,
         quantity: event.quantity
       };

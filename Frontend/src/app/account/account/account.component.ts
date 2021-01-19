@@ -36,7 +36,7 @@ export class AccountComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription.push(
-      this.userApi.getById(this.globalUser.user.id)
+      this.userApi.getById(JSON.parse(localStorage.getItem('currentUser')).id)
         .subscribe( user => {
           this.user = user;
           if (user != null) {

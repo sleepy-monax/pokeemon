@@ -29,7 +29,7 @@ export class PokeeteamComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.userService.query().pipe(first()).subscribe(users => {
-      this.creatureService.get(this.globalUser.user.id)
+      this.creatureService.get(JSON.parse(localStorage.getItem('currentUser')).id)
         .subscribe(creatures => {
           this.creatures = creatures;
           creatures.forEach(creature => {

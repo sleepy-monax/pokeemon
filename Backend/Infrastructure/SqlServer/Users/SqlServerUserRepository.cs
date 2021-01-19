@@ -79,13 +79,17 @@ namespace Infrastructure.SqlServer.Users
         public IUser GetUser(IUser user)
         {
             IUser userBis = UserExist(user);
-            var hash = BCrypt.Net.BCrypt.Verify(user.Password, userBis.Password);
-            if (hash)
+            if (userBis.Id != 0)
             {
-                user.Id = userBis.Id;
-                user.Pseudo = userBis.Pseudo;
-                user.Email = userBis.Email;
+                var hash = BCrypt.Net.BCrypt.Verify(user.Password, userBis.Password);
+                if (hash)
+                {
+                    user.Id = userBis.Id;
+                    user.Pseudo = userBis.Pseudo;
+                    user.Email = userBis.Email;
+                }    
             }
+            
             return user;
         }
 
@@ -166,8 +170,14 @@ namespace Infrastructure.SqlServer.Users
                 command.CommandText = ReqUpdate;
 
                 command.Parameters.AddWithValue($"@{ColPseudo}", user.Pseudo);
-                
-                var hash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                IUser exist = UserExist(user);
+                var hash = user.Password;
+
+                if (exist.Password != hash)
+                {
+                    hash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                    
+                }
                 command.Parameters.AddWithValue($"@{ColPassword}", hash);
                 command.Parameters.AddWithValue($"@{ColEmail}", user.Email);
                 command.Parameters.AddWithValue($"@{ColMoney}", user.Money);

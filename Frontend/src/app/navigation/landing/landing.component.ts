@@ -33,7 +33,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.userService.query().pipe(first()).subscribe(users => {
       this.loading = false;
       this.users = users;
-      this.creatureService.get(this.globalUser.user.id)
+      this.creatureService.get(JSON.parse(localStorage.getItem('currentUser')).id)
         .subscribe(creatures => {
           creatures.forEach(creature => {
             if (creature.pickable) {
